@@ -1,0 +1,241 @@
+.panelnav{
+	.panel-content{	
+		.content-inicio{
+			display: block;
+			height: 93%;
+			width: 100%;
+			.content{
+				padding: 10px;
+				height: 91%;
+				width: 100%;
+				.licitacion{
+					height: 13%;
+					padding: 0.8em;
+					padding-left: 0px;
+					padding-right: 0px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+					}
+					@media screen and (max-width: 1366px) and (max-height: 681px) {
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						height: 10%;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					}
+
+					.bcontent{
+						height: 100%;
+						border: 1px #333 dotted;
+						padding: 0.6em;
+						font-size: 1.5em;
+						text-align: center;
+						// PANTALLA DE 720 X 1280
+						@media screen and (max-width: 1024px) and (max-height: 768px) {
+							padding: 0.3em;
+							font-size: 1.3em;
+						}
+						@media screen and (max-width: 1024px) and (max-height: 681px) {
+							padding: 0.3em;
+							font-size: 1.3em;
+						}
+					}
+				}
+				.kml{
+					height: 20%;
+					border: 1px #333 dotted;
+					padding: 0.5em;
+					padding-right: 1em;
+					padding-left: 1em;
+					font-size: 1.5em;
+					text-align: center;
+					.bcontent{
+						height: 100%;
+						width: 100%;
+						.noubication{
+							position: relative;
+							width: 100%;
+							height: 45%;
+							background: #118BF4;
+							color: #FFF;
+							padding: 7px;
+							margin-bottom: 2%;
+							cursor: pointer;
+							@media screen and (max-height: 681px) {
+								font-size: 0.8em;
+							}
+						}
+						.kmlfile{
+							position: relative;
+							width: 100%;
+							height: 45%;
+							.uploadbtn{
+								float: left;
+								width: 10%;
+								height: 100%;
+								background: #118BF4;
+								color: #FFF;
+								padding: 5px;
+								padding-top: 10px;
+								.upload{
+									position: absolute;
+									top: 0;
+									right: 0;
+									margin: 0;
+									padding: 0;
+									font-size: 20px;
+									cursor: pointer;
+									opacity: 0;
+									filter: alpha(opacity=0);
+								}
+							}
+							.visor{
+								border: 1px #CCC solid;
+								padding: 5px;
+								float: left;
+								width: 90%;
+								height: 100%;
+							}
+						}
+					}
+				}
+				.listado{
+					height: 67%;
+					width: 100%;
+					.bheader{
+						height: 13%;
+						width: 100%;
+						padding: 10px;
+						text-align: center;
+						font-size: 1.4em;
+					}
+					.bcontent{
+						height: 87%;
+						width: 100%;
+						.table{
+							border: 1px #666 solid;
+							width: 100%;
+							height: 100%;
+							.thead{
+								position: relative;
+								width: 100%;
+								height: 10%;
+								.tr{
+									position: relative;
+									width: 100%;
+									height: 100%;
+									.t1{
+									}
+									.t2{
+										width: 15%;
+									}
+									.t3{
+										width: 55%;
+									}	
+									.t4{
+										width: 15%;
+									}
+									.t5{
+										width: 15%;
+									}
+								}
+								.th{
+									float: left;
+									background: #AAA;
+									color: #FFF;
+									height: 30px;
+									border: 1px #666 solid;
+									border-top: none;
+									border-left: none;
+									text-align: center;
+									padding: 5px; 
+								}
+								.th:last-child{
+									border-right: none;
+								}
+								.th:first-child{
+									border-left: none;
+								}
+							}
+							.tbody{
+								height: 89%;
+								position: relative;
+								width: 100%;
+								text-align: center;
+								display: block;
+								overflow-y: hidden;
+								.td{
+									padding: 4px;
+									float: left;
+									background: #FFF;
+									text-align: center;
+									border: 1px #999 solid;
+									border-left: none;
+									border-top: none;
+									height: 100%;
+								}
+								.td:last-child{
+									border-right: none;
+								}
+								.tr{
+									height: 25px;
+									width: 100%;
+									.rojo{
+										color: #CC2626;
+									}
+									.verde{
+										color: #249836;
+									}
+									.t1{
+										width: 25%;
+										font-size: 0.9em;
+									}
+									.t2{
+										width: 15%;
+										font-size: 0.9em;
+									}
+									.t3{
+										width: 55%;
+										padding-top: 6px;
+										font-size: 0.8em;
+										cursor: pointer;
+									}	
+									.t4{
+										width: 15%;
+										cursor: pointer;
+									}
+									.t5{
+										width: 15%;
+										cursor: pointer;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.footer{
+				height: 9%;
+				padding: 10px;
+				padding-top: 0px;
+				.botonfin{
+					cursor: pointer;
+					background: #118BF4;
+					color: #FFF;
+					font-size: 1.7em;
+					height: 100%;
+					text-align: center;
+					padding: 7px;
+					@media screen and (max-height: 681px) {
+						font-size: 1.3em;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,128 @@
+{
+	// VARIABLES DE ENTORNO
+	// PATH DEL SISTEMA DE ARCHIVOS
+	"ASSET": {
+		"APP": "CHILECOMPRA/app/app.js",
+		"LAYOUT": "CHILECOMPRA/public_html/layout.jsp",
+		"ERROR": "CHILECOMPRA/public_html/error.jsp",
+		"STYLES": "CHILECOMPRA/public_html/styles/",
+		"HTML": "CHILECOMPRA/public_html/partial/",
+		"CRYPTO": "CHILECOMPRA/app/crypto/",
+		"CONFIG": "CHILECOMPRA/app/config/const.jsp",
+		"DEPENDENCE": "CHILECOMPRA/app/dep/",
+		"CSSDEPENDENCE": "CHILECOMPRA/app/cssdep/",
+	 	"CONTROLLER": "CHILECOMPRA/app/controller/",
+		"GEA": "CHILECOMPRA/gea/",
+		"CUSTOM": "CHILECOMPRA/app/custom/"
+	},
+	
+	// SE INTEGRAN LOS OBJETOS DE CRIPTOGRAFIA
+	"CRYPTO": [
+		"aes", 
+		"md5", 
+		"pbkdf2", 
+		"sha1", 
+		"aesutil"
+	],
+	
+	// SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS COMPONENTES GEA
+	"GEA": [
+		"geautils", 
+		"geomap", 
+		"geobox"
+	],
+	
+	// SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LAS DEPENDENCIAS
+	"DEPENDENCE": {
+		"INTERNAL": [
+			"jquery", 
+			"jquery-ui", 
+			"angular", 
+			"bigInt", 
+			"include", 
+			"com", 
+			"model", 
+			"controller", 
+			"scrollbar", 
+			"cookie"
+		],
+		
+		"EXTERNAL": [
+			"maps.googleapis.com/maps/api/js?client=gme-contraloriageneral&v=3.exp&libraries=places,drawing"
+		],
+		
+		"CSS": [
+			"normalize",
+			"jquery-ui", 
+			"scrollbar"
+		],
+	},
+	
+	// SE DESCRIBE EN ORDEN SECUENCIAL EL ORDEN DE LA CARGA DE LOS PARTIAL
+	// TODOS LOS LAYOUT ESTAN ASOCIADOS A UN ARCHIVO LESS QUE DEBE EXISTIR, SINO ESTOS SERAN IGNORADOS DE LA ESTRUCTURA
+	"LAYOUT": [
+		"header.jsp", 
+		"mapa.jsp", 
+		"footer.jsp", 
+		"popover.jsp", 
+		"loading.jsp", 
+		"modal.jsp",
+		"ayuda_panel.jsp"
+	],
+	
+	"STYLES": [
+		"base.less", 
+		"essential.less", 
+		"header.less", 
+		"mapa.less", 
+		"panel.less", 
+		"ayuda_panel.less",
+		"footer.less", 
+		"popover.less",
+		"etiqueta.less", 
+		"loading.less", 
+		"geobox.less", 
+		"infopop.less",
+		"modal.less", 
+		"alert.less",
+		"prompt.less"
+	],
+	
+	//SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS CONTROLARES
+	"CONTROLLER": [
+		"module", 
+		"panel", 
+		"ayuda_panel", 
+		"spatial", 
+		"loading", 
+		"formulario", 
+		"chilecompra", 
+		"popover", 
+		"infopop",
+		"etiqueta",
+		"modal", 
+		"toolbar", 
+		"alert",
+		"slidercc",
+		"analytics",
+		"validaciones",
+		"prompt"
+	],
+	
+	// VARIABLES DE APLICACION
+	"MAP": {
+		"LAT": -33.46911990,
+		"LNG": -70.6419970,
+		"ZOOM": 4,
+	},
+	"MERCADOPUBLICO": {
+		"MP": "api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?",
+		"CODIGO": "LP14",
+		"TICKET": "&ticket=D6DF9A69-2F0E-482E-B1F4-55A234C8193F"
+	},
+	"MIDESO": {
+		"URLMIDESO": "bipqa.mds.cl:8090/bip2-trabajo/app/services/",
+		"CONSULTAIDI": "ConsultaIdiWS",
+		"CONSULTAFICHA": "ConsultaFiichaIdiWS"
+	}
+}

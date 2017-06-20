@@ -1,0 +1,1446 @@
+@COLOR2DO:#DDD;
+.panel{
+	position: absolute;
+	top: 6%;
+	height: 70%;
+	padding: 0 0 0 0;
+	border: none !important;
+	background: transparent !important;
+	-webkit-box-shadow: 0 0px 0px !important;
+	box-shadow: 0 0px 0px !important;
+	// PANTALLA 1366x768
+	@media screen and (max-width: 1366px) and (max-height: 768px){
+	 	font-size: 0.8em;	
+	}	
+	// PANTALLA 1280*1024
+	@media screen and (max-width: 1280px) and (max-height: 1024px){
+	 	font-size: 0.7em;	
+	}
+	// PANTALLA 1280x768
+	@media screen and (max-width: 1280px) and (max-height: 768px){
+	 	font-size: 0.8em;	
+	}	
+	// PANTALLA DE 720 X 1280
+	@media screen and (max-width: 1280px) and (max-height: 720px) {
+	 	font-size: 0.7em;
+	}	
+	#paneltabs{
+		float: left;
+		height: 100%;
+		width: 25%;
+		color:#333;
+		#switchpanel{
+			float: left;
+			background: @COLOR2DO;
+			height: 40px;
+			padding: 5px;
+			width: 100%;
+			font-size: 1.6em;
+			text-align: center;
+			color:#FA9747;
+			font-weight: bold;
+			border-right: none;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			 	padding: 8px;
+			}	
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	padding: 10px; 
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			 	padding: 8px;
+			}	
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	padding: 5px;
+			 	height: 30px;
+			}	
+			#show{
+				height: 100%;
+				display: none;
+				cursor: pointer;
+			}
+			#hide{
+				height: 100%;
+				display: block;
+				cursor: pointer;
+			}
+		}
+		.tabpanel{
+			float: left;
+			cursor: pointer;
+			height: 70px;
+			width: 100%;
+			font-size: 0.9em;
+			text-align: center;
+			padding: 15px;
+			//border: 1px @COLOR2DO solid;
+			border-top: none;
+			border-right: none;
+			background: #FFF;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			 	padding: 7px;
+				padding-top: 13px;
+				padding-bottom: 13px;
+			 	height: auto;
+			 	font-size: 0.8em;
+			}	
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				padding: 7px;
+				padding-top: 13px;
+				padding-bottom: 13px;
+			 	height: auto; 
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			 	padding: 7px;
+				padding-top: 13px;
+				padding-bottom: 13px;
+			 	height: auto;
+			 	font-size: 0.8em;
+			}	
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	padding: 7px;
+				padding-top: 13px;
+				padding-bottom: 13px;
+			 	height: auto;
+			}
+			.borderdiv{
+				border-left: 4px #FA9747 solid;
+				height: 100%;
+			}
+		}
+		.tabficha{
+			color: #999;
+		}
+	}
+	#panelcontent{
+		float: left;
+		border: 1px @COLOR2DO solid;
+		border-top: none;
+		background: #FFF;
+		height: auto;
+		width: 75%;
+		#descargas{
+			position: relative;
+			background: @COLOR2DO;
+			height: 40px;
+			width: 100%;
+			text-align: center;
+			color:#FA9747;
+			font-weight: bold;
+			font-size: 1.1em;
+			border-bottom: 1px @COLOR2DO solid;
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	height: 30px;
+			}
+			#titulo{
+				float: left;
+				width: 35%;
+				height: 100%;
+				padding: 5px;
+				text-align: center;
+				color: #FFF;
+				border-right: 1px #FFF solid;
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				 	padding: 7px;
+				}
+			}
+			#download{
+				height: 100%;
+				width: 100%;
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				 	height: 1em; 
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				 	padding: 2px;
+				}
+				img{
+					height: 1.7em;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+					 	height: 2em; 
+					}	
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+					 	height: 2.5em; 
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					 	height: 2em; 
+					}	
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					 	height: 1.6em; 
+					}
+				}
+				#pdf{
+					float: right;
+					height: 100%;
+					padding: 5px;
+					cursor: pointer;
+				}
+				#xls{
+					float: right;
+					height: 100%;
+					padding: 5px;
+					cursor: pointer;
+				}
+				#kml{
+					float: right;
+					height: 100%;
+					padding: 5px;
+					cursor: pointer;
+				}
+			}
+		}
+		#search{
+			display: block;
+			position: relative;
+			height: 310px;
+			width: 100%;
+			margin: 20px;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				height: 216px;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	padding-left: 0%;
+			 	height: 234px;
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				height: 220px;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	height: 202px;
+			}
+			.picker{
+				border: 1px solid #558ed5;
+				background: #F2F2F2;
+				font-size: 0.7em;
+				text-align: center;
+				padding: 2.5px;
+				height: 90px;
+				width: 90%;
+				font{
+					color:#558ED5;
+					font-weight: bold;
+				}
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 73px;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+					height: 73px;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				}
+				.dataswitch{
+					width: 100%;
+					height: 27px;
+					margin-top: 5px;
+					color: #558ED5;
+					.divcenter{
+						margin: 0 auto;
+						height: 27px;
+						width: 100%;
+					}
+				}
+				.labeldate{
+					float: left;
+					padding-left: 15px;
+					border-top-left-radius: 5px; 
+					border-bottom-left-radius: 5px; 
+					border:1px solid #999;
+					height: 28px;
+					width: 43.5%;
+					background: #FFF;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						width: 40.7%;
+						height: 25px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						width: 40%;
+						height: 25px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					}
+				}
+				.labeldateright{
+					float: left;
+					padding-right: 15px;
+					border-top-right-radius: 5px; 
+					border-bottom-right-radius: 5px; 
+					border:1px solid #999;
+					height: 28px;
+					width: 43.5%;
+					background: #FFF;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						width: 40.7%;
+						height: 25px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						width: 40%;
+						height: 25px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					}
+				}
+				.datefrom{
+					padding-right: 15px;
+					border:none;
+					width: 80%;
+					font-size: 1em;
+					height: 26px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 23px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						height: 23px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						font-size: 0.8em;
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+						font-size: 0.8em;
+					}
+				}	
+				.dateto{
+					padding-left: 15px;
+					border:none;
+					width: 80%;
+					font-size: 1em;
+					height: 26px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 23px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						height: 23px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						font-size: 0.8em;
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+						font-size: 0.8em;
+					}
+				}
+				.tituloHasta{
+					float: left;
+					height: 28px;
+					line-height: 26px;
+					vertical-align: middle;
+					font-size: 0.9em;
+					color: #f5f5f5;
+					background-color: #558ED5;
+					position: relative;
+					font-size: 0.8em; 
+					width: 40px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 25px;
+						line-height: 25px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						height: 25px;
+						line-height: 25px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					}
+				}
+			}
+			div{
+				height:27%;
+				margin-top:5%;
+
+				.titulo{
+					width: 100%;
+					float: left;
+					height: 40%;
+					margin-top:0%;
+					font-size: 1em;
+				}
+				.inputs{
+					float: left;
+					width: 100%;
+					height: 60%;
+					margin-top:0%;
+					input{
+						width: 75%;
+						height: 40px;
+						// PANTALLA 1366x768
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+							height: 30px;
+						}
+						// PANTALLA 1280*1024
+						@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						 	height: 30px;
+						}
+						// PANTALLA 1280x768
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+							height: 30px;
+						}
+						// PANTALLA DE 720 X 1280
+						@media screen and (max-width: 1280px) and (max-height: 720px) {
+						 	height: 30px;
+						}
+					}
+					button{
+						width: 15%;
+						height: 40px;
+						background: #558ed5;
+						color: #FFF;
+						border: none;
+						// PANTALLA 1366x768
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+							height: 30px;
+						}
+						// PANTALLA 1280*1024
+						@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						 	height: 30px;
+						}
+						// PANTALLA 1280x768
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+							height: 30px;
+						}
+						// PANTALLA DE 720 X 1280
+						@media screen and (max-width: 1280px) and (max-height: 720px) {
+						 	height: 30px;
+						}
+					}
+				}
+			}
+		}
+		#advasearch{
+			position: relative;
+			display: none;
+			height: 650px;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				height: 440px;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	height: 100%; 
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				height: 440px;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	height: 440px;
+			}
+			width: 100%;
+			.picker{
+				margin-top: 5%;
+				margin-left: 5%;
+				border: 1px solid #558ed5;
+				background: #F2F2F2;
+				font-size: 0.7em;
+				text-align: center;
+				padding: 2.5px;
+				height: 90px;
+				width: 90%;
+				font{
+					color:#558ED5;
+					font-weight: bold;
+				}
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 73px;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+					height: 73px;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				}
+				.dataswitch{
+					width: 100%;
+					height: 27px;
+					margin-top: 5px;
+					color: #558ED5;
+					.divcenter{
+						margin: 0 auto;
+						height: 27px;
+						width: 100%;
+					}
+				}
+				.labeldate{
+					float: left;
+					padding-left: 15px;
+					border-top-left-radius: 5px; 
+					border-bottom-left-radius: 5px; 
+					border:1px solid #999;
+					height: 28px;
+					width: 43.5%;
+					background: #FFF;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						width: 40.7%;
+						height: 25px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						width: 40%;
+						height: 25px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					}
+				}
+				.labeldateright{
+					float: left;
+					padding-right: 15px;
+					border-top-right-radius: 5px; 
+					border-bottom-right-radius: 5px; 
+					border:1px solid #999;
+					height: 28px;
+					width: 43.5%;
+					background: #FFF;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						width: 40.7%;
+						height: 25px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						width: 40%;
+						height: 25px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					}
+				}
+				.datefrom{
+					padding-right: 15px;
+					border:none;
+					width: 80%;
+					font-size: 1em;
+					height: 26px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 23px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						height: 23px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						font-size: 0.8em;
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+						font-size: 0.8em;
+					}
+				}	
+				.dateto{
+					padding-left: 15px;
+					border:none;
+					width: 80%;
+					font-size: 1em;
+					height: 26px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 23px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						height: 23px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						font-size: 0.8em;
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+						font-size: 0.8em;
+					}
+				}
+				.tituloHasta{
+					float: left;
+					height: 28px;
+					line-height: 26px;
+					vertical-align: middle;
+					font-size: 0.9em;
+					color: #f5f5f5;
+					background-color: #558ED5;
+					position: relative;
+					font-size: 0.8em; 
+					width: 40px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 25px;
+						line-height: 25px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						height: 25px;
+						line-height: 25px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					}
+				}
+			}
+			.inputs{
+				float: left;
+				height: ~'calc(10%+0.5em)';
+				width: 100%;
+				padding-left: 5%;
+				padding-top: 0.3em;
+				.titulo{
+					width: 100%;
+					float: left;
+					font-size: 0.9em;
+					margin-bottom: 0.3em;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						font-size: 0.8em;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						font-size: 0.8em;
+					}
+				}
+				input{
+					width: 90%;
+					height: 25px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 20px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						height: 20px;
+					}
+				}
+			}
+			#valores{
+				height: 17%;
+				width: 100%;
+				float: left;
+				font-size: 0.9em;
+				padding-left: 5%;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 85.5px;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+					height: 24%;
+				}
+				.valorestab{
+					width: 100%;
+					height: 40%;
+					padding-top: 2.5%; 
+					float: left;
+					.titulo{
+						float: left;
+						width: 15%;
+					}
+					.valorestabsub{
+						float: left;
+						width: 40%;
+						input{
+							width: 90%;
+							height: 25px;
+							// PANTALLA 1366x768
+							@media screen and (max-width: 1366px) and (max-height: 768px) {
+								height: 20px;
+							}
+							// PANTALLA 1280x768
+							@media screen and (max-width: 1280px) and (max-height: 768px) {
+								height: 20px;
+							}
+						}
+						span{
+
+						}
+						.destext{
+							font-size: 0.8em;
+							// PANTALLA 1280*1024
+							@media screen and (max-width: 1280px) and (max-height: 1024px) {
+							 	font-size: 0.9em;
+							}
+						}
+					}
+				}
+			}
+			#clasificacion{
+				float: left;
+				height: 12%;
+				width: 100%;
+				padding-top: 0.3em;
+				font-size: 0.9em;
+				padding-left: 5%;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 10%;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+					height: 10%;
+				}
+				.titulo{
+					padding-bottom: 0.5em;
+				}
+				select{
+					width: 90%;
+					height: 25px; 
+					background:#FFF;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 20px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						height: 20px;
+					}
+				}
+			}
+			#actions{
+				float: left;
+				width: 100%;
+				height: 10%;
+				text-align: center;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 19%;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+					height: 19%;
+				}
+				.result-tab{
+					display: none;
+					cursor: pointer;
+					margin-top: 5px;
+					margin-bottom: 5px;
+					margin: 2%;
+					width: 96%;
+					height: 85px;
+					background: #F8F8F8;
+					border: 1px #E8E8E8 solid;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 50px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						height: 67.5px;
+					}
+					// PANTALLA 1280X1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+					 	height: 67.5px;
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					 	height: 67.5px;
+					}
+					.resultados-adva{
+						position: relative;
+						height: 65px;
+						width: 100%;
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+							height: 35px;
+						}
+						// PANTALLA 1280x768
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+							height: 45px;
+						}
+						// PANTALLA 1280X1024
+						@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						 	height: 45px;
+						}
+						// PANTALLA DE 720 X 1280
+						@media screen and (max-width: 1280px) and (max-height: 720px) {
+						 	height: 47.5px;
+						}
+						.numero{
+							position: relative;
+							padding-top: 7.5px;
+							text-align: right;
+							font-size: 1.4em;
+							padding-right: 5px;
+							height: 40px;
+							width: 100%;
+							@media screen and (max-width: 1366px) and (max-height: 768px) {
+								height: 22.5px;
+								font-size: 1.1em;
+								padding-top: 3px;
+							}
+							// PANTALLA 1280x768
+							@media screen and (max-width: 1280px) and (max-height: 768px) {
+								height: 30px;
+							}
+							// PANTALLA 1280X1024
+							@media screen and (max-width: 1280px) and (max-height: 1024px) {
+							 	height: 30px;
+							}
+							// PANTALLA DE 720 X 1280
+							@media screen and (max-width: 1280px) and (max-height: 720px) {
+							 	height: 30px;
+							}
+						}
+						.detail{
+							position: relative;
+							text-align: right;
+							padding-right: 5px;
+							height: 25px;
+							width: 100%;
+							@media screen and (max-width: 1366px) and (max-height: 768px) {
+								height: 10px;
+								font-size: 0.75em;
+							}
+							// PANTALLA 1280x768
+							@media screen and (max-width: 1280px) and (max-height: 768px) {
+								height: 15px;
+							}
+							// PANTALLA 1280X1024
+							@media screen and (max-width: 1280px) and (max-height: 1024px) {
+							 	height: 15px;
+							}
+							// PANTALLA DE 720 X 1280
+							@media screen and (max-width: 1280px) and (max-height: 720px) {
+							 	height: 15px;
+							}
+						}
+					}
+					.godetail{
+						height: 20px;
+						font-size: 0.7em;
+						position: relative;
+						bottom: 0px;
+						padding: 2px;
+						border: 1px #D0D0D0 solid;
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+							height: 15px;
+							font-size: 0.6em;
+						}
+						.title{
+							float: left;
+							width: 70%;
+							height: 100%;
+							padding-left: 15px;
+							text-align: left;
+						}
+						.etiqueta-detail{
+							float: left;
+							width: 29%;
+							height: 100%;
+							text-align: right;
+							padding-right: 5px;
+							font-size: 1.1em;
+						}
+					}
+				}
+				.actiontab{
+					height: 45px;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 30px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						height: 30px;
+					}
+					.advabtn{
+						float: left;
+						height: 35px;
+						width: 45%;
+						margin-left: 5%;
+						margin-right: 2.5%;
+						background: #558ed5;
+						border:1px #558ed5 solid;
+						color: #FFF;
+						font-size: 1em;
+						// PANTALLA 1366x768
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+							height: 25px;
+							width: 42.5%;
+							margin-left: 5%;
+							margin-right: 7.5%; 
+						}
+						// PANTALLA 1280*1024
+						@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						 	width: 45%;
+							margin-left: 5%;
+							margin-right: 7.5%; 
+						}
+						// PANTALLA 1280x768
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+							height: 25px;
+							width: 40%;
+							margin-left: 5%;
+							margin-right: 7.5%; 
+						}
+					}
+					.advdeletebtn{
+						float: left;
+						height: 35px;
+						width: 40%;
+						margin-right: 7.5%;
+						background: #AAA;
+						border:1px #AAA solid;
+						color: #FFF;
+						font-size: 1em;
+						// PANTALLA 1366x768
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+							height: 25px;
+							width: 37.5%;
+							margin-right: 7.5%; 
+						}
+						// PANTALLA 1280*1024
+						@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						 	width: 40%;
+							margin-right: 7.5%; 
+						}
+						// PANTALLA 1280x768
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+							height: 25px;
+							width: 37.5%;
+							margin-right: 7.5%; 
+						}
+					}
+					#resultados-adva{
+						width: 40%;
+						float: left;
+						text-align: left;
+						font-size: 0.8em;
+						margin-left: 5%;
+						color:#558ed5;
+					}
+					#ordenar{
+						width: 55%;
+						height:30px;
+						float: right;
+						// PANTALLA 1366x768
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+							height: 20px;
+						}
+						// PANTALLA 1280*1024
+						@media screen and (max-width: 1280px) and (max-height: 1024px) {
+						 	height: 20px;
+						}
+						// PANTALLA 1280x768
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+							height: 20px;
+						}
+						//////////////////////////
+						select{
+							width: 80%;
+							font-size: 0.9em;
+							height: 100%;
+							background:#FFF;
+						}
+					}
+				}
+			}
+			#resultados{
+				height: 22%;
+				width: 100%;
+				float: left;
+				overflow-y: scroll;
+				table{
+					width: 90%;
+					margin-left: 5%;
+					td{
+						padding: 3px;
+						border: 1px #DDD solid;
+						font-size: 0.8em;
+						text-align: center;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		#clasificatab{
+			position: relative;
+			display: none;
+			height: 500px;
+			width: 100%;
+			font-size: 1em;
+			font-family: "Helvetica";
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				height: 345px;
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				height: 370px;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	height: 330px;
+			}
+			.titulo{
+				font-size: 1.2em;
+				height: 17%;
+				text-align: center;
+				padding-left: 30px;
+				padding-right: 30px;
+				padding-top: 30px;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					padding-left: 20px;
+					padding-right: 20px;
+					padding-top: 20px;
+					height: 17%;
+					font-size: 1em;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				 	height: 13%;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+					padding-left: 20px;
+					padding-right: 20px;
+					padding-top: 20px;
+					height: 17%;
+					font-size: 1em;
+				}
+				//////////////////////////
+			}
+			.grafico{
+				height: 83%;
+				width: 100%;
+				padding: 15px;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+				 	padding-right: 5px;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				 	padding-right: 5px;
+				}	
+				.rowgrafico{
+					position: relative;
+					width: 100%;
+					height: 10%;
+					.porcentaje{
+						float: left;
+						width: 15%;
+						height: 100%;
+						font-size: 1.1em;
+						text-align: center;
+						border-right: 1px #00ABE5 solid;
+					}
+					.info{
+						float: left;
+						height: 100%;
+						width: 85%;
+						.barra{
+							position: relative;
+							width: 100%;
+							background: #00ABE5;
+							height: 50%;
+							cursor: pointer;
+						}
+						.clasificacion{
+							height: 50%;
+							position: relative;
+							font-size: 0.6em;
+							padding-left: 5px;
+							// PANTALLA 1280*1024
+							@media screen and (max-width: 1280px) and (max-height: 1024px) {
+							 	font-size: 0.7em;
+							}	
+							//////////////////////////
+						}
+					}
+				}
+			}
+		}
+		#ranking{
+			display: none;
+			position: relative;
+			width: 100%;
+			height: 500px;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				height: 345px;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	height: 450px;
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				height: 340px;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	height: 330px;
+			}
+			.titulo{
+				float: left;
+				width: 100%;
+				height: 10%;
+				min-height: 40px;
+				font-size: 1em;
+				padding-top: 1em;
+				padding: 9px;
+				padding-left: 5%;
+				padding-right: 5%;
+				text-align: center;
+				color: #666;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					font-size: 0.9em;
+					padding-top: 0.5em;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+					font-size: 0.9em;
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				}
+				div{
+					width: 95%;
+					height: 100%;
+					padding: 5px;
+					text-align: center;
+					border: 1px solid #558ED5;
+				}
+			}
+			#erasesearch{
+				display: none;
+				cursor: pointer;
+				div{
+					color: #FFF;
+					background: #558ED5;
+				}
+			}
+			.listado{
+				float: left;
+				width: 100%;
+				height: 89.5%;
+				font-size: 0.8em;
+				overflow-y: scroll;
+				table{
+					width: 90%;
+					margin-left: 5%;
+					td{
+						border: 1px #DDD solid;
+						text-align: center;
+						height: 30px;
+						background: #FFF;
+						font-size: 0.8em;
+						padding: 3px;
+						cursor: pointer;
+						color: #578FD5;
+					}
+					.multidpa{
+						td{
+							color: #666;
+						}
+					}
+					.d2{
+						td{
+							background: #F8F8F8;
+						}
+					}
+					th{
+						border: 1px #DDD solid;
+						text-align: center;
+						height: 30px;
+						padding: 0px !important;
+						.name{
+							padding: 5px;
+							height: 30px;
+							float: left;
+							width: 53%;
+							background: #F0F0F0;
+							color: #666;
+							border-right: 1px #DDD solid;
+						}
+						.monto{
+							padding: 5px;
+							height: 30px;
+							width: 27%;
+							float: left;
+							background: #FFF;
+							color: #666;
+							border-right: 1px #DDD solid;
+							cursor: pointer;
+						}
+						.fecha{
+							padding: 5px;
+							height: 30px;
+							width: 20%;
+							float: left;
+							background: #FFF;
+							color: #666;
+							cursor: pointer;
+						}
+						.activo{
+							background: #F0F0F0 !important;
+							i{
+								color: #558ED5;
+							}
+						}
+					}
+				}
+			}
+			.botonera{
+				height: 10%;
+				width: 100%;
+				float: left;
+				div:first-child{
+					margin-left: 20%;
+					background: #999;
+					border: 1px #666 solid;
+				}
+				div{
+					float: left;
+					width: 30%;
+					height: 30px;
+					padding: 3px;
+					border: 1px #666 solid;
+					border-left:none;
+					background: #EEE;
+					color: #333;
+					text-align: center;
+					cursor: pointer;
+					// PANTALLA 1366x768
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+						height: 25px;
+					}
+					// PANTALLA 1280*1024
+					@media screen and (max-width: 1280px) and (max-height: 1024px) {
+					 	padding: 6px;
+					}
+					// PANTALLA 1280x768
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+						height: 25px;
+					}
+					// PANTALLA DE 720 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 720px) {
+					 	padding: 3px;
+					}
+				}
+			}
+			.listadoorden{
+				float: left;
+				width: 100%;
+				height: 45%;
+				font-size: 0.8em;
+				overflow-y: scroll;
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				 	height: 47%;
+				}
+				table{
+					width: 90%;
+					margin-left: 5%;
+					td{
+						border: 1px #DDD solid;
+						text-align: center;
+						height: 30px;
+						font-size: 0.8em;
+						padding: 3px;
+						cursor: pointer;
+					}
+					th{
+						border: 1px #DDD solid;
+						text-align: center;
+						height: 30px;
+						cursor: pointer;
+
+					}
+				}
+			}
+		}
+		#ficha{
+			height: 560px;
+			padding: 5px;
+			display: none;
+			position: relative;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			 	height: 420px;	
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			 	height: 420px;	
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			 	height: 380px;
+			}
+			.botones{
+				position: relative;
+				height: 25%;
+				width: 100%;
+				padding: 10px;
+				font-size: 1em;
+				color: #FFF;
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				 	height: 25%;
+				}	
+				//////////////////////////
+				#sugerencia-fis{
+					margin-top: 2.5%;
+					width: 100%;
+					height: 40%;
+					background:#558ed5;
+					border: 1px #558ed5 solid;
+					margin-bottom: 2.5%;
+				}
+				#denunca-online{
+					margin-top: 2.5%;
+					height: 40%;
+					width: 100%;
+					background:#558ed5;
+					border: 1px #558ed5 solid;
+					margin-bottom: 2.5%;
+				}
+			}
+			.acordeon{
+				position: relative;
+				height: 75%;
+				width: 100%;
+				overflow-y: hidden;
+				.ptab{
+					position: relative;
+					padding: 2px;
+					height: auto;
+					.pheader{
+						position: relative;
+						width: 100%;
+						height: 25px;
+						border: 1px #666 solid;
+						background: #EEE;
+						color: #333;
+						cursor: pointer;
+						// PANTALLA DE 720 X 1280
+						@media screen and (max-width: 1280px) and (max-height: 720px) {
+						 	height: 20px;
+						}
+						.titulo{
+							padding: 2px;
+							padding-left: 10px;
+							float: left;
+							height: 100%;
+							width: 95%;
+						}
+						.flecha{
+							float: left;
+							height: 100%;
+							width: 5%;
+							padding: 2px;
+							cursor: pointer;
+						}
+					}
+					.pbody{
+						position: relative;
+						display: none;
+						height: 250px;
+						overflow-y: scroll;
+						padding: 10px;
+						// PANTALLA 1366x768
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+						 	height: 150px;	
+						}
+						// PANTALLA 1280x768
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+						 	height: 150px;	
+						}
+						.fila{
+							height: 45px;
+							width: 100%;
+							.titulo{
+								float: left;
+								height: 40px;
+								width: 50%;
+								font-size: 0.8em;
+							}
+							.body{
+								float: left;
+								height: 40px;
+								width: 50%;
+								font-size: 0.7em;
+							}
+							.bodyextend{
+								float: left;
+								height: 40px;
+								width: 100%;
+								font-size: 0.8em;
+							}
+							.bodyextendheight{
+								float: left;
+								height: auto;
+								width: 50%;
+								padding-bottom: 20px;
+								font-size: 0.8em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

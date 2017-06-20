@@ -1,0 +1,129 @@
+{
+	// VARIABLES DE ENTORNO
+	// PATH DEL SISTEMA DE ARCHIVOS
+	"ASSET": {
+		"APP": "CIU/app/app.js",
+		"LAYOUT": "CIU/public_html/layout.jsp",
+		"ERROR": "CIU/public_html/error.jsp",
+		"STYLES": "CIU/public_html/styles/",
+		"HTML": "CIU/public_html/partial/",
+		"CRYPTO": "CIU/app/crypto/",
+		"CONFIG": "CIU/app/config/const.jsp",
+		"DEPENDENCE": "CIU/app/dep/",
+		"CSSDEPENDENCE": "CIU/app/cssdep/",
+		"CONTROLLER": "CIU/app/controller/",
+		"GEA": "CIU/gea/"
+	},
+	
+	// SE INTEGRAN LOS OBJETOS DE CRIPTOGRAFIA
+	"CRYPTO": [
+		"aes",
+		"md5",
+		"pbkdf2",
+		"sha1",
+		"aesutil"
+	],
+	
+	// SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS COMPONENTES GEA
+	"GEA": [
+		"geautils",
+		"geomap",
+		"databank",
+		"geobox"
+	],
+	
+	// SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LAS DEPENDENCIAS
+	"DEPENDENCE": {
+		"INTERNAL": [
+			"jquery",
+			"jquery-ui",
+			"angular",
+			"bootstrap",
+			"bigInt",
+			"include",
+			"com",
+			"model",
+			"controller",
+			"jquery.easypiechart"
+		],
+		
+		"EXTERNAL": [
+			"maps.googleapis.com/maps/api/js?client=gme-contraloriageneral&v=3.17&sensor=true"
+		],
+		
+		"CSS": [
+			"normalize",
+			"jquery-ui",
+			"fontawesome",
+			"bootstrap",
+			"bootstrap-theme"
+		]
+	},
+	
+	// SE DESCRIBE EN ORDEN SECUENCIAL EL ORDEN DE LA CARGA DE LOS PARTIAL
+	// TODOS LOS LAYOUT ESTAN ASOCIADOS A UN ARCHIVO LESS QUE DEBE EXISTIR
+	// SINO ESTOS SERAN IGNORADOS DE LA ESTRUCTURA
+	"LAYOUT": [
+		"header.jsp",
+		"mapa.jsp",
+		"footer.jsp",
+		"popover.jsp",
+		"loading.jsp",
+		"modal.jsp"
+	],
+	
+	"STYLES": [
+		"base.less",
+		"essential.less",
+		"header.less",
+		"mapa.less",
+		"panel.less",
+		"footer.less",
+		"popover.less",
+		"panel.less",
+		"loading.less",
+		"infopop.less",
+		"etiqueta.less",
+		"geobox.less",
+		"infopop.less",
+		"resumen.less",
+		"modal.less"
+	],
+	
+	// SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS CONTROLARES
+	"CONTROLLER": [
+		"module",
+		"loading",
+		"grafico",
+		"popover",
+		"ranking",
+		"panel",
+		"controles",
+		"filtro",
+		"etiqueta",
+		"geocgr",
+		"mapa",
+		"infopop",
+		"resumen",
+		"filtros",
+		"header",
+		"footer",
+		"modal",
+		"search",
+		"analytics"
+	],
+	
+	// VARIABLES DE APLICACION
+	"MAP": {
+		"LAT": -43.43778,
+		"LNG": -70.65028,
+		"ZOOM": 4,
+		"MINZOOM": 4,
+		"MAXZOOM": 17
+	},
+	"MIDESO": {
+		"URLMIDESO": "bipqa.mds.cl:8090/bip2-trabajo/app/services/",
+		"CONSULTAIDI": "ConsultaIdiWS",
+		"CONSULTAFICHA": "ConsultaFiichaIdiWS"
+	}
+}

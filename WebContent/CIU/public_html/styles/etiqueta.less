@@ -1,0 +1,104 @@
+.etiqueta{
+	position: absolute;
+	z-index: 10;
+	display: block;
+	width: 350px;
+	font-family: 'Arial Narrow', Arial, sans-serif;
+	.titulo{
+		height: auto;
+		width: 100%;
+		background: #FFF;
+		border: 1px #AAA solid;
+		margin-bottom: 4px;
+		border-bottom: 4px #FF9D26 solid;
+		color: #666;
+		font-size: 14px;
+		padding: 5px;
+		font-family: 'Arial Narrow', Arial, sans-serif;
+		font-weight: bold;
+	}
+	.grafico{
+		float: left;
+		height: 100%;
+		width: 90px;
+		padding: 5px;
+		background: #FFF;
+		border: 1px #AAA solid;
+		.chart {
+		  position: relative;
+		  display: inline-block;
+		  width: 80px;
+		  height: 80px;
+		  text-align: center;
+		}
+		.chart canvas {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		}
+		.percent {
+		  display: inline-block;
+		  line-height: 80px;
+		  z-index: 2;
+		}
+		.percent:after {
+		  content: '%';
+		  margin-left: 0.1em;
+		  font-size: .8em;
+		}
+	}
+	.datos{
+		float: left;
+		min-width: 256px;
+		min-height: 92px;
+		margin-left: 4px;
+		height: 100%;
+		color:#333;
+		background: #FFF;
+		border: 1px #AAA solid;
+		.numobras{
+			height: 17.5px;
+			margin-left: 2.5%;
+			margin-right: 2.5%;
+			width: 100%;
+			padding: 5px;
+			color: #FF9D26;
+			font-size: 11px;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+		}
+		.totalinv{
+			font-size: 0.8em;
+			padding: 5px;
+			height: 30px;
+			margin-left: 2.5%;
+			margin-right: 2.5%;
+			width: auto;
+			color: #FF9D26;
+			font-size: 15px;
+			font-weight: bold;
+			border-bottom: 2px #CCC solid;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+		}
+		.numobrasmultidpa{
+			padding: 5px;
+			height: 25px;
+			font-size: 11px;
+			width: 100%;
+			margin-left: 2.5%;
+			margin-right: 2.5%;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+		}
+		.lastreg{
+			bottom: 0px;
+			padding: 5px;
+			padding-top: 2.5px;
+			width: 100%;
+			height: 17.5px;
+			font-size: 10px;
+			font-weight: normal;
+			color:#666;
+			background: #EEE;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+		}
+	}
+}

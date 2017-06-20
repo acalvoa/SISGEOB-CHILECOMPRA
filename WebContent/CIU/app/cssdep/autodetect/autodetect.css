@@ -1,0 +1,184 @@
+#modal3{
+	position: absolute;
+	top:0%;
+	left: 0%;
+	height: 100%;
+	width: 100%;
+	font-size: 1em;
+	display: block;
+	z-index: 10000;
+}
+#modal3 .background{
+	background: black;
+	opacity: 0.6;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  	filter: alpha(opacity=50);
+  	-moz-opacity: 0.5;
+  	-khtml-opacity: 0.5;
+	height: 100%;
+	width: 100%;
+	z-index: 5;
+	display: block;
+}
+#modal3 .white{
+	background: rgba(255,255,255,1);
+	height: 100%;
+	width: 100%;
+	display: block;
+	z-index: 5;
+}
+#modal3 .modalbox{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -200px;
+	background: #FFF;
+	height: 400px;
+	width: 800px;
+	margin-left: -400px;
+	padding: 20px;
+	z-index: 10;
+	display: block;
+}
+#modal3 .modalbox .body{
+	position: relative;
+	height: 70%;
+	padding: 30px;
+	text-align: left;
+}
+#modal3 .modalbox .header .logo img{
+	height: 50px;
+	width:200px;
+}
+/* PANTALLA 1366x768*/
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
+	#modal3 .modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -250px;
+		background: #FFF;
+		height: 500px;
+		width: 50%;
+		margin-left: -25%;
+		padding: 20px;
+		z-index: 10;
+	}
+}	
+/* PANTALLA 1366x768*/
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+	#modal3 .modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -200px;
+		background: #FFF;
+		height: 400px;
+		width: 75%;
+ 		margin-left: -37.5%;
+		padding: 20px;
+		z-index: 10;
+	}
+}	
+/* PANTALLA 1280*1024*/
+@media screen and (max-width: 1280px) and (max-height: 1024px) {
+	#modal3 .modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -200px;
+		background: #FFF;
+		height: 400px;
+		width: 75%;
+ 		margin-left: -37.5%;
+		padding: 20px;
+		z-index: 10;
+	}
+ 	
+}
+/* PANTALLA 1280x768*/
+@media screen and (max-width: 1280px) and (max-height: 768px) {
+	#modal3 .modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -200px;
+		background: #FFF;
+		height: 400px;
+		width: 75%;
+ 		margin-left: -37.5%;
+		padding: 20px;
+		z-index: 10;
+	}
+}
+
+/* PANTALLA DE 720 X 1280*/
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+	#modal3 .modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		padding: 20px;
+		z-index: 10;
+		height: 400px;
+	    margin-top: -200px;
+	    width: 70%;
+	 	margin-left: -35%;
+	}
+    
+}
+@media screen and (min-width : 320px) and (max-width : 900px) {
+	#modal3{
+		font-size: 0.5em;
+	}
+	#modal3 .modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 200px;
+	    margin-top: -100px;
+	    width: 70%;
+	 	margin-left: -35%;
+		background: #FFF;
+		padding: 20px;
+		z-index: 10;
+	}
+	#modal3 .modalbox .header .logo img{
+		height: 30px;
+	}
+	#modal3 .modalbox .body{
+		position: relative;
+		height: 70%;
+		padding: 20px;
+		text-align: left;
+	}
+}
+#modal3 .modalbox .header{
+	position: relative;
+	height: 20%;
+}
+#modal3 .modalbox .header .logo{
+	float: left;
+	height: 100%;
+	width: 95%;
+}
+#modal3 .modalbox .footer{
+	height: 10%;
+	position: relative;
+}
+#modal3 .modalbox .footer .boton{
+	height: 100%;
+	width: 80%;
+	padding: 0.7em;
+	padding-bottom: 0px;
+}
+#modal3 .modalbox .footer .boton button{
+	position: absolute;
+	left: 50%;
+	margin-left: -75px;
+	background: #558ed5;
+	border: none;
+	height: 3em;
+	width: 150px;
+	color: #FFF;
+}

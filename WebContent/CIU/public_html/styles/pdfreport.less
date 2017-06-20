@@ -1,0 +1,801 @@
+.pdf_report{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	overflow: visible;
+	.nav_izq{
+		height: 100%;
+		width: 15%;
+		position: absolute;
+		left: 50%;
+		margin-left: -600px;
+		top: 0px;
+		z-index: 4;
+		.nav_control{
+			font-size: 4em;
+			color: #333;
+			position: absolute;
+			height: 20%;
+			top:50%;
+			margin-top: -1em;
+		}
+	}
+	.nav_dere{
+		height: 100%;
+		width: 15%;
+		position: absolute;
+		left: 50%;
+		margin-left: 550px;
+		top: 0px;
+		z-index: 4;
+		.nav_control{
+			font-size: 4em;
+			color: #333;
+			position: absolute;
+			height: 20%;
+			top:50%;
+			margin-top: -1em;
+		}
+	}
+	.pdf_r{
+		.close_r{
+			height: 30px;
+			width: 30px;
+			position: absolute;
+			right: -15px;
+			top:-15px;
+			background: #FFF;
+			border: 1px #333 solid;
+			z-index: 5;
+			-moz-border-radius: 50%;
+		    -webkit-border-radius: 50%;
+		    border-radius: 50%;
+		    font-size: 1.3em;
+		    cursor: pointer;
+		    text-align: center;
+		}
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin: auto;
+		width: 1200px;
+		height: 850px;
+		overflow: visible;
+		.pdf_report_div{
+			position: relative;
+			background: #FFF;
+			width: 100%;
+			height: 100%;
+			overflow: visible;
+			.pdfreportmap{
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top:0px;
+				left: 0px;
+				z-index: 1;
+			}
+			#panelizq{
+				height: auto;
+				width: 35%;
+				position: absolute;
+				left: 5px;
+				top: 5px;
+				z-index: 2;
+				background: #FFF;
+				border: #333 solid 1px;
+				.cabecera{
+					position: relative;
+					height: 40px;
+					width: 100%;
+					background: #0070c0;
+					color: #FFF;
+					text-align: center;
+					padding: 10px 5px;
+					font-size: 0.8em;
+					border-bottom: 1px #333 solid;
+				}
+				.fila{
+					position: relative;
+					height: 50px;
+					width: 100%;
+					text-align: center;
+					padding: 10px 5px;
+					font-size: 0.5em;
+					border-bottom: 1px #333 solid;
+				}
+				.fila:last-child{
+					border: none;
+				}
+				.t1{
+					float: left;
+					width: 35%;
+					height: 100%;
+				}
+				.t2{
+					float: left;
+					width: 35%;
+					height: 100%;
+					font-size: 1.1em;
+				}
+				.t3{
+					float: left;
+					width: 30%;
+					height: 100%;
+					font-size: 1.1em;
+				}
+			}
+			#panelizqbot{
+				width: 25%;
+				position: absolute;
+				left: 5px;
+				bottom: 5px;
+				z-index: 2;
+				background: #FFF;
+				border: 1px #999 solid;
+				height: 25px;
+				position: absolute;
+				padding: 0 0 0 0;
+				.leyenda-info{
+					float: left;
+					width: 25%;
+					font-size: 0.8em;
+					padding-top: 3px;
+					text-align: center;
+				}
+				@QCOLORBORDER:transparent;
+				#leyenda-color{
+					width: 50%;
+					float: left;
+					height: 100%;
+					padding-top: 3px;
+					padding-bottom:3px;
+					div{
+						height: 100%;
+						width:20%;
+						float: left;
+					}
+					#q1{
+						background: #C1E9FF;
+						border: 1px @QCOLORBORDER solid;
+					}
+					#q2{
+						background: #93A7F1;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+					#q3{
+						background: #626FE3;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+					#q4{
+						background: #3137D5;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+					#q5{
+						background: #0000A0;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+				}
+			}
+			#paneldere{
+				height: 100%;
+				width: 30%;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				z-index: 2;
+				background: #FFF;
+				border: #333 solid 1px;
+				.informe_pdf_dere{
+					text-align: center;
+					height: 15%;
+					padding-top: 5%;
+					width: 100%;
+					color:#00A7FF;
+					cursor: pointer;
+					border-bottom: 1px #333 solid;
+					#inversiontotal_pdf{
+						position: relative;
+					}	
+					#numobras_pdf{
+						color: #0091FF;
+						position: relative;
+					}
+					.titulo{
+						font-size: 0.7em;
+					}
+					.data{
+						color: #0091FF;
+						font-size: 1.3em;
+					}
+				}
+				.clasificacion{
+					position: relative;
+					height: 55%;
+					width: 100%;
+					.cabecera{
+						height: 13%;
+						width: 100%;
+						padding: 15px;
+						text-align: center;
+						font-size: 1.2em;
+					}
+					.grafico_pdf_dere{
+						height:87%;
+						width: 100%;
+						padding: 15px;
+						.rowgrafico{
+							position: relative;
+							width: 100%;
+							height: 10%;
+							.porcentaje{
+								float: left;
+								width: 15%;
+								height: 100%;
+								font-size: 1.1em;
+								text-align: center;
+								border-right: 1px #00ABE5 solid;
+							}
+							.info{
+								float: left;
+								height: 100%;
+								width: 85%;
+								.barra{
+									position: relative;
+									width: 100%;
+									background: #00ABE5;
+									height: 50%;
+									cursor: pointer;
+								}
+								.clasificacion{
+									height: 50%;
+									position: relative;
+									font-size: 0.6em;
+									padding-left: 5px;
+								}
+							}
+						}
+					}
+				}
+				.logo_pdf{
+					width: 100%;
+					height: 10%;
+					border-bottom: 1px #333 solid;
+					border-top: 1px #333 solid;
+					img{
+						width: 100%;
+					}
+				}
+				.info_pdf{
+					height: 17%;
+					width: 100%;
+					text-align: center;
+					padding: 10%;
+					border-bottom: 1px #333 solid;
+					.in1{
+						font-weight: bold;
+						font-size: 1.5em;
+					}
+					.in2{
+						font-size: 1.2em;
+					}
+					.in3{
+						font-size: 0.8em;
+					}
+				}
+				.date_pdf{
+					height: 3%;
+					width: 100%;
+					.fecha{
+						float: left;
+						height: 100%;
+						width: 50%;
+						text-align: left;
+						padding: 5px;
+						padding-top: 3px;
+					}
+					.pagina{
+						float: left;
+						width: 50%;
+						height: 100%;
+						text-align: right;
+						padding: 5px;
+						padding-top: 3px;
+					}
+				}
+				
+			}
+			#panelizq_mapa{
+				height: 100%;
+				width: 30%;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				z-index: 2;
+				.date_pdf{
+					position: absolute;
+					border: 1px #333 solid;
+					bottom: 0px;
+					height: 3%;
+					width: 100%;
+					background: #FFF;
+					.fecha{
+						float: left;
+						height: 100%;
+						width: 50%;
+						text-align: left;
+						padding: 5px;
+						padding-top: 3px;
+					}
+					.pagina{
+						float: left;
+						width: 50%;
+						height: 100%;
+						text-align: right;
+						padding: 5px;
+						padding-top: 3px;
+					}
+				}
+				
+			}
+		}
+		.pdf_report_div_info{
+			position: absolute;
+			top:0px;
+			left: 0px;
+			z-index: 1;
+			background: #FFF;
+			width: 100%;
+			height: 100%;
+			overflow: visible;
+			.pdfreportmap{
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top:0px;
+				left: 0px;
+				z-index: 1;
+			}
+			#panelizqbot1{
+				width: 25%;
+				position: absolute;
+				left: 5px;
+				bottom: 5px;
+				z-index: 2;
+				background: #FFF;
+				border: 1px #999 solid;
+				height: 25px;
+				position: absolute;
+				padding: 0 0 0 0;
+				.leyenda-info{
+					float: left;
+					width: 25%;
+					font-size: 0.8em;
+					padding-top: 3px;
+					text-align: center;
+				}
+				@QCOLORBORDER:transparent;
+				#leyenda-color{
+					width: 50%;
+					float: left;
+					height: 100%;
+					padding-top: 3px;
+					padding-bottom:3px;
+					div{
+						height: 100%;
+						width:20%;
+						float: left;
+					}
+					#q1{
+						background: #C1E9FF;
+						border: 1px @QCOLORBORDER solid;
+					}
+					#q2{
+						background: #93A7F1;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+					#q3{
+						background: #626FE3;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+					#q4{
+						background: #3137D5;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+					#q5{
+						background: #0000A0;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+				}
+			}
+			#panelizqbot2{
+				width: 25%;
+				position: absolute;
+				left: 5px;
+				bottom: 5px;
+				z-index: 2;
+				background: #FFF;
+				border: 1px #999 solid;
+				height: 25px;
+				position: absolute;
+				padding: 0 0 0 0;
+				.leyenda-info{
+					float: left;
+					width: 30%;
+					font-size: 0.8em;
+					padding-top: 3px;
+					text-align: center;
+				}
+				@QCOLORBORDER:transparent;
+				#leyenda-color{
+					width: 40%;
+					float: left;
+					height: 100%;
+					padding-top: 3px;
+					padding-bottom:3px;
+					div{
+						height: 100%;
+						width:33.3%;
+						float: left;
+					}
+					#q1{
+						background: #74C2E1;
+						border: 1px @QCOLORBORDER solid;
+					}
+					#q2{
+						background: #0191C8;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+					#q3{
+						background: #004A80;
+						border: 1px @QCOLORBORDER solid;
+						border-left: 0px;
+					}
+				}
+			}
+			#panelizq{
+				height: auto;
+				width: 70%;
+				position: absolute;
+				left: 5px;
+				top: 5px;
+				z-index: 2;
+				background: #FFF;
+				border: #333 solid 1px;
+				.cabecera{
+					position: relative;
+					height: 40px;
+					width: 100%;
+					background: #0070c0;
+					color: #FFF;
+					text-align: center;
+					padding: 10px 5px;
+					font-size: 0.8em;
+					border-bottom: 1px #333 solid;
+				}
+				.fila{
+					position: relative;
+					height: 40px;
+					width: 100%;
+					text-align: center;
+					padding: 10px 5px;
+					font-size: 0.6em;
+					border-bottom: 1px #333 solid;
+				}
+				.fila:last-child{
+					border: none;
+				}
+				.t1{
+					float: left;
+					width: 35%;
+					height: 100%;
+				}
+				.t2{
+					float: left;
+					width: 35%;
+					height: 100%;
+					font-size: 1.1em;
+				}
+				.t3{
+					float: left;
+					width: 30%;
+					height: 100%;
+					font-size: 1.1em;
+				}
+				.t1_2{
+					float: left;
+					width:70%;
+					height: 100%;
+				}
+				.t2_2{
+					float: left;
+					width: 30%;
+					height: 100%;
+					font-size: 1.1em;
+				}
+				.t3_2{
+					float: left;
+					width: 30%;
+					height: 100%;
+					font-size: 1.1em;
+					text-align: left;
+					padding-left: 10px;
+				}
+			}
+			#paneldere{
+				height: 100%;
+				width: 30%;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				z-index: 2;
+				background: #FFF;
+				border: #333 solid 1px;
+				.informe_pdf_dere{
+					text-align: center;
+					height: 15%;
+					padding-top: 5%;
+					width: 100%;
+					color:#00A7FF;
+					cursor: pointer;
+					.datos{
+						float: left;
+						padding: 10px;
+						width: 100%;
+						color:#333;
+						.titulo{
+							color: #666;
+							font-size: 0.8em;
+							height: auto;
+							padding-bottom: 10px;
+							width: 100%;
+							text-align: center;
+							border-bottom: 2px solid #CCC;
+						}
+						.titulodoble{
+							color: #666;
+							font-size: 0.6em;
+							height: auto;
+							padding-bottom: 10px;
+							width: 100%;
+							text-align: center;
+							border-bottom: 2px solid #CCC;
+						}
+						.totalinv{
+							font-size: 1em;
+							padding: 2.5px;
+							height: 30px;
+							color: #FF9D26;
+							font-weight: bold;
+							border-bottom: 2px solid #CCC;
+						}
+						.numobras{
+							font-size: 0.8em;
+							padding-top: 5px;
+							height: 20px;
+							width: 100%;
+							text-align: left;
+							color: #FF9D26;
+						}
+						.multidpa{
+							font-size: 0.8em;
+							height: 20px;
+							width: 100%;
+							text-align: left;
+							color: #666;
+						}
+					}
+				}
+				.clasificacion{
+					position: relative;
+					height: 55%;
+					width: 100%;
+					border-top: #333 solid 1px;
+					.cabecera{
+						height: 13%;
+						width: 100%;
+						padding: 15px;
+						text-align: center;
+						font-size: 1.2em;
+					}
+					.grafico_pdf_dere{
+						height:87%;
+						width: 100%;
+						padding: 15px;
+						.rowgrafico{
+							position: relative;
+							width: 100%;
+							height: 10%;
+							.porcentaje{
+								float: left;
+								width: 15%;
+								height: 100%;
+								font-size: 1.1em;
+								text-align: center;
+								border-right: 1px #00ABE5 solid;
+							}
+							.info{
+								float: left;
+								height: 100%;
+								width: 85%;
+								.barra{
+									position: relative;
+									width: 100%;
+									background: #00ABE5;
+									height: 50%;
+									cursor: pointer;
+								}
+								.clasificacion{
+									height: 50%;
+									position: relative;
+									font-size: 0.6em;
+									padding-left: 5px;
+								}
+							}
+						}
+					}
+				}
+				.logo_pdf{
+					width: 100%;
+					height: 10%;
+					border-bottom: 1px #333 solid;
+					border-top: 1px #333 solid;
+					img{
+						width: 100%;
+					}
+				}
+				.info_pdf{
+					height: 17%;
+					width: 100%;
+					text-align: center;
+					padding: 10%;
+					border-bottom: 1px #333 solid;
+					.in1{
+						font-weight: bold;
+						font-size: 1.5em;
+					}
+					.in2{
+						font-size: 1.2em;
+					}
+					.in3{
+						font-size: 0.8em;
+					}
+				}
+				.date_pdf{
+					height: 3%;
+					width: 100%;
+					.fecha{
+						float: left;
+						height: 100%;
+						width: 50%;
+						text-align: left;
+						padding: 5px;
+						padding-top: 3px;
+					}
+					.pagina{
+						float: left;
+						width: 50%;
+						height: 100%;
+						text-align: right;
+						padding: 5px;
+						padding-top: 3px;
+					}
+				}
+				
+			}
+			#panelizq_mapa{
+				height: 100%;
+				width: 30%;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				z-index: 2;
+				.date_pdf{
+					position: absolute;
+					border: 1px #333 solid;
+					bottom: 0px;
+					height: 3%;
+					width: 100%;
+					background: #FFF;
+					.fecha{
+						float: left;
+						height: 100%;
+						width: 50%;
+						text-align: left;
+						padding: 5px;
+						padding-top: 3px;
+					}
+					.pagina{
+						float: left;
+						width: 50%;
+						height: 100%;
+						text-align: right;
+						padding: 5px;
+						padding-top: 3px;
+					}
+				}
+				
+			}
+		}
+	}
+	.background{
+		background: rgba(0,0,0,0.6);
+		height: 100%;
+		width: 100%;
+		z-index: 5;
+	}
+}
+.pdf_modal{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	display: none;
+	left: 0px;
+	z-index: 10;
+	.pdf_modal_body{
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		margin: auto;
+		width: 600px;
+		height: 150px;
+		overflow: visible;
+		background: #FFF;
+		border: 1px #333 solid;
+		.cabecera{
+			text-align: center;
+			padding: 15px;
+			height: 50%;
+			width: 100%;
+			font-size: 1.4em;
+			color:#333;
+		}
+		.cuerpo{
+			height: 50%;
+			width: 100%;
+			#visualizar_pdf{
+				float: left;
+				width: 40%;
+				margin-left:5%;
+				margin-right: 5%;
+				height: 45px;
+				background: #0070c0;
+				color: #FFF;
+				border: 1px #0070c0 solid;
+			}
+			#descargar_pdf{
+				float: left;
+				width: 40%;
+				margin-left:5%;
+				margin-right: 5%;
+				height: 45px;
+				background: #0070c0;
+				color: #FFF;
+				border: 1px #0070c0 solid;
+			}
+		}
+	}
+	.background{
+		background: rgba(0,0,0,0.6);
+		height: 100%;
+		width: 100%;
+	}
+}

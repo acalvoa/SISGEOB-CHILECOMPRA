@@ -1,0 +1,318 @@
+@import "base.less";
+// VARIABLES DE LA HOJA DE ESTILO
+// FIN VARIABLES
+footer{
+	width: 100%;
+	height: @FooterHeight;
+		// PANTALLA 1366x768
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		 	height: 25px;
+		}
+		// PANTALLA 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		 	height: 25px;
+		}
+	.f2{
+		height: @FooterHeight;
+		// PANTALLA 1366x768
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		 	height: 15px;
+		}
+		// PANTALLA 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		 	height: 15px;
+		}
+		background: #FFF;
+		.newbtn{
+			margin: 2.5px;
+			padding-left: 15px;
+			padding-right: 10px;
+			margin-left: 0px;
+			border: 1px solid #999;
+			color: #777;
+			cursor: pointer;
+			i{
+				float: right;
+				font-size: 1.3em;
+			}
+		}
+		.newbtn:hover{
+			color:#558ED5;
+			border-color: #558ED5;
+		}
+		.active{
+			background: #558ED5;
+			color: #FFF;
+		}
+		.active:hover{
+			background: #558ED5;
+			color: #FFF;	
+		}
+		address{
+			float:left;
+			font-size:1.1em;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			 	font-size: 0.8em;
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			 	font-size: 0.8em;
+			}
+			a{
+				text-decoration: none;
+				color: #333;
+			}
+		}
+		#logos{
+			float: right;
+			div{
+				float: left;
+				margin-right: 25px;
+				font-size: 1.2em;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+				 	font-size: 0.8em;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				 	font-size: 0.8em;
+				}
+			}
+			address{
+				float:left;
+				margin-right: 30px;
+				padding-top: 2.5px;
+				font-size:0.85em;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+				 	font-size: 0.8em;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				 	font-size: 0.8em;
+				}
+				a{
+					text-decoration: none;
+					color: #666;
+				}
+			}
+			#contraloriayciu{
+				cursor: pointer;
+				img{
+					height: 30px;
+				}
+			}
+			#contraloria{
+				cursor: pointer;
+				text-decoration: none;
+				color: #969696;
+			}
+			#fb{
+				color: #3137D5;
+				cursor: pointer;
+			}
+			#tw{
+				color: #3137D5;
+				cursor: pointer;
+			}
+			#rss{
+				color: orange;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.f9{
+	position: absolute;
+	height: 150px !important;
+	width: 100%;
+	padding: 10px;
+	display: block;
+	bottom: -170px;
+	box-sizing: border-box;
+	// MEDIA QUERYS //////////
+	// PANTALLA 1366x768
+	@media screen and (max-width: 1366px) and (max-height: 768px) {
+	 	height: 125px !important;
+	}
+	// PANTALLA 1280x768
+	@media screen and (max-width: 1280px) and (max-height: 768px) {
+	 	height: 90px !important;
+	}
+	//////////////////////////
+	.contenedor{
+		height: 100%;
+		width: auto;
+	}
+	.flecha{
+		float: left;
+		height: 100%;
+		width: 30px;
+		background: #FFF;
+	}
+	.new{
+		margin-right: 5px;
+		height: 100%;
+		width: 19.5%;
+		background: #FFF;
+		color: #558ED5;
+		float: left;
+		padding: 15px;
+		padding-bottom: 5px;
+		border-bottom: 4px solid #7EB2DF;
+		cursor: pointer;
+		// MEDIA QUERYS //////////
+		// PANTALLA DE 768 X 1366
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		    margin-right: 25px;
+		    font-size: 0.7em;
+		    padding: 7.5px;
+		}
+		// PANTALLA 1280*1024
+		@media screen and (max-width: 1280px) and (max-height: 1024px) {
+		 	margin-right: 20px;
+		 	font-size: 0.8em;
+		 	padding: 7.5px;
+		}
+		// PANTALLA DE 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		    margin-right: 25px;
+		    font-size: 0.7em;
+		    padding: 7.5px;
+		}
+		// PANTALLA DE 720 X 1280
+		@media screen and (max-width: 1280px) and (max-height: 720px) {
+		    margin-right: 20px;
+		 	font-size: 0.7em;
+		 	padding: 7.5px;
+		}
+		//////////////////////////
+		.fecha{
+			height: 20%;
+			margin-bottom: 5px;
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	height: 15%;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			   height: 20%;
+			 	
+			}
+		}
+		.titulo{
+			height: 70%;
+			font-weight: bold;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			 	height: 60%;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	height: 65%;
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			 	height: 60%;
+			}
+		}
+		.more{
+			font-weight: bold;
+			height: 30%;
+			cursor: pointer;
+			.pag{
+				float: left;
+				width: 20%;
+				font-size: 1.2em;
+			}
+			.fecha{
+				height: 100%;
+				margin-bottom: 5px;
+				font-size: 0.9em;
+				line-height: 30px;
+				width: 50%;
+				float: right;
+				text-align: right;
+				vertical-align: text-bottom;
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				 	height: 15%;
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				   height: 20%;
+				 	
+				}
+			}
+		}
+	}
+	.new:hover{
+		background: #558ED5;
+		color: #FFF;
+	}
+	.new:active{
+		background: #9DC3E6;
+		color: #FFF;
+	}
+	.activenotice{
+		background: #9DC3E6;
+		color: #FFF;
+	}
+	#demo{
+		margin-right: 40px;
+		height: inherit;
+		width: 15%;
+		background: #DDD;
+		float: left;
+		// MEDIA QUERYS //////////
+		// PANTALLA DE 768 X 1366
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		    margin-right: 20px;
+		    height: 110px;
+		}
+		// PANTALLA 1280*1024
+		@media screen and (max-width: 1280px) and (max-height: 1024px) {
+		 	margin-right: 20px;
+		 	width: 20%;
+		}
+		// PANTALLA DE 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		    margin-right: 20px;
+		    height: 95px;
+		}
+		//////////////////////////
+	}
+	#CGR{
+		margin-right: 40px;
+		height: inherit;
+		width: 330px;
+		float: right;
+		// MEDIA QUERYS //////////
+		// PANTALLA DE 768 X 1366
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		    margin-right: 20px;
+		    width: 250px;
+		    text-align: right;
+		    img{
+		    	height: 45px;
+		    }
+		}
+		// PANTALLA 1280*1024
+		@media screen and (max-width: 1280px) and (max-height: 1024px) {
+		 	margin-right: 5px;
+		}
+		// PANTALLA DE 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		    margin-right: 20px;
+		    text-align: right;
+		    img{
+		    	height: 45px;
+		    }
+		}
+		//////////////////////////
+		img{
+			cursor: pointer;
+		}
+	}
+}

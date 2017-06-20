@@ -1,0 +1,266 @@
+.resumen {
+	height: 120px;
+	width: 300px;
+	//left: 50px;
+	right: 0px;
+	top:5px;
+	background: #FFF;
+	position: absolute;
+	display: none;
+	border: 1px #AAA solid;
+	
+	@media screen and (max-width: 1366px) and (max-height: 768px) {			// PANTALLA 1366x768
+		height: 88px;
+	}
+	@media screen and (max-width: 1280px) and (max-height: 1024px) {		// PANTALLA 1280*1024
+	 	font-size:0.9em;
+	}
+	@media screen and (max-width: 1280px) and (max-height: 768px) {			// PANTALLA 1280x768
+		height: 88px;
+	}
+	@media screen and (max-width: 1280px) and (max-height: 720px) {			// PANTALLA DE 720 X 1280
+	 	height: 78px;
+	}
+	
+	.grafico {
+		float: left;
+		height: 100%;
+		width: 110px;
+		padding: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		
+		.chart {
+			position: relative;
+			display: inline-block;
+			width: 90px;
+			height: 90px;
+		 	text-align: center;
+		 	
+			@media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				height: 88px;
+				width: 65px;
+				height: 65px;
+				margin-left: 10px;	
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				height: 88px;
+				width: 65px;
+				height: 65px;
+				margin-left: 10px;	
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+			 	height: 78px;
+				width: 60px;
+				height: 60px;
+				margin-left: 15px;	
+			}
+		}
+		
+		.chart canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+			@media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				height: 65px !important;
+				width: 65px !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				height: 65px !important;
+				width: 65px !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+			 	height: 60px !important;
+				width: 60px !important;
+			}
+		}
+		
+		.percent {
+			display: inline-block;
+		    line-height: 90px;
+		    vertical-align: middle;
+		    z-index: 2;
+		    
+		    @media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				line-height: 65px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				line-height: 65px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+				height: 55px !important;
+				width: 55px !important;
+			}
+		}
+		
+		.percent:after {
+			content: '%';
+			margin-left: 0.1em;
+			font-size: .8em;
+		}
+		
+		.subgrafico {
+			margin-top: 5px;
+			font-size: 0.6em;
+			position: relative;
+			text-align: center;
+			
+			@media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				margin-top: 0px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				margin-top: 0px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+				margin-top: 0px;
+				font-size: 0.5em;
+			}
+		}
+	}
+	
+	.datos {
+		float: left;
+		padding: 10px;
+		width: ~'calc(100% - 110px)';
+		color: #333;
+		
+		.titulo {
+			color: #666;
+			font-size: 0.95em;
+			height: auto;
+			padding-bottom: 10px;
+			width: 100%;
+			text-align: left;
+			border-bottom: 2px solid #CCC;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+			font-weight: bold;
+			
+			@media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				font-size: 0.7em;
+				padding-bottom: 5px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {// PANTALLA 1280*1024
+			 	font-size: 0.8em;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) { // PANTALLA 1280x768
+				font-size: 0.7em;
+				padding-bottom: 5px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+			 	font-size: 0.45em;
+			}
+		}
+		
+		.titulodoble {
+			font-size: 0.65em !important;
+			
+			@media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				font-size: 0.6em !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {// PANTALLA 1280*1024
+			 	font-size: 0.6em !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {// PANTALLA 1280x768
+				font-size: 0.6em !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {// PANTALLA DE 720 X 1280
+			 	font-size: 0.5em !important;
+			}
+		}
+		
+		.titulotriple {
+			min-height: 75px !important;
+			
+			@media screen and (max-width: 1366px) and (max-height: 768px) {// PANTALLA 1366x768
+				min-height: 1.8em !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {// PANTALLA 1280*1024
+			 	min-height: 1.8em !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				min-height: 1.8em !important;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+			 	min-height: 1.5em !important;
+			}
+		}
+		
+		.noborderbot {
+			border-bottom: none !important;
+		}
+		
+		.totalinv {
+			font-size: 1.25em;
+			padding: 2.5px;
+			height: 35px;
+			color: #FF9D26;
+			font-weight: bold;
+			border-bottom: 2px solid #CCC;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+			
+			@media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				font-size: 0.9em;
+				height: 25px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {// PANTALLA 1280*1024
+			 	font-size: 1.1em;
+			 	height: 25px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				font-size: 1em;
+				height: 25px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+			 	height: 20px;
+			 	font-size: 0.6em;
+			}
+		}
+		
+		.numobras {
+			font-size: 0.8em;
+			padding-top: 5px;
+			height: 20px;
+			width: 100%;
+			text-align: left;
+			color: #FF9D26;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+			
+			@media screen and (max-width: 1366px)and (max-height: 768px) {	// PANTALLA 1366x768
+				font-size: 0.6em;
+				height: 17.5px;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {// PANTALLA 1280*1024
+			 	font-size: 0.8em;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				font-size: 0.7em;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+			 	height: 12.5px;
+			 	font-size: 0.45em;
+			}
+		}
+		
+		.multidpa {
+			font-size: 0.8em;
+			height: 20px;
+			width: 100%;
+			text-align: left;
+			color: #666;
+			font-family: 'Arial Narrow', Arial, sans-serif;
+			
+			@media screen and (max-width: 1366px) and (max-height: 768px) {	// PANTALLA 1366x768
+				height: 17.5px;
+				font-size: 0.6em;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 768px) {	// PANTALLA 1280x768
+				font-size: 0.5em;
+			}
+			@media screen and (max-width: 1280px) and (max-height: 720px) {	// PANTALLA DE 720 X 1280
+			 	height: 12.5px;
+			 	font-size: 0.45em;
+			}
+		}
+	}
+}

@@ -1,0 +1,596 @@
+@import "base.less";
+@COLORZOOM: #999;
+@SIZEPICT: 1.7em;
+.mapa{
+	position: relative;
+	height: ~'calc(100% - @{HeaderHeight} - @{FooterHeight})';
+	width: 100%;
+	// PANTALLA 1366x768
+	@media screen and (max-width: 1366px) and (max-height: 768px) {
+	 	height: ~'calc(100% - 72px - 25px)';
+	}
+	// PANTALLA 1280x768
+	@media screen and (max-width: 1280px) and (max-height: 768px) {
+	 	height: ~'calc(100% - 72px - 25px)';
+	}
+	//////////////////////////
+	#gea{
+		height: 100%;
+		width: 100%;
+	}
+	// DEFINIMOS EL PANEL DPA SUPERIOR
+	.dpa{
+		position: absolute;
+		height: 30px;
+		top: 0px;
+		padding: 0 0 0 0;
+		text-align: center;
+		cursor: pointer;
+		z-index: 2;
+		// MEDIA QUERYS //////////
+		// PANTALLA DE 768 X 1366
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		    height: 25px;
+		}
+		// PANTALLA DE 768 X 1280
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		    height: 25px;
+		}
+		//////////////////////////
+		.dpablock{
+			float: left;
+			width: 49%;
+			margin: 0.5%;
+			margin-top: 0px;
+			background: white;
+			height: 100%;
+			padding-top: 5px;
+			border: 1px @COLORZOOM solid;
+			border-top: none;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    height: 25px;
+			    font-size: 0.8em;
+			    padding-top: 3px;
+			}
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    height: 25px;
+			    font-size: 0.8em;
+			    padding-top: 3px;
+			}
+			//////////////////////////
+		}
+		#dpa-regional{
+			display: none;
+		}
+		#dpa-comunal{
+			display:block;
+		}
+		#dpa-provincial{
+			display:block;
+		}
+		.active{
+			border-bottom: 4px #FF9900 solid;
+		}
+		.inactive{
+			border-bottom: 4px #CCC solid;
+			color: #CCC;
+		}
+	}
+	// DEFINIMOS EL ZOOM LATERAL IZQUIERDO
+	.changer{
+			padding-left:5px;
+			height: 90px;
+			min-width: 150px;
+			position: absolute;
+			top: 35%;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    min-width: 100px;
+			    height: 65px;
+			}
+			// PANTALLA DE 768 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    min-width: 100px;
+			    height: 65px;
+			}
+			//////////////////////////
+			#zoom{
+				float:left;
+				width: 30%;
+				height: 100%;
+				background: white;
+				border: 1px @COLORZOOM solid;
+				color: @COLORZOOM;
+				cursor: pointer;
+				font-size: @SIZEPICT;
+				.zoomBlock{
+					text-align: center;
+					height: 40px;
+					margin: 2.5px 2.5px 0px 2.5px;
+					// MEDIA QUERYS //////////
+					// PANTALLA DE 768 X 1366
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+					    height: 30px;
+					    font-size: (@SIZEPICT - 0.9em);
+					}
+					// PANTALLA DE 768 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					    height: 30px;
+					    font-size: (@SIZEPICT - 0.9em);
+					}
+					//////////////////////////
+				}
+				#zoomIn{
+					border-bottom: 1px solid @COLORZOOM;
+				}
+			}
+			#dpapanel{
+				float:left;
+				width: 65%;
+				margin-left: 5%;
+				height: 100%;
+				background: white;
+				border: 1px #CCC solid;
+				.dpaview{
+					padding: 10px;
+					cursor: pointer;
+					// MEDIA QUERYS //////////
+					// PANTALLA DE 768 X 1366
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+					   	padding: 5px;
+					}
+					// PANTALLA DE 768 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					   	padding: 5px;
+					}
+					//////////////////////////	
+					img{
+						height: 70px;
+						width: 70px;
+						// MEDIA QUERYS //////////
+						// PANTALLA DE 768 X 1366
+						@media screen and (max-width: 1366px) and (max-height: 768px) {
+						    height: 50px;
+							width: 50px;
+						}
+						// PANTALLA DE 768 X 1280
+						@media screen and (max-width: 1280px) and (max-height: 768px) {
+						    height: 50px;
+							width: 50px;
+						}
+						//////////////////////////			
+					}
+				}
+				#pais{
+					display: block;
+				}
+				#region{
+					display: none;
+				}
+				#provincia{
+					display: none;
+				}
+				#comuna{
+					display: none;
+				}
+			}
+	}
+	.leyenda{
+		background: #FFF;
+		border: 1px #999 solid;
+		height: 25px;
+		position: absolute;
+		padding: 0 0 0 0;
+		z-index: 2;
+		// MEDIA QUERYS //////////
+		// PANTALLA DE 768 X 1366
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		    padding-right: 0px;
+		    padding-left: 0px;
+		}
+		// PANTALLA DE 768 X 1280
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		    padding-right: 0px;
+		    padding-left: 0px;
+		}
+		//////////////////////////
+		.leyenda-info{
+			float: left;
+			width: 25%;
+			font-size: 0.8em;
+			padding-top: 3px;
+			text-align: center;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				width: 30%;
+			    font-size: 0.7em;
+				padding-top: 4px;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	font-size: 0.6em;
+			 	padding: 3px;
+			 	width: 30%;
+			 	padding-top: 5px;
+			}
+			// PANTALLA DE 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				width: 30%;
+			    font-size: 0.7em;
+				padding-top: 4px;
+			}
+			//////////////////////////
+		}
+		@QHEIGHT:20%;
+		@QWIDTH:20%;
+		@QCOLORBORDER:transparent;
+		#leyenda-color{
+			width: 50%;
+			float: left;
+			height: 100%;
+			padding-top: 3px;
+			padding-bottom:3px;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				width: 40%;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	width: 40%;
+			}
+			// PANTALLA DE 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				width: 40%;
+			}
+			//////////////////////////
+			div{
+				height: 100%;
+				width:20%;
+				float: left;
+			}
+			#q1{
+				background: #C1E9FF;
+				border: 1px @QCOLORBORDER solid;
+			}
+			#q2{
+				background: #93A7F1;
+				border: 1px @QCOLORBORDER solid;
+				border-left: 0px;
+			}
+			#q3{
+				background: #626FE3;
+				border: 1px @QCOLORBORDER solid;
+				border-left: 0px;
+			}
+			#q4{
+				background: #3137D5;
+				border: 1px @QCOLORBORDER solid;
+				border-left: 0px;
+			}
+			#q5{
+				background: #0000A0;
+				border: 1px @QCOLORBORDER solid;
+				border-left: 0px;
+			}
+		}
+	}
+	.leyendaobra{
+		display: none;
+		position: absolute;
+		padding: 0 0 0 0;
+		z-index: 2;
+		// MEDIA QUERYS //////////
+		// PANTALLA DE 768 X 1366
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		    padding-right: 0px;
+		    padding-left: 0px;
+		    font-size: 0.8em;
+		}
+		// PANTALLA 1280*1024
+		@media screen and (max-width: 1280px) and (max-height: 1024px) {
+		 	font-size: 0.8em;
+		}
+		// PANTALLA DE 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		    padding-right: 0px;
+		    padding-left: 0px;
+		    font-size: 0.8em;
+		}
+		#leyenda-color{
+			width: 200px;
+			margin-left: 15%;
+			float: left;
+			font-size: 1em;
+			height: 27px;
+			background: #FFF;
+			border: 1px #999 solid;
+			padding-left: 10px;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				margin-left: 5%;
+				width: 90%;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	margin-left: 5%;
+			 	width: 90%;
+			}
+			// PANTALLA DE 768 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				margin-left: 5%;
+				width: 90%;
+			}
+			//////////////////////////
+			.simbologia{
+				height: 100%;
+				width: 100%;
+				.inversion{
+					width: 50%;
+				    height: 100%;
+				    padding: 2px;
+				    border-right: 1px solid #999;
+				    float: left;
+					.eje1{
+						height: 21px;
+					    width: 21px;
+					    border-radius: 21px;
+					    background: #000;
+					    float: left;
+					    margin-right: 5px;
+					    background: #74C2E1;
+					}
+					.eje2{
+						height: 21px; 
+					    width: 21px; 
+					    border-radius: 21px; background: #000;
+					    float: left;
+					    margin-right: 5px;
+					    background: #0191C8;
+					}
+					.eje3{
+						height: 21px; 
+					    width: 21px; 
+					    border-radius: 21px; background: #000;
+					    float: left;
+					    margin-right: 5px;
+					    background: #004A80;
+					}
+				}
+				.multidpa{
+					float: left;
+				    width: 25%;
+				    padding: 2px;
+				    height: 100%;
+				    border-right: 1px solid #999;
+					.multi{
+						margin-left: 8px;
+					    height: 21px; 
+					    width: 21px; border: 1px solid #999; 
+					    border-radius: 21px;
+					}
+				}
+				.sede{
+					float: left;
+				    width: 25%;
+				    height: 100%;
+				    padding: 2px;
+				    .sedecon{
+				    	height: 21px;
+					    width: 21px;
+					    border: 1px solid #999;
+					    border-radius: 21px;
+					    margin-left: 13px;
+					    .sedeconci{
+					    	top: 1px;
+						    height: 17px; 
+						    width: 17px; 
+						    border: 1px solid #999; 
+						    border-radius: 19px;
+						    left: 1px;
+						    position: relative;
+						    .sedeconci2{
+						    	top: 1px; 
+							    height: 13px; 
+							    width: 13px; border: 1px solid #999; 
+							    border-radius: 13px; left: 1px; position: relative;
+						    }
+					    }
+				    }
+				}
+			}
+		}
+	}
+	.filtro{
+		height: 50px;
+		padding: 5px;
+		display: none;
+		top: ~'calc(100% - 55px)';
+		position: absolute;
+		#filtro-tab{
+			height: 100%;
+			width: 100%;
+			.close-filter{
+				float: left;
+				height: 100%;
+				width: 120px;
+				margin-left: 3px;
+				padding: 10px;
+				padding-left: 15px;
+				background: #FFF;
+				border: 1px #999 solid;
+				font-size: 0.9em;
+				color: #999;
+				cursor: pointer;
+			}
+			.filter{
+				float: left;
+				height: 100%;
+				width: 50px;
+				background: #FFF;
+				margin-left: 3px;
+				border: 1px #999 solid;
+				div{
+					height: 100%;
+					width: 100%;
+					cursor: pointer;
+					padding: 4px 10px;
+					img{
+						height: 30px;
+						width: 30px;
+					}
+				}
+			}
+		}
+	}
+	.f1{
+		position: absolute;
+		height: 150px !important;
+		width: 100%;
+		padding: 10px;
+		display: block;
+		top:~'calc(100% - 160px)';
+		border-top: 1px #CCC solid;
+		// MEDIA QUERYS //////////
+		// PANTALLA 1366x768
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		 	height: 125px !important;
+		 	top:~'calc(100% - 125px)';
+		}
+		// PANTALLA 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		 	height: 90px !important;
+		 	top:~'calc(100% - 110px)';
+		}
+		//////////////////////////
+		.new{
+			margin-right: 40px;
+			height: inherit;
+			width: 15%;
+			background: #CCC;
+			color: #333;
+			float: left;
+			padding: 15px;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    margin-right: 25px;
+			    font-size: 0.7em;
+			    padding: 7.5px;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	margin-right: 20px;
+			 	font-size: 0.8em;
+			 	padding: 7.5px;
+			}
+			// PANTALLA DE 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    margin-right: 25px;
+			    font-size: 0.7em;
+			    padding: 7.5px;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			    margin-right: 20px;
+			 	font-size: 0.7em;
+			 	padding: 7.5px;
+			}
+			//////////////////////////
+			.fecha{
+				height: 20%;
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				 	height: 15%;
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				   height: 20%;
+				 	
+				}
+			}
+			.titulo{
+				height: 60%;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+				 	height: 60%;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				 	height: 65%;
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				 	height: 60%;
+				}
+			}
+			.more{
+				font-weight: bold;
+				height: 20%;
+				cursor: pointer;
+			}
+		}
+		#demo{
+			margin-right: 40px;
+			height: inherit;
+			width: 15%;
+			background: #DDD;
+			float: left;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    margin-right: 20px;
+			    height: 110px;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	margin-right: 20px;
+			 	width: 20%;
+			}
+			// PANTALLA DE 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    margin-right: 20px;
+			    height: 95px;
+			}
+			//////////////////////////
+		}
+		#CGR{
+			margin-right: 40px;
+			height: inherit;
+			width: 330px;
+			float: right;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    margin-right: 20px;
+			    width: 250px;
+			    text-align: right;
+			    img{
+			    	height: 45px;
+			    }
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	margin-right: 5px;
+			}
+			// PANTALLA DE 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    margin-right: 20px;
+			    text-align: right;
+			    img{
+			    	height: 45px;
+			    }
+			}
+			//////////////////////////
+			img{
+				cursor: pointer;
+			}
+		}
+	}
+}

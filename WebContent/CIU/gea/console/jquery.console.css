@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+/*CONSOLA*/
+.Geocgr-Console-body{
+	height: 100%;
+	position: absolute;
+	top:5px;
+	left:0px;
+	overflow:scroll;
+	overflow-x:hidden;
+	width:100%;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+}
+#Geocgr-Console-leter{
+	height: 30px;
+	position: absolute;
+	top:100%;
+	left:0px;
+	margin-top: -30px;
+	width: 100%;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:1px;
+	padding-bottom:3px;
+}
+#Geocgr-Console-input{
+	height:100%;
+	width:100%;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+}

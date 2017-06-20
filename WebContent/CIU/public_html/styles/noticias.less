@@ -1,0 +1,105 @@
+.noticia{
+	position: absolute;
+	top:0%;
+	left: 0%;
+	height: 100%;
+	width: 100%;
+	font-size: 1em;
+	display: none;
+	z-index: 5;
+	.background{
+		background: rgba(0,0,0,0.6);
+		height: 100%;
+		width: 100%;
+		z-index: 10;
+	}
+	.modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -35%;
+		margin-top: -400px;
+		background: #FFF;
+		height: 800px;
+		width: 70%;
+		padding: 20px;
+		z-index: 15;
+		// PANTALLA 1366x768
+		@media screen and (max-width: 1366px) and (max-height: 768px) {
+		 	width: 75%;
+		 	margin-left: -37.5%;
+		}	
+		// PANTALLA 1280*1024
+		@media screen and (max-width: 1280px) and (max-height: 1024px) {
+		 	width: 75%;
+		 	margin-left: -37.5%;
+		}
+		// PANTALLA 1280x768
+		@media screen and (max-width: 1280px) and (max-height: 768px) {
+		 	width: 75%;
+		 	margin-left: -37.5%;
+		}	
+		// PANTALLA DE 720 X 1280
+		@media screen and (max-width: 1280px) and (max-height: 720px) {
+		    height: 500px;
+		    margin-top: -250px;
+		    width: 70%;
+		 	margin-left: -35%;
+		}
+		//////////////////////////
+		.header{
+			position: relative;
+			height: 20%;
+			.logo{
+				float: left;
+				height: 100%;
+				width: 95%;
+				img{
+					height: ~'calc(90% - 1px + 1px)';
+				}
+			}
+		}
+		.body{
+			position: relative;
+			height: 70%;
+			overflow-y: scroll;
+			table{
+				td{
+					padding: 10px;
+				}
+			}
+			h3,h2{
+				padding: 10px;
+			}
+		}
+		.footer{
+			height: 10%;
+			position: relative;
+			.boton{
+				height: 100%;
+				width: 70%;
+				padding: 0.7em;
+				float: left;
+				padding-bottom: 0px;
+				button{
+					position: absolute;
+					left: 50%;
+					margin-left: -75px;
+					background: #558ed5;
+					border: none;
+					height: 3em;
+					width: 150px;
+					color: #FFF;
+				}
+			}
+			.checkbtn{
+				float: left;
+				height: 100%;
+				width: 30%;
+				padding: 1.6em;
+				font-size: 0.9em;
+				padding-right: 0px;
+			}
+		}
+	}
+}

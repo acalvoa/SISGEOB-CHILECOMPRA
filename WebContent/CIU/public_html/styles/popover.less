@@ -1,0 +1,184 @@
+//POPOVER LESS
+.popove{
+	position: absolute;
+	top: 0px;
+	left: 300px;
+	height: 80px;
+	width: 120px;
+	padding: 5px;
+   margin-top: -7px;
+	background: #FFF;
+	display: none;
+	z-index: 1000;
+	border-radius: 6px;
+	text-align: left;
+	white-space: normal;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+	.content{
+		height: 100%;
+		width: 100%;
+		text-align: center;
+      //DEFINICION ESPECIAL
+      .popranking{
+         min-height: inherit;
+         min-width: 230px;
+         max-width: 260px;
+         .titulo{
+            height: auto;
+            width: 100%;
+            text-align: left;
+            top:0px;
+         }
+         .stats{
+            height: 35px;
+            position: absolute;
+            bottom: 0px;
+            .lheader{
+               float: left;
+               padding-top: 5px;
+               height: 40px;
+               width: 140px;
+            }
+            .mregion{
+               float: left;
+               height: 25px;
+               width: 25px;
+               margin-left: 2.5px;
+               margin-right: 2.5px;
+               border-radius: 25px;
+               line-height: 25px;
+               vertical-align: middle;
+               background: #DFDFDF;
+               border:1px #999 solid;
+               color: #999;
+            }
+            .mprovincia{
+               float: left;
+               height: 25px;
+               width: 25px;
+               line-height: 25px;
+               vertical-align: middle;
+               margin-left: 2.5px;
+               margin-right: 2.5px;
+               border-radius: 25px;
+               background: #DFDFDF;
+               border:1px #999 solid;
+               color: #999;
+            }
+            .mcomuna{
+               float: left;
+               height: 25px;
+               width: 25px;
+               margin-left: 2.5px;
+               margin-right: 2.5px;
+               border-radius: 25px;
+               line-height: 25px;
+               vertical-align: middle;
+               background: #DFDFDF;
+               border:1px #999 solid;
+               color: #999;
+            }
+         }
+      }
+	}
+}
+.top:after{
+   content:"";
+   position: absolute;
+   left: 50%;
+   margin-left: -13px;
+   top: 100%;
+   width: 0;
+   height: 0;
+   border-top: 26px solid white;
+   border-right: 13px solid transparent;
+   border-left: 13px solid transparent;
+}
+.top:before{
+   content:"";
+   position: absolute;
+   left: 50%;
+   margin-left: -13px;
+   top: ~'calc(100% + 1px)';
+   width: 0;
+   height: 0;
+   border-top: 26px solid #ccc;
+   border-right: 13px solid transparent;
+   border-left: 13px solid transparent;
+}
+.left:after{
+   content:"";
+   position: absolute;
+   right: 100%;
+   top: 50%;
+   margin-top: -13px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid white;
+   border-bottom: 13px solid transparent;
+}
+.left:before{
+   content:"";
+   position: absolute;
+   right: ~'calc(100% + 1px)';
+   top: 50%;
+   margin-top: -13px;
+   width: 0;
+   height: 0;
+   border-right: 26px solid #ccc;
+   border-top: 13px solid transparent;
+   border-left: 13px solid transparent;
+}
+.right:after{
+   content:"";
+   position: absolute;
+   left: 100%;
+   margin-top: -13px;
+   top: 50%;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-left: 26px solid white;
+   border-bottom: 13px solid transparent;
+}
+.right:before{
+   content:"";
+   position: absolute;
+   left: ~'calc(100% + 1px)';
+   margin-top: -13px;
+   top: 50%;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-left: 26px solid #CCC;
+   border-bottom: 13px solid transparent;
+}
+.bottom:after{
+   content:"";
+   position: absolute;
+   left: 50%;
+   margin-left: -13px;
+   bottom:100%;
+   width: 0;
+   height: 0;
+   border-left: 13px solid transparent;
+   border-right: 13px solid transparent;
+   border-bottom: 26px solid white;
+}
+.bottom:before{
+   content:"";
+   position: absolute;
+   left: 50%;
+   margin-left: -13px;
+   bottom:~'calc(100% + 1px)';
+   width: 0;
+   height: 0;
+   border-left: 13px solid transparent;
+   border-right: 13px solid transparent;
+   border-bottom: 26px solid #CCC;
+}

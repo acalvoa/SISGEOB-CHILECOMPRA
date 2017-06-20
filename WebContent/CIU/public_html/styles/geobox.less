@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+/*DEFINIMOS LAS FUNCIONES FIJAS*/
+.boxShadow (@hor: 0px, @vert: 0px, @blur: 10px, @rad, @shadow: #757171) {
+	box-shadow: @hor @vert @blur @rad @shadow;
+	-moz-box-shadow: @hor @vert @blur @rad @shadow;
+	-webkit-box-shadow: @hor @vert @blur @rad @shadow;
+}
+.rotate(@rota){
+	-webkit-transform:rotate(@rota);
+	-moz-transform:rotate(@rota);
+	-o-transform:rotate(@rota);
+	-ms-transform:rotate(@rota);
+}
+/*CLASES*/
+.geoBox{
+	position:absolute;
+	height:auto;
+	width:auto;
+	display:none;
+	cursor:default;
+	overflow:visible;
+	.geoBox-closebutton{
+		position:absolute;
+		top:5px;
+		left:100%;
+		margin-left:-15px;
+		height:20px;
+		width:20px;
+		cursor:pointer;
+		z-index:3;
+		clip: rect(0px, 10px, 10px, 0px);
+	}
+	.geoBox-back{
+		position:absolute;
+		top:0%;
+		left:0%;
+		height:100%;
+		width:100%;
+		// .boxShadow(40px, 20px,20px, 0px,#666);
+		z-index:2;
+	}
+	.geoBox-back:before{
+		content:"";
+	    position: absolute;
+	    left: 2px;
+	    top: ~'calc(100% + 1px)';
+	    width: 0;
+	    height: 0;
+	    border-top: 16px solid #CCC;
+	    border-right: 16px solid transparent;
+	    border-left: 16px solid transparent;
+	}
+	 
+	.geoBox-back:after{
+		content:"";
+	    position: absolute;
+	    left: 2px;
+	    top: 100%;
+	    width: 0;
+	    height: 0;
+	    border-top: 16px solid white;
+	    border-right: 16px solid transparent;
+	    border-left: 16px solid transparent;
+	}
+	.geoBox-content{
+		position:absolute;
+		height:92%;
+		width:100%;
+		top:0px;
+		left:0px;
+		z-index:2;
+	}
+}

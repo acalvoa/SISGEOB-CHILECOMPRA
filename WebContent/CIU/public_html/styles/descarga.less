@@ -1,0 +1,85 @@
+.descarga{
+	position: absolute;
+	top:0%;
+	left: 0%;
+	height: 100%;
+	width: 100%;
+	font-size: 1em;
+	display: none;
+	.background{
+		background: rgba(0,0,0,0.6);
+		height: 100%;
+		width: 100%;
+		z-index: 5;
+	}
+	.modalbox{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -25%;
+		margin-top: -200px;
+		background: #FFF;
+		height: 400px;
+		width: 50%;
+		padding: 20px;
+		z-index: 10;
+		.header{
+			position: relative;
+			height: 20%;
+			.logo{
+				float: left;
+				height: 100%;
+				width: 95%;
+				img{
+					height: ~'calc(90% - 1px + 1px)';
+				}
+			}
+		}
+		.body{
+			position: relative;
+			height: 65%;
+			text-align: left;
+			table{
+				td{
+					padding: 10px;
+				}
+			}
+			h3{
+				font-size: 1.3em;
+				padding-bottom: 20px;
+			}
+			h2{
+				font-size: 1.1em;
+			}
+		}
+		.footer{
+			height: 10%;
+			position: relative;
+			.boton{
+				height: 100%;
+				width: 70%;
+				padding: 0.7em;
+				float: left;
+				padding-bottom: 0px;
+				button{
+					position: absolute;
+					left: 50%;
+					margin-left: -75px;
+					background: #558ed5;
+					border: none;
+					height: 2em;
+					width: 150px;
+					color: #FFF;
+				}
+			}
+			.checkbtn{
+				float: left;
+				height: 100%;
+				width: 30%;
+				padding: 1.6em;
+				font-size: 0.9em;
+				padding-right: 0px;
+			}
+		}
+	}
+}

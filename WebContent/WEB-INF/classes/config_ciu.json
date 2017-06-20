@@ -1,0 +1,151 @@
+{
+///////////////////////
+// VARIABLES DE ENTORNO
+	//	 PATH DEL SISTEMA DE ARCHIVOS
+	"ASSET":{
+		"APP": "CIU/app/app.js",
+		"LAYOUT": "CIU/public_html/layout.jsp",
+		"ERROR": "CIU/public_html/error.jsp",
+		"STYLES": "CIU/public_html/styles/",
+		"HTML": "CIU/public_html/partial/",
+		"CRYPTO": "CIU/app/crypto/",
+		"CONFIG": "CIU/app/config/const.jsp",
+		"DEPENDENCE": "CIU/app/dep/",
+		"CSSDEPENDENCE": "CIU/app/cssdep/",
+		"CONTROLLER": "CIU/app/controller/",
+		"GEA": "CIU/gea/"
+	},
+	// 	SE INTEGRAN LOS OBJETOS DE CRIPTOGRAFIA
+	"CRYPTO":[
+		"aes",
+		"md5",
+		"pbkdf2",
+		"sha1",
+		"aesutil"
+	],
+	// 	SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS COMPONENTES GEA
+	"GEA":[
+		"geautils",
+		"geomap",
+		"databank",
+		"geobox",
+		"report"
+	],
+	// 	SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LAS DEPENDENCIAS
+	"DEPENDENCE":{
+		"INTERNAL":[
+			"jquery",
+			"jquery-ui",
+			"angular",
+			"bootstrap",
+			"bigInt",
+			"include",
+			"com",
+			"model",
+			"controller",
+			"jquery.easypiechart",
+			"cookie",
+			"xls",
+			"video",
+			"jspdf",
+			"FileSaver",
+			"sprintf",
+			"html2canvas",
+			"xmlwriter",
+			"autocomplete",
+			"datepicker"
+		],
+		"EXTERNAL":[
+			"maps.googleapis.com/maps/api/js?v=3.17&client=gme-contraloriageneral"
+			//"maps.googleapis.com/maps/api/js?v=3.17"
+		],
+		"CSS":[
+			"normalize",
+			"jquery-ui",
+			"fontawesome",
+			"bootstrap",
+			"bootstrap-theme",
+			"video",
+			"autodetect",
+			"autocomplete",
+			"datepicker"
+		]
+	},
+	// 	SE DESCRIBE EN ORDEN SECUENCIAL EL ORDEN DE LA CARGA DE LOS PARTIAL
+	//	TODOS LOS LAYOUT ESTAN ASOCIADOS A UN ARCHIVO LESS QUE DEBE EXISTIR
+	// 	SINO ESTOS SERAN IGNORADOS DE LA ESTRUCTURA
+	"LAYOUT":[
+		"header.jsp",
+		"mapa.jsp",
+		"footer.jsp",
+		"popover.jsp",
+		"loading.jsp",
+		"modal.jsp",
+		"noticias.jsp",
+		"downloadkml.jsp",
+		"pdfreport.jsp"
+	],
+	"STYLES":[
+		"base.less",
+		"essential.less",
+		"header.less",
+		"mapa.less",
+		"panel.less",
+		"footer.less",
+		"popover.less",
+		"panel.less",
+		"loading.less",
+		"infopop.less",
+		"etiqueta.less",
+		"geobox.less",
+		"infopop.less",
+		"resumen.less",
+		"modal.less",
+		"noticias.less",
+		"descarga.less",
+		"pdfreport.less",
+		"alert.less"
+	],
+	// 	SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS CONTROLARES
+	"CONTROLLER":[
+		"browser",
+		"autodetect",
+		"module",
+		"loading",
+		"cluster",
+		"grafico",
+		"popover",
+		"ranking",
+		"panel",
+		"controles",
+		"filtro",
+		"etiqueta",
+		"grilla",
+		"leyend",
+		"geocgr",
+		"mapa",
+		"infopop",
+		"resumen",
+		"filtros",
+		"header",
+		"footer",
+		"modal",
+		"search",
+		"ficha",
+		"advasearch",
+		"xls",
+		"video",
+		"analytics",
+		"alert"
+	],
+//	FIN VARIABLES DE ENTORNO
+///////////////////////
+	"MAP":{
+		"LAT": -43.43778,
+		"LNG": -70.65028,
+		"ZOOM": 4,
+		"MINZOOM": 4,
+		"MAXZOOM": 17
+	}
+// FIN VARIABLES DE APLICACION
+}

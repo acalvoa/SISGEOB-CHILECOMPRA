@@ -1,0 +1,68 @@
+@import "base.less";
+@COLORZOOM: #999;
+@SIZEPICT: 1.7em;
+.mapa{
+	position: relative;
+	height: ~'calc(100% - @{FooterHeight})';
+	width: 100%;
+	// MEDIA QUERYS //////////
+	// PANTALLA DE 768 X 1366
+	// PANTALLA 1366x768
+	@media screen and (max-width: 1366px) and (max-height: 768px) {
+	 	height: ~'calc(100% - 20px)';
+	}
+	@media screen and (max-width: 1366px) and (max-height: 681px) {
+	 	height: ~'calc(100% - 20px)';
+	}		
+	// PANTALLA 1280*1024
+	@media screen and (max-width: 1280px) and (max-height: 1024px) {
+		height: ~'calc(100% - 20px)';
+	}
+	// PANTALLA 1280*1024
+	@media screen and (max-width: 1280px) and (max-height: 800px) {
+		height: ~'calc(100% - 20px)';
+	}
+	// PANTALLA 1280x768
+	@media screen and (max-width: 1280px) and (max-height: 768px) {
+	}
+	// PANTALLA DE 720 X 1280
+	@media screen and (max-width: 1280px) and (max-height: 720px) {
+	}
+	//////////////////////////
+	#gea{
+		height: 100%;
+		width: 100%;
+	}
+	// DEFINIMOS EL PANEL DE BSUQUEDA
+	.busqueda{
+		position: absolute;
+		top: 15%;
+		#pac-input {
+			float: left;
+	        background-color: #fff;
+	        width: ~'calc(85% - 4px)';
+	        height:40px;
+	        font-family: "Helvetica";
+	        font-size: 16px;
+	        text-overflow: ellipsis;
+	        ///////////////////////////
+	        margin-top:1px;
+			padding: 5px 10px 5px 10px;
+			background: #FFF;
+			border-radius: 2px 0 0 2px;
+			z-index: 5;
+			border: 1px #CCC solid;
+	    }
+	    #buscarcalle{
+	    	float: left;
+	    	width: 15%;
+	    	height: 40px;
+	    	background: #118BF4;
+	    	margin: 1px;
+	    	margin-left: 3px;
+	    	border: none;	
+	    	color: #FFF;
+	    }
+	}
+	
+}

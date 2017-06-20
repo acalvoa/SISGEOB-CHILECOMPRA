@@ -1,0 +1,414 @@
+@import "base.less";
+header{
+	height:@HeaderHeight;
+	background: #FFF;
+	//SOMBRA
+	position:relative;
+	-webkit-box-shadow: 3px 7px 27px -10px rgba(0,0,0,1);
+    -moz-box-shadow: 3px 7px 27px -10px rgba(0,0,0,1);
+    box-shadow: 3px 7px 27px -10px rgba(0,0,0,1);
+	z-index: 1;
+	// MEDIA QUERYS //////////
+	// PANTALLA DE 768 X 1366
+	@media screen and (max-width: 1366px) and (max-height: 768px) {
+	    height: @HeaderHeight768;
+	}
+	// PANTALLA DE 768 X 1280
+	@media screen and (max-width: 1280px) and (max-height: 768px) {
+	    height: @HeaderHeight768;
+	}
+	//////////////////////////
+	
+	//ESTRUCTURA CSS DEL LOGO
+	#GEOCGR{
+		img{
+			height: @HeaderHeight;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    height: @HeaderHeight768;
+			}
+			// PANTALLA DE 768 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    height: @HeaderHeight768;
+			}
+			//////////////////////////
+		}
+	}
+	//DEFINIMOS LA ESTRUCTURA CSS DEL MENU
+	#menu{
+		#navbar{
+			margin-top: @HeaderHeight - @HeaderNavHeight;
+			height: @HeaderNavHeight;
+			width: 130%;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    margin-top: @HeaderHeight768 - @HeaderNavHeight768;
+				height: @HeaderNavHeight768;
+			}
+			// PANTALLA DE 768 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    margin-top: @HeaderHeight768 - @HeaderNavHeight768;
+				height: @HeaderNavHeight768;
+			}
+			//////////////////////////
+			ul{
+				margin-left: 0px;
+				padding-left: 0px;
+				li{
+					float: left;
+					margin-right: @HeaderNavMargin;
+					// width: ~'calc(25% - @{HeaderNavMargin})';
+					width: ~'calc(20% - @{HeaderNavMargin})';
+					height: @HeaderNavHeight;
+					list-style:none;
+					background: #FFF;
+					border: 1px solid #EEE;
+					text-align: center;
+					line-height: @HeaderNavHeight;
+					vertical-align: middle;
+					cursor: pointer;
+					color: #666;
+					font-weight: bold;
+					// MEDIA QUERYS //////////
+					// PANTALLA DE 768 X 1366
+					@media screen and (max-width: 1366px) and (max-height: 768px) {
+					    height: @HeaderNavHeight768;
+					    line-height: @HeaderNavHeight768;
+					    font-size: 0.9em;
+					}
+					// PANTALLA DE 768 X 1280
+					@media screen and (max-width: 1280px) and (max-height: 768px) {
+					    height: @HeaderNavHeight768;
+					    line-height: @HeaderNavHeight768;
+					    font-size: 0.9em;
+					}
+					//////////////////////////
+				}
+				li:hover{
+					border:1px solid #CCC;
+					background-color: #0294E5;
+					color: #FFF;
+				}
+			}
+		}
+	}
+	#stats{
+		text-align: center;
+		color:#558ED5;
+		cursor: pointer;
+		height: 100%;
+		.dataswitch{
+			width: 100%;
+			height: 27px;
+			.divcenter{
+				margin: 0 auto;
+				height: 27px;
+				width: 350px;
+			}
+		}
+		.switch{
+			position: absolute;
+			height: 100%;
+			width: 350px;
+			right: 0px;
+			.selector{
+				padding: 3px;
+				float: left;
+				width: 50%;
+				height: 100%;
+				#c2014{
+					position: relative;
+					height: 50%;
+					width: 100%;
+					font-size: 1.3em;
+					text-align: center;
+					margin-top: 1.5px;
+					.txt{
+						padding: 9%;
+						padding-left: 4%;
+					}
+				}
+				#c2015{
+					position: relative;
+					height: 50%;
+					width: 100%;
+					font-size: 1.3em;
+					text-align: center;
+					margin-bottom: 1.5px;
+					.txt{
+						padding: 9%;
+						padding-left: 4%;
+					}
+				}
+				.active{
+					background: #0294E5;
+					color: #FFF;
+					border: none;
+				}
+				.active:hover{
+					background: #51B9F2;
+					color: #FFF;
+					border:none;
+				}
+				.active:active { 
+				    background: #0294E5;
+				    border: #0B74AE 1px solid;
+				}
+				.swcontent{
+					position: relative;
+					left: 40%;
+					width: 60%;
+					height: 100%
+				}
+				.inactive{
+					color:#D9D9D9;
+					background: #FFF;
+					border: 1px #D9D9D9 solid;
+				}
+				.inactive:hover{
+					background: #f5f5f5;
+					border: 1px #D9D9D9 solid;
+				}
+				.inactive:active{
+					background: #EFEFEF;
+					border: #969696 1px solid;
+				}
+
+			}
+			.info{
+				float: left;
+				width: 50%;
+				height: 100%;
+				padding-top: 3px;
+				padding-bottom: 3px; 
+			}
+			.lg{
+				float: left;
+				padding: 5%;
+				height: 100%;
+				width: 37%;
+				padding-left: 4%;
+				text-align: right;
+			}
+			.txt{
+				float: left;
+				padding: 3%;
+				height: 100%;
+				width: 63%;
+				font-size: 0.75em;
+				text-align: left;
+				padding-left: 5%;
+				div{
+					height: 50%;
+					float: left;
+					width: 100%;
+				}
+			}
+			.labeldate{
+				float: left;
+				padding-left: 15px;
+				border-top-left-radius: 5px; 
+				border-bottom-left-radius: 5px; 
+				border:1px solid #999;
+				height: 28px;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 24px;
+					line-height: 24px;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				}
+			}
+			.labeldateright{
+				float: left;
+				padding-right: 15px;
+				border-top-right-radius: 5px; 
+				border-bottom-right-radius: 5px; 
+				border:1px solid #999;
+				height: 28px;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 24px;
+					line-height: 24px;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				}
+			}
+			.datefrom{
+				padding-right: 15px;
+				border:none;
+				width: 110px;
+				font-size: 1em;
+				height: 26px;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 20px;
+					line-height: 20px;
+					font-size: 0.9em;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				}
+			}	
+			.dateto{
+				padding-left: 15px;
+				border:none;
+				width: 110px;
+				font-size: 1em;
+				height: 26px;
+				// PANTALLA 1366x768
+				@media screen and (max-width: 1366px) and (max-height: 768px) {
+					height: 20px;
+					line-height: 20px;
+					font-size: 0.9em;
+				}
+				// PANTALLA 1280*1024
+				@media screen and (max-width: 1280px) and (max-height: 1024px) {
+				}
+				// PANTALLA 1280x768
+				@media screen and (max-width: 1280px) and (max-height: 768px) {
+				}
+				// PANTALLA DE 720 X 1280
+				@media screen and (max-width: 1280px) and (max-height: 720px) {
+				}
+			}
+		}
+		#inversiontotal{
+			position: relative;
+			padding-top: 5px;
+			font-size: 1.4em;
+			font-weight: bold;
+			line-height: 24px;
+			vertical-align: middle;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				line-height: 20px;
+				height: 22px;
+				font-size: 1.2em;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+				font-size: 1.1em;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			}
+		}	
+		#numobras{
+			color: #558ED5;
+			position: relative;
+			font-size: 0.9em; 
+			line-height: 24px;
+			vertical-align: middle;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				line-height: 20px;
+				height: 24px;
+				font-size: 0.8em;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			}
+		}
+		.titulo{
+			font-size: 0.9em;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    font-size: 0.6em;
+			}
+			//////////////////////////
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	font-size: 0.6em;
+			}
+			// PANTALLA DE 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    font-size: 0.6em;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			    font-size: 0.6em;
+			}
+		}
+		.tituloHasta{
+			float: left;
+			height: 28px;
+			line-height: 26px;
+			vertical-align: middle;
+			font-size: 0.9em;
+			color: #f5f5f5;
+			background-color: #558ED5;
+			position: relative;
+			font-size: 0.8em; 
+			width: 50px;
+			// PANTALLA 1366x768
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+				height: 24px;
+				line-height: 24px;
+			}
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			}
+			// PANTALLA 1280x768
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			}
+		}
+		.data{
+			color: #558ED5;
+			font-size: 1em;
+			// MEDIA QUERYS //////////
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1366px) and (max-height: 768px) {
+			    font-size: 1em;
+			}
+			//////////////////////////
+			// PANTALLA 1280*1024
+			@media screen and (max-width: 1280px) and (max-height: 1024px) {
+			 	font-size: 1.2em;
+			}
+			// PANTALLA DE 768 X 1366
+			@media screen and (max-width: 1280px) and (max-height: 768px) {
+			    font-size: 1em;
+			}
+			// PANTALLA DE 720 X 1280
+			@media screen and (max-width: 1280px) and (max-height: 720px) {
+			    font-size: 0.95em;
+			}
+		}
+	}
+}
