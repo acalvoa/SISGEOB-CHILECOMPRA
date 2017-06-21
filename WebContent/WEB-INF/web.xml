@@ -22,13 +22,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Key</display-name>
-    <servlet-name>KeyServer</servlet-name>
-    <servlet-class>gea.keys.KeyServer</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet>
-    <description></description>
     <display-name>Gateway</display-name>
     <servlet-name>Gateway</servlet-name>
     <servlet-class>gea.gateway.Gateway</servlet-class>
