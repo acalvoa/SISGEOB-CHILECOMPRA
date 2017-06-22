@@ -117,8 +117,10 @@
 	},
 	"MERCADOPUBLICO": {
 		"MP": "api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?",
+		"OC": "apidesarrollo.chilecompra.cl/servicios/v2/Publico/OrdenesDeCompra.json?",
 		"CODIGO": "LP14",
-		"TICKET": "&ticket=D6DF9A69-2F0E-482E-B1F4-55A234C8193F"
+		"TICKET": "&ticket=D6DF9A69-2F0E-482E-B1F4-55A234C8193F",
+		"TICKETOC": "ticket=D582A409-1B3F-496B-90CC-C41FAE839808"
 	},
 	"MIDESO": {
 		"URLMIDESO": "bipqa.mds.cl:8090/bip2-trabajo/app/services/",

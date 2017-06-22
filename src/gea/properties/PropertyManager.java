@@ -16,14 +16,14 @@ public class PropertyManager {
 
     private PropertyManager(){
         if(System.getProperty("os.name").equals("Linux") || System.getProperty("os.name").equals("Unix")){
-        	//this.PathProperties ="/home/GEOCGR/config.properties";
-        	//this.AMBIENTE_DESPLIEGUE ="DESARROLLO";
+        	this.PathProperties ="/home/GEOCGR/config.properties";
+        	this.AMBIENTE_DESPLIEGUE ="DESARROLLO";
         	//this.PathProperties ="/home/GEOCGR/properties/config.properties";
         	//this.AMBIENTE_DESPLIEGUE ="PRETESTING";
         	//this.PathProperties ="/test110/dominios/properties/QA/config-geocgr/config.properties";
         	//this.AMBIENTE_DESPLIEGUE="TESTING";
-        	this.PathProperties ="/bea110/dominios/properties/PRODUCCION/config-geocgr/config.properties";
-        	this.AMBIENTE_DESPLIEGUE="PRODUCCIÓN";
+        	//this.PathProperties ="/bea110/dominios/properties/PRODUCCION/config-geocgr/config.properties";
+        	//this.AMBIENTE_DESPLIEGUE="PRODUCCIÓN";
         }
         else
         {	   

@@ -213,6 +213,16 @@ public class ControllerMercado extends ControllerBase{
 			return null;
 		}
 	}
+	//METODO PARA IDENTIFICAR UNA OC
+	private static boolean isOC(String licitacion){
+		if(licitacion.matches("(-OC.*|-SE.*|-D1.*|-C1.*|-F3.*|-G1.*|-R1.*|-CA.*|-CM.*|-FG.*|-TL.*)")){
+			return true;
+		}
+		return false;
+	}
+	public static void oc(Request req, Response res) throws ErrorDBDataNotExistsException, ErrorCodeException{
+		
+	}
 	// ACTION PARA GUARDAR LOS DATOS DEL FORMULARIO
 	public static void set(Request req, Response res) throws ErrorDBDataNotExistsException, ErrorCodeException{
 		// FORMULARIOS DE ROLLBACK
