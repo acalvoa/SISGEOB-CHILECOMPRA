@@ -21,7 +21,7 @@
 					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
 					height="60"
 					type="image/svg+xml">
-					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" />
+					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" height="60" />
 				</object>
 				<img src="CHILECOMPRA/public_html/images/logos/png/chilecompra.png" height="60" style="vertical-align: top;" />
 			</div>
