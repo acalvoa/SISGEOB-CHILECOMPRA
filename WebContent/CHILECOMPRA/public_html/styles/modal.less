@@ -1,3 +1,4 @@
+@import "base.less";
 #modal1{
 	position: absolute;
 	top:0%;
@@ -266,9 +267,6 @@
 				float: left;
 				height: 100%;
 				width: 95%;
-				img{
-					height: ~'calc(90% - 1px + 1px)';
-				}
 			}
 		}
 		.body{
@@ -359,6 +357,7 @@
 		.footer{
 			height: 15%;
 			position: relative;
+			text-align: center;
 			.boton{
 				height: 100%;
 				padding: 0.7em;
@@ -368,7 +367,7 @@
 					position: absolute;
 					left: 50%;
 					margin-left: -75px;
-					background: #558ed5;
+					background-color: @SisgeobColor;
 					border: none;
 					height: 3em;
 					width: 150px;
@@ -377,13 +376,14 @@
 			}
 			#finish-acept{
 				position: relative;
-				color: #118BF4;
+				color: #FFF;
 				border: 1px solid #118BF4;
 				float: left;
-				height: 100%;
-				width: 300px;
-				left: 5%;
-				background: #FFF;
+				height: 45px;
+				width: 400px;
+				left: 50%;
+				margin-left: -200px;
+				background-color: @SisgeobColor;
 			}
 			#finish-cancel{
 				position: relative;
@@ -399,7 +399,7 @@
 	}
 
 }
-#modal3,#modal4,#modal_SERVICIOS,#modal5{
+#modal3, #modal4, #modal_SERVICIOS, #modal5{
 	position: absolute;
 	top:0%;
 	left: 0%;
@@ -447,9 +447,6 @@
 				height: 80px;
 				width: 100%;
 				text-align: center;
-				img{
-					height: ~'calc(90% - 1px + 1px)';
-				}
 			}
 		}
 		.body{
@@ -462,7 +459,7 @@
 				.icon{
 					float: left;
 					padding-top: 50px;
-					width: 20%;
+					width: 10%;
 					font-size: 4em;
 					text-align: center;
 				}
@@ -517,7 +514,7 @@
 						width: 30%;
 						height: 45px;
 						button{
-							background: #558ed5;
+							background-color: @SisgeobColor;
 							border: none;
 							height: 45px;
 							width: 100%;
@@ -539,7 +536,7 @@
 					position: absolute;
 					left: 50%;
 					margin-left: -75px;
-					background: #558ed5;
+					background-color: @SisgeobColor;
 					border: none;
 					height: 3em;
 					width: 150px;
@@ -556,14 +553,14 @@
 			}
 			#finish-acept{
 				position: relative;
-				color: #118BF4;
+				color: #FFF;
 				border: 1px solid #118BF4;
 				float: left;
 				height: 45px;
 				width: 400px;
 				left: 50%;
 				margin-left: -200px;
-				background: #FFF;
+				background-color: @SisgeobColor;
 			}
 		}
 	}

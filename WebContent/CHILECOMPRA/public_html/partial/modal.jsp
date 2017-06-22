@@ -2,23 +2,28 @@
 	<div class="background"></div>
 	<div class="modalbox">
 		<div class="header">
-			<div class="logo">
-				<img src="CHILECOMPRA/public_html/images/logo.png">
+			<div class="logo text-center">
+				<object
+					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
+					height="100"
+					type="image/svg+xml">
+					<img height="100" src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" />
+				</object>
 			</div>
 		</div>
 		<div class="body">
 			<div class="tab">
-				<div class="active tabitem" ng-click="m.why($event)" id="whygeocgr">&iquest;Qu&eacute; es GEO-CGR?</div>
+				<div class="active tabitem" ng-click="m.why($event)" id="whygeocgr">&iquest;Qu&eacute; es SISGEOB?</div>
 				<div class="inactive tabitem" ng-click="m.ayuda($event)" id="ayuda">Ayuda</div>
 				<div class="inactive tabitem" ng-click="m.contacto($event)" id="contacto">Contacto</div>
 			</div>
 			<div class="content">
 				<div class="whygeocgr modal-ini-content">
-					GEO-CGR es un sistema inform&aacute;tico que permitir&aacute; articular, almacenar, publicar y consultar informaci&oacute;n georreferenciada de la inversi&oacute;n de recursos en obras p&uacute;blicas, con el objetivo de promover el control ciudadano mediante la entrega de instrumentos para el an&aacute;lisis y monitoreo de informaci&oacute;n confiable, oportuna y con contexto territorial, &uacute;til para la autoridad, entregando la posibilidad de realizar denuncias y sugerencias de fiscalizaci&oacute;n, facilitando su participaci&oacute;n activa en el control del uso de los recursos p&uacute;blicos.
+					SISGEOB es un sistema inform&aacute;tico que permitir&aacute; articular, almacenar, publicar y consultar informaci&oacute;n georreferenciada de la inversi&oacute;n de recursos en obras p&uacute;blicas, con el objetivo de promover el control ciudadano mediante la entrega de instrumentos para el an&aacute;lisis y monitoreo de informaci&oacute;n confiable, oportuna y con contexto territorial, &uacute;til para la autoridad, entregando la posibilidad de realizar denuncias y sugerencias de fiscalizaci&oacute;n, facilitando su participaci&oacute;n activa en el control del uso de los recursos p&uacute;blicos.
 					<br><br>
 					Adem&aacute;s, contribuir&aacute; a la gesti&oacute;n de las entidades p&uacute;blicas, a trav&eacute;s de la sistematizaci&oacute;n y transparencia de la informaci&oacute;n sobre inversi&oacute;n en obras p&uacute;blicas, impulsando la rendici&oacute;n de cuentas ante la ciudadan&iacute;a.
 					<br><br>
-					La informaci&oacute;n que se registre en esta etapa por medio del &uml;Formulario de Registro GEO-CGR&uml; alimentar&aacute; el portal GEO-CGR Control Ciudadano de Obras, desarrollado por la Contralor&iacute;a General de la Rep&uacute;blica de Chile. Dicho portal puede ser visitado en el siguiente link: <a href="http://www.contraloria.cl/geocgrappcgr/GEOCGR/index.jsp" target=_blank>www.contraloria.cl/geocgr</a>.
+					La informaci&oacute;n que se registre en esta etapa por medio de SISGEOB alimentar&aacute; el portal GEO-CGR Control Ciudadano de Obras, desarrollado por la Contralor&iacute;a General de la Rep&uacute;blica de Chile. Dicho portal puede ser visitado en el siguiente link: <a href="http://www.contraloria.cl/geocgrappcgr/GEOCGR/index.jsp" target=_blank>www.contraloria.cl/geocgr</a>.
 				</div>
 				<div class="ayuda modal-ini-content">
 					<div class="tabs">
@@ -138,8 +143,14 @@
 	<div class="background"></div>
 	<div class="modalbox">
 		<div class="header">
-			<div class="logo">
-				<img src="CHILECOMPRA/public_html/images/logoGeoMp.jpg">
+			<div class="logo text-center">
+				<object
+					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
+					height="60"
+					type="image/svg+xml">
+					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" height="60"/>
+				</object>
+				<img src="CHILECOMPRA/public_html/images/logos/png/chilecompra.png" height="60" style="vertical-align: top;" />
 			</div>
 		</div>
 		<div class="body">
@@ -153,12 +164,19 @@
 		</div>
 	</div>
 </div>
+
 <div id="modal3" ng-controller="modal3 as m">
 	<div class="background"></div>
 	<div class="modalbox">
 		<div class="header">
-			<div class="logo"> 
-				<img src="CHILECOMPRA/public_html/images/logoGeoMp.jpg">
+			<div class="logo text-center">
+				<object
+					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
+					height="60"
+					type="image/svg+xml">
+					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" height="60"/>
+				</object>
+				<img src="CHILECOMPRA/public_html/images/logos/png/chilecompra.png" height="60" style="vertical-align: top;" />
 			</div>
 		</div>
 		<div class="body">
@@ -180,8 +198,14 @@
 	<div class="background"></div>
 	<div class="modalbox">
 		<div class="header">
-			<div class="logo"> 
-				<img src="CHILECOMPRA/public_html/images/logoGeoMp.jpg">
+			<div class="logo text-center">
+				<object
+					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
+					height="60"
+					type="image/svg+xml">
+					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" height="60"/>
+				</object>
+				<img src="CHILECOMPRA/public_html/images/logos/png/chilecompra.png" height="60" style="vertical-align: top;" />
 			</div>
 		</div>
 		<div class="body">
@@ -196,12 +220,19 @@
 		</div>
 	</div>
 </div>
+
 <div id="modal_SERVICIOS" ng-controller="modalServicios as m">
 	<div class="background"></div>
 	<div class="modalbox">
 		<div class="header">
-			<div class="logo"> 
-				<img src="CHILECOMPRA/public_html/images/logoGeoMp.jpg">
+			<div class="logo text-center"> 
+				<object
+					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
+					height="60"
+					type="image/svg+xml">
+					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" height="60"/>
+				</object>
+				<img src="CHILECOMPRA/public_html/images/logos/png/chilecompra.png" height="60" style="vertical-align: top;" />
 			</div>
 		</div>
 		<form name="formServicio">
@@ -222,12 +253,19 @@
 		</form>
 	</div>
 </div>
+
 <div id="modal5" ng-controller="modal3 as m">
 	<div class="background"></div>
 	<div class="modalbox">
 		<div class="header">
-			<div class="logo"> 
-				<img src="CHILECOMPRA/public_html/images/logoGeoMp.jpg">
+			<div class="logo text-center">
+				<object
+					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
+					height="60"
+					type="image/svg+xml">
+					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" height="60"/>
+				</object>
+				<img src="CHILECOMPRA/public_html/images/logos/png/chilecompra.png" height="60" style="vertical-align: top;" />
 			</div>
 		</div>
 		<div class="body">
@@ -240,7 +278,12 @@
 			</div>
 		</div>
 		<div class="footer">
-			<button id="finish-acept" ng-click="m.close5($event)"><i class="fa fa-check"></i> Aceptar y volver a Mercado Publico</button>
+			<button 
+				class="enter"
+				id="finish-acept"
+				ng-click="m.close5($event)">
+				<i class="fa fa-check"></i> Aceptar y volver a Mercado Publico
+			</button>
 		</div>
 	</div>
 </div>
