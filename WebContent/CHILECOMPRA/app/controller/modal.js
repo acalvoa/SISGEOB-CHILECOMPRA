@@ -90,6 +90,7 @@ GEOCGRAPP
 							});
 							prompt.PUB.set_first('<i class="fa fa-check"></i> Aceptar');
 							prompt.PUB.set_second('<i class="fa fa-times"></i> Cancelar');
+							prompt.PUB.set_second_class('rojo');
 							prompt.PUB.show();
 						}
 						else
