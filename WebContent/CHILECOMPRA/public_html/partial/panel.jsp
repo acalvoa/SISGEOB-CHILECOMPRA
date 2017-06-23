@@ -15,7 +15,7 @@
 			<div class="content">
 				<div class="licitacion">
 					<div class="bcontent" id="tituloid">
-						LICITACIO“N 573-11-PL14
+						LICITACIOï¿½N 573-11-PL14
 					</div>
 				</div>
 				<div class="kml">
@@ -94,7 +94,7 @@
 					<div class="botondere" ><i class="fa fa-chevron-right"></i></div>
 				</div>
 			</div>
-			<form name="formlinea">
+			<form name="formlinea" style="height: 100%">
 				<div class="formulario">	
 					<div class="bcontent">
 						<div class="form-tabs">

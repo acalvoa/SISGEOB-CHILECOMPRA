@@ -1,3 +1,4 @@
+@import "base.less";
 .panelnav{
 	.panel-content{	
 		.content-inicio{
@@ -6,7 +7,7 @@
 			width: 100%;
 			.content{
 				padding: 10px;
-				height: 91%;
+				height: 90%;
 				width: 100%;
 				.licitacion{
 					height: 13%;
@@ -220,17 +221,17 @@
 				}
 			}
 			.footer{
-				height: 9%;
+				height: 10%;
 				padding: 10px;
 				padding-top: 0px;
 				.botonfin{
 					cursor: pointer;
-					background: #118BF4;
+					background-color: @SisgeobColor;
 					color: #FFF;
-					font-size: 1.7em;
-					height: 100%;
+					font-size: 1.5em;
+					padding: 13px;
+					height: @ButtonsHeight;
 					text-align: center;
-					padding: 7px;
 					@media screen and (max-height: 681px) {
 						font-size: 1.3em;
 					}
