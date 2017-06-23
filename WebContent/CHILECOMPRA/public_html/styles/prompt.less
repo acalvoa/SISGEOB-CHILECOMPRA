@@ -1,3 +1,4 @@
+@import "base.less";
 .prompt{
 	position: absolute;
 	top:0%;
@@ -47,9 +48,6 @@
 				height: 80px;
 				width: 100%;
 				text-align: center;
-				img{
-					height: ~'calc(90% - 1px + 1px)';
-				}
 			}
 		}
 		.body{
@@ -91,6 +89,7 @@
 						text-align: center;
 					}
 				}
+				.rojo {background-color: #E83910 !important}
 			}
 			.float2{
 				position: absolute;
@@ -106,7 +105,7 @@
 					button{
 						height: 100%;
 						width: 100%;
-						background: #558ed5;
+						background-color: @SisgeobColor;
 						border: none;
 						height: 100%;
 						width: 150px;
@@ -114,6 +113,7 @@
 						text-align: center;
 					}
 				}
+				.rojo {background-color: #E83910 !important}
 			}
 		}
 		.infoparagraph{
