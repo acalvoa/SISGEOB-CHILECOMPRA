@@ -114,6 +114,9 @@
 						padding: 10px;
 						text-align: center;
 						font-size: 1.4em;
+						@media screen and (max-width: 768px) {
+							font-size: 1.3em;
+						}
 					}
 					.bcontent{
 						height: 87%;
@@ -232,8 +235,9 @@
 					padding: 13px;
 					height: @ButtonsHeight;
 					text-align: center;
-					@media screen and (max-height: 681px) {
+					@media screen and (max-height: 768px) {
 						font-size: 1.3em;
+						height: @ButtonsHeight768;
 					}
 				}
 			}

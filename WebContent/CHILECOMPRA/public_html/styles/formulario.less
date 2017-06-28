@@ -591,6 +591,9 @@
 					height: @ButtonsHeight;
 					width: inherit;
 					overflow-y: hidden;
+					@media screen and (max-height: 768px) {
+						height: @ButtonsHeight768;
+					}
 					.guardar{
 						float: right;
 						border: 1px solid #118BF4;
@@ -602,8 +605,8 @@
 						padding: 13px;
 						text-align: center;
 						cursor: pointer;
-						@media screen and (max-width: 1366px) and (max-height: 681px) {
-						 	font-size: 1.3em;
+						@media screen and (max-height: 768px) {
+							font-size: 1.3em;
 						}
 					}
 				}
