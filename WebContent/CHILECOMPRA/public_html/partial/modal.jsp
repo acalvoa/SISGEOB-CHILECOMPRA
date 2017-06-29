@@ -34,11 +34,6 @@
 								<div class="titulo">Manual SISGEOB</div>
 								<div class="file"><a href="CHILECOMPRA/public_html/download/Manual-SISGEOB.pdf" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></div>
 							</div>
-							<div class="item">
-								<div class="titulo">Video Tutorial KML</div>
-								<div class="file"><a href="https://www.youtube.com/watch?v=aWtqjt8Q-uk" target="_blank">
-								<i class="fa fa-youtube" aria-hidden="true"></i></a></div>
-							</div>
 						</div>
 					</div>
 					<div class="tcontent">
