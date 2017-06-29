@@ -14,17 +14,25 @@
 </head>
 <body>
 	<div class="container-fluid nopadding fullscreen" ng-app="GEOCGR">
-		<div class="row">&nbsp;</div>
-		<div class="row">
+		<div class="row" style="margin-top: 10px;">
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">&nbsp;</div>
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:center;"><img src="CHILECOMPRA/public_html/images/logoGeoMp.jpg" /></div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+				<object
+					data="CHILECOMPRA/public_html/images/logos/sisgeob.svg"
+					height="60"
+					type="image/svg+xml">
+					<img src="CHILECOMPRA/public_html/images/logos/png/sisgeob.png" height="60" />
+				</object>
+				<img src="CHILECOMPRA/public_html/images/logos/png/chilecompra.png" height="60" style="vertical-align: top;" />
+			</div>
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">&nbsp;</div>
 		</div>
-		<div class="row">&nbsp;</div>
-		<div class="row">
+
+		<div class="row" style="margin-top: 20px;">
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">&nbsp;</div>
-			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align:center;"><!-- ERROR BEGIN --><!-- ERROR END --></div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center"><!-- ERROR BEGIN --><!-- ERROR END --></div>
 			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">&nbsp;</div>
 		</div>
+	</div>
 </body>
 </html>

@@ -939,7 +939,7 @@
 													settings.spatial[name].PUB.clear_check();
 													GEOCGRCHI.PUB.set_control_spatial_state(false);
 													$(".visor").html("Archivo KML");
-													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .noubication").css("background", "#118BF4");
+													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .noubication").css("background", "#4980BB");
 													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .kmlfile .uploadbtn .fa-upload").css("display", "block");
 													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .kmlfile .uploadbtn .fa-trash-o").css("display", "none");
 													$.SYNC.FREE(2,"DRAW")
@@ -1003,7 +1003,7 @@
 													settings.spatial[name].PUB.clear_check();
 													GEOCGRCHI.PUB.set_control_spatial_state(false);
 													$(".visor").html("Archivo KML");
-													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .noubication").css("background", "#118BF4");
+													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .noubication").css("background", "#4980BB");
 													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .kmlfile .uploadbtn .fa-upload").css("display", "block");
 													$(".panelnav .panel-content .content-inicio .content .kml .bcontent .kmlfile .uploadbtn .fa-trash-o").css("display", "none");
 													$.SYNC.FREE(2,"DRAW")

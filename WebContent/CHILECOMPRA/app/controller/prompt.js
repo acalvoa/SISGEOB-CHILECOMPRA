@@ -23,9 +23,22 @@
 			var content = $('<div></div>').addClass("body").appendTo(box);
 			var footer = $('<div></div>').addClass("footer").appendTo(box);
 			// DEFINIMOS EL LOGO
-			var logo = $('<div></div>').addClass("logo").appendTo(header);
+			var logo = $('<div></div>').addClass("logo text-center").appendTo(header);
 			if(!_CONFIG._CUSTOM.BLOCK){
-				$("<img></img>").attr("src","CHILECOMPRA/public_html/images/logoGeoMp.jpg").appendTo(logo);
+				var object = $("<object></object>")
+					.attr("data", "CHILECOMPRA/public_html/images/logos/sisgeob.svg")
+					.attr("height", "60")
+					.attr("type", "image/svg+xml")
+					.appendTo(logo);
+				$("<img></img>")
+					.attr("src","CHILECOMPRA/public_html/images/logos/png/sisgeob.png")
+					.attr("height","60")
+					.appendTo(object);
+				$("<img></img>")
+					.attr("src","CHILECOMPRA/public_html/images/logos/png/chilecompra.png")
+					.attr("height","60")
+					.attr("style","vertical-align: top;")
+					.appendTo(logo);
 			}
 			else
 			{
@@ -120,14 +133,26 @@
 			set_first: function(txt){
 				SETTINGS.first.children('button').html(txt);
 			},
+			set_first_class: function(txt){
+				SETTINGS.first.children('button').addClass(txt);
+			},
 			set_second: function(txt){
 				SETTINGS.second.children('button').html(txt);
+			},
+			set_second_class: function(txt){
+				SETTINGS.second.children('button').addClass(txt);
 			},
 			set_third: function(txt){
 				SETTINGS.third.children('button').html(txt);
 			},
+			set_third_class: function(txt){
+				SETTINGS.third.children('button').addClass(txt);
+			},
 			set_centro: function(txt){
 				SETTINGS.centro.children('button').html(txt);
+			},
+			set_centro_class: function(txt){
+				SETTINGS.centro.children('button').addClass(txt);
 			}
 		}
 		// LLAMAMOS AL CONSTRUCTOR DE LA CLASE

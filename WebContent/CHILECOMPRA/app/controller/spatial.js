@@ -471,9 +471,9 @@
 						$.SYNC.FREE(3,"DRAW");
 					}
 					//CASIGNAMOS LOS COLORES Y DESBLOQUEOS CORRESPONDIENTES A CADA ELEMENTO
-					$(".panelnav .panel-content .content-inicio .content .kml .bcontent .kmlfile .uploadbtn").css("background", "#118BF4");
+					$(".panelnav .panel-content .content-inicio .content .kml .bcontent .kmlfile .uploadbtn").css("background", "#4980BB");
 					$("#uploadBtn").prop("disabled", true);
-					$(".panelnav .panel-content .content-inicio .content .kml .bcontent .noubication").css("background", "#118BF4");
+					$(".panelnav .panel-content .content-inicio .content .kml .bcontent .noubication").css("background", "#4980BB");
 					MAPA.PUB.verify_draw();
 					$(".kmlfile .visor").html("Archivo KML");
 					$("#uploadBtn").prop("disabled",false);

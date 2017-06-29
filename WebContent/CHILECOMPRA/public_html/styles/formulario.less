@@ -1,3 +1,4 @@
+@import "base.less";
 .panelnav{
 	.panel-content{	
 		.content-formulario{
@@ -16,7 +17,7 @@
 						height: inherit;
 						font-size: 3em;
 						width: 33.3%;
-						color: #118BF4;
+						color: @SisgeobColor;
 						float: left;
 						padding: 10px;
 						text-align: right;
@@ -57,7 +58,7 @@
 						font-size: 3em;
 						float: left;
 						padding: 10px;
-						color: #118BF4;
+						color: @SisgeobColor;
 						text-align: left;
 						@media screen and (max-width: 1366px) and (max-height: 681px) {
 							padding-top: 5px;
@@ -72,7 +73,7 @@
 				padding:10px;
 				padding-top: 0px;
 				font-size: 1.2em;
-				height: 280px;
+				height: 50%;
 				// PANTALLA 1366x768
 				@media screen and (max-width: 1366px) and (max-height: 768px) {
 				 	font-size: 1em;
@@ -232,7 +233,7 @@
 						    bottom: 0px;
 						    position:absolute;
 						    pointer-events:none;
-						    background:#118BF4;
+						    background-color:@SisgeobColor;
 						    color: #FFF;
 						    // PANTALLA 1366x768
 							@media screen and (max-width: 1366px) and (max-height: 768px) {
@@ -343,7 +344,7 @@
 							}
 							.picker{
 								float: left;
-								background: #118BF4;
+								background-color: @SisgeobColor;
 								border: none;
 								width: 20%;
 								height: 100%;
@@ -355,7 +356,7 @@
 			}
 			.form-comuna{
 				font-size: 1.2em;
-				height: 105px;
+				height: 15%;
 				padding-top: 10px;
 				// PANTALLA 1366x768
 				@media screen and (max-width: 1366px) and (max-height: 768px) {
@@ -425,7 +426,7 @@
 								width: 20%;
 								height: 100%;
 								text-align: center;
-								background: #118BF4;
+								background-color: @SisgeobColor;
 								color: #FFF;
 								border: none;	
 							}
@@ -472,9 +473,8 @@
 			}	
 			.form-tecnicos{
 				font-size: 1.2em;
-				padding:10px;
-				padding-top: 10px;
-				height: 12%;
+				padding: 0 10px;
+				height: 10%;
 				// PANTALLA 1366x768
 				@media screen and (max-width: 1366px) and (max-height: 681px) {
 				 	padding-top: 0px;
@@ -551,7 +551,7 @@
 							}
 							.picker{
 								float: left;
-								background: #118BF4;
+								background-color: @SisgeobColor;
 								border: none;
 								width: 20%;
 								height: 100%;
@@ -563,7 +563,7 @@
 				
 			}
 			.footer{
-				height: 55px;
+				height: 10%;
 				width: 100%;
 				padding:10px;
 				padding-top: 0px;
@@ -588,26 +588,26 @@
 				@media screen and (max-width: 1280px) and (max-height: 720px) {
 				}
 				.bcontent{
-					height: 95%;
+					height: @ButtonsHeight;
 					width: inherit;
 					overflow-y: hidden;
+					@media screen and (max-height: 768px) {
+						height: @ButtonsHeight768;
+					}
 					.guardar{
 						float: right;
 						border: 1px solid #118BF4;
-						color: #118BF4;
+						color: #FFF;
+						background-color: @SisgeobColor;
 						height: 100%;
-						width: 50%;
+						width: 100%;
 						font-size: 1.5em;
-						padding: 10px;
+						padding: 13px;
 						text-align: center;
 						cursor: pointer;
-						@media screen and (max-width: 1366px) and (max-height: 681px) {
-						 	font-size: 1.3em;
+						@media screen and (max-height: 768px) {
+							font-size: 1.3em;
 						}
-					}
-					.verde{
-						color: #249836;
-						border: 1px #249836 solid;
 					}
 				}
 			}
