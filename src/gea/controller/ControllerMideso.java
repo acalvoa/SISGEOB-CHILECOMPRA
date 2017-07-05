@@ -55,7 +55,7 @@ public class ControllerMideso extends ControllerBase {
 		Date date = new Date();
 		String fecha = dateFormat.format(date);
 		
-		//Par·metros
+		//Par√°metros
 		//String parte = "0";
 		
 		MessageFactory messageFactory = MessageFactory.newInstance();
