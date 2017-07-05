@@ -1,0 +1,51 @@
+<project name="Pasarela SISGEOB Chilecompra" default="dist">
+    <!-- Global properties -->
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="src.dir" value="src"/>
+    <property name="web.dir" value="WebContent"/>
+    <property name="lib.dir" value="${web.dir}/WEB-INF/lib"/>
+
+    <!-- Classpath -->
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar" />
+    </path>
+
+    <!-- Targets -->
+    <target name="clean" description="Clean up">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <target name="compile" description="Compile the source">
+        <mkdir dir="${build.dir}/classes"/>
+        <javac 
+            srcdir="${src.dir}/gea:${src.dir}/SPATIAL"
+            destdir="${build.dir}/classes"
+            target="1.6"
+            source="1.6" 
+            includeantruntime="false"
+            includeJavaRuntime="true"
+            classpathref="classpath" />
+    </target>
+
+    <target name="dist" depends="compile" description="Generate the distribution">
+        <mkdir dir="${dist.dir}"/>
+
+        <war destfile="${dist.dir}/sisgeob-chilecompra.war" webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}" excludes="META-INF WEB-INF" />
+
+            <lib dir="${lib.dir}" />
+
+            <classes dir="${web.dir}/WEB-INF/classes"/>
+            <classes dir="${build.dir}/classes"/>
+        </war>
+    </target>
+
+    <target name="dist-ear" depends="dist" description="Generate the EAR distribution">
+        <ear destfile="${dist.dir}/sisgeob-chilecompra.ear" appxml="${web.dir}/META-INF/weblogic-application.xml" >
+            <fileset dir="${dist.dir}" includes="*.war"/>
+        </ear>
+        <delete file="${dist.dir}/sisgeob-chilecompra.war"/>
+    </target>
+</project>
