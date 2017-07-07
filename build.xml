@@ -4,20 +4,56 @@
     <property name="dist.dir" value="dist"/>
     <property name="src.dir" value="src"/>
     <property name="web.dir" value="WebContent"/>
+    <property name="web.project.dir" value="${web.dir}/CHILECOMPRA"/>
+    <property name="properties.dir" value="Properties"/>
     <property name="lib.dir" value="${web.dir}/WEB-INF/lib"/>
+
+    <property name="env" value="develop"/>
 
     <!-- Classpath -->
     <path id="classpath">
         <fileset dir="${lib.dir}" includes="**/*.jar" />
     </path>
 
-    <!-- Targets -->
+    <!-- Private Targets -->
+    <target name="check-properties">
+        <available file="${properties.dir}/${env}.properties" property="properties.exist"/>
+        <fail message="File not found: ${properties.dir}/${env}.properties">
+            <condition><not>
+                <available file="${properties.dir}/${env}.properties" />
+            </not></condition>
+        </fail>
+        <echo message="${properties.dir}/${env}.properties load" level="info" />
+    </target>
+
+    <target name="write-properties" depends="check-properties" if="properties.exist" >
+        <property file="${properties.dir}/${env}.properties" />
+
+        <echo level="info" message="Creating new property file: ${web.project.dir}/app/config/properties.json" />
+        <!-- Esta mala indentación es para que echo escriba de buena manera el archivo -->
+<echo file="${web.project.dir}/app/config/properties.json">{
+    "registro_referencia_url": "${REGISTROURL}",
+    "cerrar_url": "${CERRARURL}"
+}
+</echo>
+        
+        <propertyfile
+            file="${web.dir}/WEB-INF/classes/properties/config.properties" 
+            comment="Properties">
+            <entry key="PATH_CONFIG_FILE" value="${PATH_CONFIG_FILE}" />
+            <entry key="ENV" value="${ENV}" />
+        </propertyfile>
+    </target>
+
+    <!-- Public Targets -->
     <target name="clean" description="Clean up">
         <delete dir="${build.dir}"/>
         <delete dir="${dist.dir}"/>
+        <delete file="${web.dir}/WEB-INF/properties/config.properties"/>
+        <delete file="${web.project.dir}/app/config/properties.json" />
     </target>
 
-    <target name="compile" description="Compile the source">
+    <target name="compile" depends="write-properties" description="Compile the source">
         <mkdir dir="${build.dir}/classes"/>
         <javac 
             srcdir="${src.dir}/gea:${src.dir}/SPATIAL"
@@ -33,11 +69,7 @@
         <mkdir dir="${dist.dir}"/>
 
         <war destfile="${dist.dir}/sisgeob-chilecompra.war" webxml="${web.dir}/WEB-INF/web.xml">
-            <fileset dir="${web.dir}" excludes="META-INF WEB-INF" />
-
-            <lib dir="${lib.dir}" />
-
-            <classes dir="${web.dir}/WEB-INF/classes"/>
+            <fileset dir="${web.dir}" />
             <classes dir="${build.dir}/classes"/>
         </war>
     </target>
