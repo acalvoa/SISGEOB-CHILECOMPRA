@@ -43,9 +43,11 @@ GEOCGRAPP
 		this.close = function(e){
 			$("#modal2").fadeOut(1000);
 		}
+		
 		this.mercadopublico = function(){
-			window.location = 'http://www.mercadopublico.cl/Procurement/CerrarGeoCGR.htm';
-			// window.location = 'http://testqa.mercadopublico.cl/Procurement/CerrarGeoCGR.htm';
+			PROPERTIES.get_propertie("cerrar_url", function(propertie) {
+				window.location = propertie;
+			});
 		}
 	})
 	.controller('modal3', function(){
@@ -55,10 +57,13 @@ GEOCGRAPP
 		this.close4 = function(e){
 			$("#modal4").fadeOut(1000);
 		}
+		
 		this.close5 = function(e){
-			window.location = 'http://www.mercadopublico.cl/Procurement/CerrarGeoCGR.htm';
-			// window.location = 'http://testqa.mercadopublico.cl/Procurement/CerrarGeoCGR.htm';
+			PROPERTIES.get_propertie("cerrar_url", function(propertie) {
+				window.location = propertie;
+			});
 		}
+		
 	})
 	.controller('modalServicios', function(){
 		this.read = function(e){
