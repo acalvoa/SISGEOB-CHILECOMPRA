@@ -1,6 +1,9 @@
 package gea.properties;
 
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Properties;
 
 import gea.properties.PropertyManagerException;
@@ -15,22 +18,19 @@ public class PropertyManager {
 	private static PropertyManager instance=null;
 
     private PropertyManager(){
-        if(System.getProperty("os.name").equals("Linux") || System.getProperty("os.name").equals("Unix")){
-        	this.PathProperties ="/home/GEOCGR/config.properties";
-        	this.AMBIENTE_DESPLIEGUE ="DESARROLLO";
-        	//this.PathProperties ="/home/GEOCGR/properties/config.properties";
-        	//this.AMBIENTE_DESPLIEGUE ="PRETESTING";
-        	//this.PathProperties ="/test110/dominios/properties/QA/config-geocgr/config.properties";
-        	//this.AMBIENTE_DESPLIEGUE="TESTING";
-        	//this.PathProperties ="/bea110/dominios/properties/PRODUCCION/config-geocgr/config.properties";
-        	//this.AMBIENTE_DESPLIEGUE="PRODUCCIÓN";
-        }
-        else
-        {	   
-        	this.PathProperties="C:\\GEOCGR\\config.properties";
-        	this.AMBIENTE_DESPLIEGUE ="DESARROLLO";
-        }
-        this.GEOCGR_FILE= new CargaPropiedades().getFile("GEOCGR");
+    	ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		InputStream config_file = classLoader.getResourceAsStream("/properties/config.properties");
+		
+		Properties prop = new Properties();
+		try {
+			prop.load(config_file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		this.PathProperties = prop.getProperty("PATH_CONFIG_FILE");
+		this.AMBIENTE_DESPLIEGUE = prop.getProperty("ENV");
+        this.GEOCGR_FILE = new CargaPropiedades().getFile("GEOCGR");
     }
 	public static synchronized PropertyManager getInstance()
 	{
