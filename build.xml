@@ -26,7 +26,13 @@
         <echo message="${properties.dir}/${env}.properties load" level="info" />
     </target>
 
-    <target name="write-properties" depends="check-properties" if="properties.exist" >
+    <target name="clean-configs">
+        <delete file="${web.dir}/WEB-INF/properties/config.properties"/>
+        <delete file="${web.project.dir}/app/config/properties.json" />
+        <delete file="${properties.dir}/config.properties" />
+    </target>
+
+    <target name="write-properties" depends="check-properties, clean-configs" if="properties.exist" >
         <property file="${properties.dir}/${env}.properties" />
 
         <echo level="info" message="Creating new property file: ${web.project.dir}/app/config/properties.json" />
@@ -47,7 +53,7 @@
         <!-- Este es el archivo que debe ser copiado en el servidor (PATH_CONFIG_FILE)-->
         <propertyfile
             file="${properties.dir}/config.properties" 
-            comment="Properties ${ENV}">
+            comment="Properties ${ENV} ${PATH_CONFIG_FILE}">
             <entry key="DBHOST" value="${DBHOST}" />
             <entry key="DBPORT" value="${DBPORT}" />
             <entry key="DBUSERNAME" value="${DBUSERNAME}" />
@@ -63,11 +69,9 @@
     </target>
 
     <!-- Public Targets -->
-    <target name="clean" description="Clean up">
+    <target name="clean" depends="clean-configs" description="Clean up">
         <delete dir="${build.dir}"/>
         <delete dir="${dist.dir}"/>
-        <delete file="${web.dir}/WEB-INF/properties/config.properties"/>
-        <delete file="${web.project.dir}/app/config/properties.json" />
     </target>
 
     <target name="compile" depends="write-properties" description="Compile the source">
