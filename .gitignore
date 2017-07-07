@@ -1,3 +1,6 @@
 build/
 dist/
 .svn
+
+Properties/config.properties
+WebContent/CHILECOMPRA/app/config/properties.json
