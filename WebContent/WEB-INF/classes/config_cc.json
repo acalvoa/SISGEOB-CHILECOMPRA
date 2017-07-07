@@ -44,7 +44,8 @@
 			"model", 
 			"controller", 
 			"scrollbar", 
-			"cookie"
+			"cookie",
+			"properties"
 		],
 		
 		"EXTERNAL": [
