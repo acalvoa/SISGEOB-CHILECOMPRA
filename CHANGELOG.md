@@ -1,5 +1,7 @@
 # Changelog
 
+## [Properties](!6) (07/07/2017)
+
 ## [Ant build](!5) (05/07/2017)
 
 ## [Redesign](!4) (29/06/2017)

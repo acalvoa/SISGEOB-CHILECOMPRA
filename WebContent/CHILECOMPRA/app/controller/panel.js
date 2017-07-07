@@ -153,45 +153,48 @@ GEOCGRAPP
 							LOADING.hide();
 						//	console.log(result);
 						}
-						$.ajax({
-							type: "POST",
-							data: JSON.stringify(geocgrdata),
-							dataType: "JSON", 
-							url: "http://api.mercadopublico.cl/servicios/v1/privado/GeoCgr/RegistroGeoReferencia.json?ticket=D6DF9A69-2F0E-482E-B1F4-55A234C8193F",
-							contentType: "application/json",
-							crossdomain: true,
-							success: function(resultado){
-								if(resultado.Respuesta == "OK"){
-									LOADING.hide();
-									$("#modal2").show();
-								}
-								else
-								{
-									if(result.STATUS == "OK"){
-										alert("El servicio de Mercado Público no validó la transacción. Contacte con los administradores de la plataforma.\n\r Código Mercado Público: "+resultado.Respuesta);
+						
+						PROPERTIES.get_propertie("registro_referencia_url", function(propertie) {
+							$.ajax({
+								type: "POST",
+								data: JSON.stringify(geocgrdata),
+								dataType: "JSON", 
+								url: propertie,
+								contentType: "application/json",
+								crossdomain: true,
+								success: function(resultado){
+									if(resultado.Respuesta == "OK"){
 										LOADING.hide();
-										$("#modal5").show();
+										$("#modal2").show();
 									}
 									else
 									{
-										alert("El servicio de Mercado Público no validó la transacción, debido a errores en la tramitación del expediente."); 
+										if(result.STATUS == "OK"){
+											alert("El servicio de Mercado Público no validó la transacción. Contacte con los administradores de la plataforma.\n\r Código Mercado Público: "+resultado.Respuesta);
+											LOADING.hide();
+											$("#modal5").show();
+										}
+										else
+										{
+											alert("El servicio de Mercado Público no validó la transacción, debido a errores en la tramitación del expediente."); 
+											LOADING.hide();
+											$("#modal5").show();
+										}
+									}
+								},
+								error: function (xhr, status, error) {
+									alert("Existe un error al contactar con el servicio de verificación de Mercado Público. Contacte con los administradores de la plataforma.");
+									LOADING.hide();
+									$("#modal5").show();
+								},
+								statusCode: {
+									404: function() {
+										alert("El servicio de validación de Mercado Público no se encuentra disponible. Contacte con los administradores de la plataforma.");
 										LOADING.hide();
 										$("#modal5").show();
-									}
+									}  
 								}
-							},
-		                    error: function (xhr, status, error) {
-		                        alert("Existe un error al contactar con el servicio de verificación de Mercado Público. Contacte con los administradores de la plataforma.");
-		                        LOADING.hide();
-		                        $("#modal5").show();
-		                    },
-		                    statusCode: {
-							    404: function() {
-							    	alert("El servicio de validación de Mercado Público no se encuentra disponible. Contacte con los administradores de la plataforma.");
-							    	LOADING.hide();
-							      	$("#modal5").show();
-							    }  
-							}
+							});
 						});
 					}
 				});
