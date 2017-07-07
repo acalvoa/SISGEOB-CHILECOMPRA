@@ -43,6 +43,23 @@
             <entry key="PATH_CONFIG_FILE" value="${PATH_CONFIG_FILE}" />
             <entry key="ENV" value="${ENV}" />
         </propertyfile>
+
+        <!-- Este es el archivo que debe ser copiado en el servidor (PATH_CONFIG_FILE)-->
+        <propertyfile
+            file="${properties.dir}/config.properties" 
+            comment="Properties ${ENV}">
+            <entry key="DBHOST" value="${DBHOST}" />
+            <entry key="DBPORT" value="${DBPORT}" />
+            <entry key="DBUSERNAME" value="${DBUSERNAME}" />
+            <entry key="DBPASSWORD" value="${DBPASSWORD}" />
+            <entry key="DBDATABASE" value="${DBDATABASE}" />
+            <entry key="APPPORT" value="${APPPORT}" />
+            <entry key="APPHOST" value="${APPHOST}" />
+            <entry key="CLIENTPORT" value="${CLIENTPORT}" />
+            <entry key="URLMIDESO" value="${URLMIDESO}" />
+            <entry key="CONSULTAIDI" value="${CONSULTAIDI}" />
+            <entry key="CONSULTAFICHA" value="${CONSULTAFICHA}" />
+        </propertyfile>
     </target>
 
     <!-- Public Targets -->
