@@ -39,6 +39,9 @@ import gea.utils.Exception.ErrorDBDataNotExistsException;
 import gea.utils.trewautils.Mapeo;
 
 public class AdjudicacionWs {
+	public static boolean isOC(String codigo){
+		return codigo.matches(".*-SE.*|.*-OC.*|.*-D1.*|.*-C1.*|.*-F3.*|.*-G1.*|.*-R1.*|.*-CA.*|.*-CM.*|.*-FG.*|.*-TL.*");
+	}
 	public static JSONObject Adjudicacion(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		JSONObject retorno = new JSONObject();
 		String ORDERS = null;
@@ -72,6 +75,7 @@ public class AdjudicacionWs {
 				Model<ModelAuth> KEY = new Model<ModelAuth>(ModelAuth.class);
 				Model<ModelChileTrans> TRANS = new Model<ModelChileTrans>(ModelChileTrans.class);
 				for(int i=0; i<orders.length(); i++){
+					System.out.println(isOC(orders.getJSONObject(i).getString("ORDER")));
 					JSONObject mercado;
 					try { 
 						//TRANSFERIMOS A ORDERS SI EXISTE

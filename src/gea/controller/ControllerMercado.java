@@ -6,8 +6,11 @@ import gea.framework.ModelResult;
 import gea.framework.Request;
 import gea.framework.Response;
 import gea.mercadopublico.Formulario;
+import gea.mercadopublico.MPData;
 import gea.mercadopublico.MercadoData;
 import gea.mercadopublico.MercadoPublico;
+import gea.mercadopublico.OCData;
+import gea.mercadopublico.OrdenDeCompra;
 import gea.model.ModelAdjudicacionContrato;
 import gea.model.ModelCodigoBIP;
 import gea.model.ModelCodigoINI;
@@ -55,12 +58,19 @@ import SPATIAL.Spatial;
 public class ControllerMercado extends ControllerBase{
 	// ACTION PARA GENERAR GET DE MERCADO
 	public static void get(Request req, Response res) throws ErrorCodeException{
-		MercadoPublico mercado;
+		
 		try {
-			mercado = new MercadoPublico(req.getData().getString("id").toUpperCase());
 			JSONObject retorno = new JSONObject();
 			retorno.put("STATUS", "OK");
-			retorno.put("DATA", mercado.principal());
+			if(isOC(req.getData().getString("id").toUpperCase())){
+				OrdenDeCompra mercado = new OrdenDeCompra(req.getData().getString("id").toUpperCase());
+				retorno.put("DATA", mercado.principal());
+			}
+			else
+			{
+				MercadoPublico mercado = new MercadoPublico(req.getData().getString("id").toUpperCase());
+				retorno.put("DATA", mercado.principal());
+			}
 			retorno.put("DATAREG", GETEXISTS(req.getData().getString("id").toUpperCase()));
 			res.SendCallback(retorno);
 		} catch (JSONException e) {
@@ -215,13 +225,10 @@ public class ControllerMercado extends ControllerBase{
 	}
 	//METODO PARA IDENTIFICAR UNA OC
 	private static boolean isOC(String licitacion){
-		if(licitacion.matches("(-OC.*|-SE.*|-D1.*|-C1.*|-F3.*|-G1.*|-R1.*|-CA.*|-CM.*|-FG.*|-TL.*)")){
+		if(licitacion.matches(".*-SE.*|.*-OC.*|.*-D1.*|.*-C1.*|.*-F3.*|.*-G1.*|.*-R1.*|.*-CA.*|.*-CM.*|.*-FG.*|.*-TL.*")){
 			return true;
 		}
 		return false;
-	}
-	public static void oc(Request req, Response res) throws ErrorDBDataNotExistsException, ErrorCodeException{
-		
 	}
 	// ACTION PARA GUARDAR LOS DATOS DEL FORMULARIO
 	public static void set(Request req, Response res) throws ErrorDBDataNotExistsException, ErrorCodeException{
@@ -230,12 +237,18 @@ public class ControllerMercado extends ControllerBase{
 		//DEFINIMOS EL OBJETO QUE USAREMOS PARA EFECTOS DE RETORNO
 		JSONObject retorno = new JSONObject();
 		//EN PRIMER CASO CAMPUTAREMOS LA INFORMACION DE MERCADO PUBLICO
-		MercadoData mercado = null;
+		MPData mercado = null;
 		JSONArray formulario = new JSONArray();
 		String KMLFILE = null;
 		try {
 			// LLAMADA A LA API DE MERCADO PUBLICO
-			mercado = new MercadoData(req.getData().getString("id_mercado"));
+			if(isOC(req.getData().getString("id_mercado"))){
+				mercado = new OCData(req.getData().getString("id_mercado"));
+			}
+			else
+			{
+				mercado = new MercadoData(req.getData().getString("id_mercado"));
+			}
 			// OBTENGO LOS FORMULARIOS ENTREGADOS POR EL FORMULARIO DE CHILECOMPRA
 			formulario = req.getData().getJSONArray("formulario");
 			// OBTENGO LOS FORMULARIOS ENTREGADOS POR EL FORMULARIO DE CHILECOMPRA
@@ -263,8 +276,9 @@ public class ControllerMercado extends ControllerBase{
 			retorno.put("ERROR", "ERROR AL EFECTUAR OPERACIONES EN LA BASE DE DATOS DE GEO.");
 			retorno.put("ERRORMESSAGE", e.getMessage());
 			res.SendCallback(retorno);
+			e.printStackTrace();
 			return;
-		}		
+		}	
 		// EMPEZAMOS CON LAS OPERACIONES
 		// ITERAMOS LOS FORMULARIOS
 		for(int i =0; i < formulario.length() ; i++){
@@ -338,7 +352,7 @@ public class ControllerMercado extends ControllerBase{
 		}
 		res.SendCallback(retorno);
 	}
-	private static boolean INPROYECTO(Formulario _FORM, MercadoData mercado) throws ErrorChileCompraRegException{
+	private static boolean INPROYECTO(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
 		try{
 			// CARGAMOS EL MODELO DE DATOS
 			Model<ModelProyectos> PROYECTO = new Model<ModelProyectos>(ModelProyectos.class);
@@ -351,11 +365,11 @@ public class ControllerMercado extends ControllerBase{
 			PROY.put("F_MODIFICA", "01-01-1900");
 			PROY.put("C_TIPO_REGISTRO", "N");
 			PROY.put("F_CREACION", _FORM.CREATEDATE);
-			PROY.put("D_DESCRIPCION", mercado.DESCRIPCION);
-			PROY.put("C_EXENTO_AFECTO", mercado.TIPODOC);
+			PROY.put("D_DESCRIPCION", mercado.getDESCRIPCION());
+			PROY.put("C_EXENTO_AFECTO", mercado.getTIPODOC());
 			PROY.put("X_PROY", _FORM.X_PROY);
 			PROY.put("C_TIPO_PROYECTO", _FORM.TYPECONTRACT);
-			PROY.put("T_TITULO_PROYECTO", mercado.TITULOPROY);
+			PROY.put("T_TITULO_PROYECTO", mercado.getTITULOPROY());
 			PROY.put("UORG_X_UORG", _FORM.SERVMANDANTE);
 			PROY.put("CLAS_X_CLAS", _FORM.CLASIFICACTION);
 			PROY.put("SUBC_X_SUBC", _FORM.SUBCLASIFICATION);
@@ -371,7 +385,7 @@ public class ControllerMercado extends ControllerBase{
 			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE PROYECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 1 DE REGISTRO. ERROR: "+e.getMessage());
 		}
 	}
-	private static void INBIP(Formulario _FORM, MercadoData mercado) throws ErrorChileCompraRegException{
+	private static void INBIP(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
 		if(_FORM.CODBIP != null){
 			try{
 				Model<ModelCodigoBIP> CODBIP = new Model<ModelCodigoBIP>(ModelCodigoBIP.class);
@@ -439,7 +453,7 @@ public class ControllerMercado extends ControllerBase{
 		}
 	}
 	
-	private static void ININI(Formulario _FORM, MercadoData mercado) throws ErrorChileCompraRegException{
+	private static void ININI(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
 		if(_FORM.CODINI != null){
 			try{
 				Model<ModelCodigoINI> CODINI = new Model<ModelCodigoINI>(ModelCodigoINI.class);
@@ -466,7 +480,7 @@ public class ControllerMercado extends ControllerBase{
 			}
 		}
 	}
-	private static boolean INCODMERCADOPUB(Formulario _FORM, MercadoData mercado) throws ErrorChileCompraRegException{
+	private static boolean INCODMERCADOPUB(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
 		try{
 			Model<ModelIdsMercadoUnico> IDMEPUBLIC = new Model<ModelIdsMercadoUnico>(ModelIdsMercadoUnico.class);
 			// GENERAMOS EL OBJETO DE INGRESOLIN
@@ -478,7 +492,7 @@ public class ControllerMercado extends ControllerBase{
 			MU.put("F_MODIFICA", "01-01-1900");
 			MU.put("PROY_X_PROY", _FORM.X_PROY);
 			MU.put("X_IDMU", IDMEPUBLIC.getNextVal("SEQ_GEO_IDS_MERCADO_UNICO"));
-			MU.put("C_ID_MERC_UNICO", mercado.CODIGOMP);
+			MU.put("C_ID_MERC_UNICO", mercado.getCODIGOMP());
 			MU.put("LINEA", _FORM.LINE);
 			MU.put("ENTIDAD", _FORM.ENTIDAD);
 			MU.put("CODIGO_ENTIDAD", _FORM.CODIGO_ENTIDAD);
@@ -495,7 +509,7 @@ public class ControllerMercado extends ControllerBase{
 			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ID MERCADO PUBLICO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 4 DE REGISTRO. ERROR: "+e.getMessage());
 		}
 	}
-	private static boolean INUBICATION(Formulario _FORM, MercadoData mercado) throws ErrorChileCompraRegException{
+	private static boolean INUBICATION(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
 		try{
 			if(_FORM.COMUNA.length() > 0){
 				Model<ModelComunalComp> COMUNAS = new Model<ModelComunalComp>(ModelComunalComp.class);
@@ -531,7 +545,7 @@ public class ControllerMercado extends ControllerBase{
 			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE UBICACION DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 5 DE REGISTRO. ERROR: "+e.getMessage());
 		}
 	}
-	private static boolean INTOMARAZON(Formulario _FORM, MercadoData mercado) throws ErrorChileCompraRegException{
+	private static boolean INTOMARAZON(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
 		try{
 			// CARGAMOS EL MODELO DE DATOS
 			Model<ModelTomaRazon> TOMARAZON = new Model<ModelTomaRazon>(ModelTomaRazon.class);
@@ -548,7 +562,7 @@ public class ControllerMercado extends ControllerBase{
 			TRAZON.put("C_NUMERO_DOCUMENTO", "");
 			TRAZON.put("N_ANHO_DOCUMENTO", 0);
 			TRAZON.put("UORG_X_UORG", _FORM.SERVCONTRATANTE);
-			TRAZON.put("RETR_X_RETR", mercado.TOMARAZON);
+			TRAZON.put("RETR_X_RETR", mercado.getTOMARAZON());
 			TRAZON.put("F_PROC_TOMA_RAZON", "01-01-1900");
 			TRAZON.put("PROY_X_PROY", _FORM.X_PROY);
 			return TOMARAZON.insert(TRAZON.toString());
@@ -563,7 +577,7 @@ public class ControllerMercado extends ControllerBase{
 			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE TOMA DE RAZON DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 6 DE REGISTRO. ERROR: "+e.getMessage());
 		}
 	}
-	private static boolean INADJUDICACION(Formulario _FORM, MercadoData mercado) throws ErrorChileCompraRegException{
+	private static boolean INADJUDICACION(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
 		try{
 			// CARGAMOS EL MODELO DE DATOS
 			Model<ModelAdjudicacionContrato> ADJUCONTRACT = new Model<ModelAdjudicacionContrato>(ModelAdjudicacionContrato.class);
@@ -575,17 +589,17 @@ public class ControllerMercado extends ControllerBase{
 			ADJU.put("MODIFICADO", "N");
 			ADJU.put("F_MODIFICA", "01-01-1900");
 			ADJU.put("X_OPAC", ADJUCONTRACT.getNextVal("SEQ_GEO_OP_ADJUDICACIONES_CONT"));
-			ADJU.put("C_TIPO_DOCUMENTO", mercado.TIPODOC);
+			ADJU.put("C_TIPO_DOCUMENTO", mercado.getTIPODOC());
 			ADJU.put("TORA_X_TORA", _FORM.X_TORA);
 			ADJU.put("C_INSPECTOR_FISCAL", "N");
-			ADJU.put("C_PROCEDIMIENTO_CONTRATACION", mercado.PROCECONTRATACION);
+			ADJU.put("C_PROCEDIMIENTO_CONTRATACION", mercado.getPROCECONTRATACION());
 			ADJU.put("MODC_X_MODC", _FORM.MODCONTRA);
 			ADJU.put("D_CAUSA_FUNDAMENTO_NORMATIVO", _FORM.CAUSAFUND);
 			ADJU.put("CAPP_X_CAPP", _FORM.CAUSEORDER);
 			ADJU.put("D_NORMA", _FORM.NORMA);
 			ADJU.put("CONT_X_CONT", "6730"); // CAMPO AGREGADO A LA DB QUE INDICA SIN CONTRATISTA
 			ADJU.put("N_PLAZO_EJECUCION", 0);
-			ADJU.put("UNTI_X_UNTI_PLAZO_EJEC",mercado.UNIDATIEMPO);
+			ADJU.put("UNTI_X_UNTI_PLAZO_EJEC",mercado.getUNIDATIEMPO());
 			ADJU.put("COPL_X_COPL", 50);
 			ADJU.put("D_COMPUTO_PLAZO", "NO POSEE");
 			ADJU.put("F_INICIO_OBRA", _FORM.INIDATE);
@@ -593,7 +607,7 @@ public class ControllerMercado extends ControllerBase{
 			ADJU.put("TIFI_X_TIFI", _FORM.TFOUNDING);
 			ADJU.put("D_TIPO_FINANCIAMIENTO", "");
 			ADJU.put("MONTO_ADJUDICADO_CLP", -1);
-			ADJU.put("MONEDA_MONTO_MP", mercado.MONEDA);
+			ADJU.put("MONEDA_MONTO_MP", mercado.getMONEDA());
 			ADJU.put("TIMO_X_TIMO_MONTO_CONTRATO",1);
 			ADJU.put("SIRE_X_SIRE", "60");
 			ADJU.put("D_SISTEMA_REAJUSTE", "NO POSEE");
@@ -621,7 +635,7 @@ public class ControllerMercado extends ControllerBase{
 			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ADJUDICACION DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 7 DE REGISTRO. ERROR: "+e.getMessage());
 		}
 	}
-	private static boolean INSPATIAL(Formulario _FORM, MercadoData mercado, Request req, String kMLFILE) throws ErrorChileCompraRegException{
+	private static boolean INSPATIAL(Formulario _FORM, MPData mercado, Request req, String kMLFILE) throws ErrorChileCompraRegException{
 		try{
 			// CARGAMOS EL MODELO DE DATOS
 			Model<ModelSpatial> SPA = new Model<ModelSpatial>(ModelSpatial.class, req);

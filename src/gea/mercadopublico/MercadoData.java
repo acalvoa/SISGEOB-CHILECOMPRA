@@ -12,7 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MercadoData {
+public class MercadoData implements MPData{
 	public String DESCRIPCION;
 	public Integer TOMARAZON;
 	public Integer PLAZOBRA;
@@ -49,6 +49,45 @@ public class MercadoData {
 		} catch (IOException e) {
 			throw new ErrorReadServiceException(e.getMessage());
 		}
+	}
+	public String getDESCRIPCION() {
+		return DESCRIPCION;
+	}
+	public Integer getTOMARAZON() {
+		return TOMARAZON;
+	}
+	public Integer getPLAZOBRA() {
+		return PLAZOBRA;
+	}
+	public Integer getUNIDATIEMPO() {
+		return UNIDATIEMPO;
+	}
+	public Integer getMONEDA() {
+		return MONEDA;
+	}
+	public String getTIPO() {
+		return TIPO;
+	}
+	public JSONArray getITEMS() {
+		return ITEMS;
+	}
+	public String getTITULOPROY() {
+		return TITULOPROY;
+	}
+	public String getCODIGOMP() {
+		return CODIGOMP;
+	}
+	public String getPROCECONTRATACION() {
+		return PROCECONTRATACION;
+	}
+	public String getTIPODOC() {
+		return TIPODOC;
+	}
+	public String getMPSTRING() {
+		return MPSTRING;
+	}
+	public String getMONTOESTIMADO() {
+		return MONTOESTIMADO;
 	}
 	public boolean verifyData(){
 		if(DESCRIPCION != null && TOMARAZON != null 

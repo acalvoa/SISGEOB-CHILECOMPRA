@@ -209,12 +209,16 @@ GEOCGRAPP
 	.controller('formulario', function(){
 		this.addcomuna = function(){
 			if($("#selector-comuna").val() != ""){
+				console.log("loki");
+				console.log($("#selector-comuna").val());
 				SOCKET.request({
 					request: "comuna/getcomunaone", 
 					data:{
 						SEARCH: $("#selector-comuna").val()
 					},
 					callback:function(result){
+						console.log("dsfdsf");
+						console.log(result);
 						if(typeof result.value != "undefined"){
 							GEOCGRCHI.PUB.get_form_element().PUB.add_comuna(result.value, JSON.parse(result.CENTROIDE), result.NUMERO);
 							$("#selector-comuna").val('');
