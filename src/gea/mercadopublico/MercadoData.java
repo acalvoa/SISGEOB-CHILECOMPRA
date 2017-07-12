@@ -26,11 +26,13 @@ public class MercadoData implements MPData{
 	public String TIPODOC;
 	public String MPSTRING;
 	public String MONTOESTIMADO;
+	private JSONObject DATA;
 	// GENERAMOS EL CONSTRUCTOR
 	public MercadoData(String idMP) throws ErrorJSONDataReadException, ErrorReadServiceException, ErrorDBDataNotExistsException, ErrorDBDataErrorException{
 		try {
 			MercadoPublico mercado = new MercadoPublico(idMP);
 			JSONObject data = mercado.principal();
+			this.DATA = data;
 			this.MPSTRING = idMP;
 			this.TITULOPROY = data.getString("NOMBRE");
 			this.DESCRIPCION = data.getString("DESCRIPCION");
@@ -101,5 +103,15 @@ public class MercadoData implements MPData{
 		else{
 			return false;
 		}
+	}
+	@Override
+	public boolean isOC() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public JSONObject getData() {
+		// TODO Auto-generated method stub
+		return this.DATA;
 	}
 }

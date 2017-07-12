@@ -106,11 +106,11 @@ public class OCData  implements MPData{
         if(data.has("Comprador") && !data.isNull("Comprados")) this.COMPRADOR = new OCComprador(data.getJSONObject("Comprador"));
         if(data.has("Estado") && !data.isNull("Estado")) this.ESTADO = data.getString("Estado");
         if(data.has("Tipo") && !data.isNull("Tipo")) this.TIPO = data.getString("Tipo");
-        if(data.has("Fecha") && data.getJSONObject("Fecha").has("FechaUltimaModificacion") && !data.getJSONObject("Fecha").isNull("FechaUltimaModificacion")) this.FECHA_ULTIMA_MODIFICACION = data.getJSONObject("Fecha").getString("FechaUltimaModificacion");
-        if(data.has("Fecha") && data.getJSONObject("Fecha").has("FechaEnvio") && !data.getJSONObject("Fecha").isNull("FechaEnvio")) this.FECHA_ENVIO= data.getJSONObject("Fecha").getString("FechaEnvio");
-        if(data.has("Fecha") && data.getJSONObject("Fecha").has("FechaAceptacion") && !data.getJSONObject("Fecha").isNull("FechaAceptacion")) this.FECHA_ACEPTACION = data.getJSONObject("Fecha").getString("FechaAceptacion");
-        if(data.has("Fecha") && data.getJSONObject("Fecha").has("FechaCancelacion") && !data.getJSONObject("Fecha").isNull("FechaCancelacion")) this.FECHA_CANCELACION = data.getJSONObject("Fecha").getString("FechaCancelacion");
-        if(data.has("Fecha") && data.getJSONObject("Fecha").has("FechaCreacion") && !data.getJSONObject("Fecha").isNull("FechaCreacion")) this.FECHA_CREACION = data.getJSONObject("Fecha").getString("FechaCreacion");
+        if(data.has("Fechas") && data.getJSONObject("Fechas").has("FechaUltimaModificacion") && !data.getJSONObject("Fechas").isNull("FechaUltimaModificacion")) this.FECHA_ULTIMA_MODIFICACION = data.getJSONObject("Fechas").getString("FechaUltimaModificacion");
+        if(data.has("Fechas") && data.getJSONObject("Fechas").has("FechaEnvio") && !data.getJSONObject("Fechas").isNull("FechaEnvio")) this.FECHA_ENVIO= data.getJSONObject("Fechas").getString("FechaEnvio");
+        if(data.has("Fechas") && data.getJSONObject("Fechas").has("FechaAceptacion") && !data.getJSONObject("Fechas").isNull("FechaAceptacion")) this.FECHA_ACEPTACION = data.getJSONObject("Fechas").getString("FechaAceptacion");
+        if(data.has("Fechas") && data.getJSONObject("Fechas").has("FechaCancelacion") && !data.getJSONObject("Fechas").isNull("FechaCancelacion")) this.FECHA_CANCELACION = data.getJSONObject("Fechas").getString("FechaCancelacion");
+        if(data.has("Fechas") && data.getJSONObject("Fechas").has("FechaCreacion") && !data.getJSONObject("Fechas").isNull("FechaCreacion")) this.FECHA_CREACION = data.getJSONObject("Fechas").getString("FechaCreacion");
         if(data.has("CodigoEstadoProveedor") && !data.isNull("CodigoEstadoProveedor")) this.CODIGO_ESTADO_PROVEEDOR = data.getInt("CodigoEstadoProveedor");
         if(data.has("AutorizadoresOrdenCompra") && !data.isNull("AutorizadoresOrdenCompra")){
         	JSONArray items = data.getJSONObject("AutorizadoresOrdenCompra").getJSONArray("Listado");
@@ -299,5 +299,15 @@ public class OCData  implements MPData{
 	public boolean verifyData() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+	@Override
+	public boolean isOC() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+	@Override
+	public JSONObject getData() {
+		// TODO Auto-generated method stub
+		return this.Jobject;
 	}
 }

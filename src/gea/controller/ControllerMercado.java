@@ -19,6 +19,7 @@ import gea.model.ModelConsultaIdi;
 import gea.model.ModelContratista;
 import gea.model.ModelIdsMercadoUnico;
 import gea.model.ModelProyectos;
+import gea.model.ModelSISGEOBOC;
 import gea.model.ModelServicio;
 import gea.model.ModelServicios;
 import gea.model.ModelSpatial;
@@ -305,6 +306,8 @@ public class ControllerMercado extends ControllerBase{
 							if(INCODMERCADOPUB(_FORM,mercado)){
 								if(INUBICATION(_FORM,mercado)){
 									if(INTOMARAZON(_FORM,mercado)){
+										/*GRABAMOS LA OC EN CASO DE EXISTIR*/
+										SAVEOC(_FORM,mercado);
 										if(INADJUDICACION(_FORM,mercado)){
 											if(INSPATIAL(_FORM,mercado, req,KMLFILE)){
 												retorno.put("STATUS", "OK");
@@ -575,6 +578,28 @@ public class ControllerMercado extends ControllerBase{
 			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE TOMA DE RAZON DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 6 DE REGISTRO. ERROR: "+e.getMessage());
 		} catch (IllegalAccessException e) {
 			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE TOMA DE RAZON DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 6 DE REGISTRO. ERROR: "+e.getMessage());
+		}
+	}
+	private static void SAVEOC(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{
+		try{
+			if(mercado.isOC()){
+				// CARGAMOS EL MODELO DE DATOS
+				Model<ModelSISGEOBOC> OCDATA = new Model<ModelSISGEOBOC>(ModelSISGEOBOC.class);
+				// CREAMOS EL INGRESO A LA TOMA DE RAZON
+				JSONObject DATAIN = new JSONObject();;
+				DATAIN.put("DATA", mercado.getData().toString());
+				DATAIN.put("TORA_X_TORA", _FORM.X_TORA);
+				DATAIN.put("PROY_X_PROY", _FORM.X_PROY);
+				OCDATA.insert(DATAIN.toString());
+			}
+			return;
+		}
+		catch(Error403Exception e){
+			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ADJUDICACION DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 7 DE REGISTRO. ERROR: "+e.getMessage());
+		} catch (IOException e) {
+			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ADJUDICACION DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 7 DE REGISTRO. ERROR: "+e.getMessage());
+		} catch (JSONException e) {
+			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ADJUDICACION DE PROJECTO PARA EL PROYECTO "+_FORM.X_PROY+". FASE 7 DE REGISTRO. ERROR: "+e.getMessage());
 		}
 	}
 	private static boolean INADJUDICACION(Formulario _FORM, MPData mercado) throws ErrorChileCompraRegException{

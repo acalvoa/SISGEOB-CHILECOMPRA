@@ -102,8 +102,12 @@ public class Formulario {
 			this.CODINI = (form.has("codigoini") && !form.getString("codigoini").equals(""))?form.getString("codigoini"):null;
 			this.CLASIFICACTION = form.getInt("clasificacion");
 			this.SUBCLASIFICATION = form.getInt("subclasificacion");
-			if("PR".equals(this.TYPEPROCED)) this.CAUSEORDER = form.getInt("licPrivada"); 
-			else if("TD".equals(this.TYPEPROCED)) this.CAUSEORDER = form.getInt("tratoDirec");
+			if("PR".equals(this.TYPEPROCED.trim())){
+				this.CAUSEORDER = form.getInt("licPrivada"); 
+			}
+			else if("TD".equals(this.TYPEPROCED.trim())){
+				this.CAUSEORDER = form.getInt("tratoDirec");
+			}
 			this.NORMA = form.getString("fundamento");
 			this.INIDATE = getDate(sdf3,sdf,form.getString("inidate"));
 			this.FINISHDATE = getDate(sdf3,sdf,form.getString("finishdate"));
@@ -113,7 +117,6 @@ public class Formulario {
 			this.ENTIDAD = form.getString("entidad");
 			this.CODIGO_ENTIDAD = form.getString("codigo_entidad");
 			this.ID_ENTIDAD = form.getInt("id_entidad");
-			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			throw new ErrorJSONDataReadException("EXISTE UN ERROR AL LEER LOS DATOS DEL FORMULARIO DE REGISTRO. ERROR: "+e.getMessage());

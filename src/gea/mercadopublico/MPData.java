@@ -1,6 +1,7 @@
 package gea.mercadopublico;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 public interface MPData {
 	public String getDESCRIPCION();
@@ -17,4 +18,6 @@ public interface MPData {
 	public String getMPSTRING();
 	public String getMONTOESTIMADO();
 	public boolean verifyData();
+	public boolean isOC();
+	public JSONObject getData();
 }

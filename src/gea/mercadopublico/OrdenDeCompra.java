@@ -31,11 +31,11 @@ public class OrdenDeCompra {
 		this.readInfo();
 		return this.jObject;
 	}
-	public JSONObject adjudicacion() throws IOException
+	public OCData adjudicacion() throws IOException
 	{
 		this.readJsonMP();
 		this.readInfo();
-		return this.jObject;
+		return this.oc_data;
 	}
 	private void readInfo(){
 		// TODO Auto-generated method stub
