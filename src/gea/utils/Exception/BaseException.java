@@ -12,7 +12,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+
 import gea.properties.PropertyManager;
+import gea.properties.PropertyManagerException;
 
 import org.json.JSONObject;
 
@@ -38,8 +40,15 @@ public class BaseException extends Exception{
 	private void SendToMail(){
 		String host = "maiten.contraloria.cl";
 		String port = "25";
-		String from = "cariatide@contraloria.cl";
-		String to = "cariatide@contraloria.cl";
+		String from = "sisgeob@contraloria.cl";
+		String to = "sisgeob@contraloria.cl";
+		try {
+			from = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.GEOCGR.MAILSOPORTE).toString();
+			to = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.GEOCGR.MAILSOPORTE).toString();
+		} catch (PropertyManagerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String subject = "INCIDENCIA - GEOCGR - " + PropertyManager.AMBIENTE_DESPLIEGUE;
 		String message = (this.reg != null)?this.getMessage()+"\n\r OBJECT ERROR: "+reg.toString(): this.getMessage();
 		String name = "GEOCGR";
