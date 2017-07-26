@@ -129,7 +129,7 @@ GEOCGRAPP
 		//      console.log("dato="+unescape(decodeURI(GET[i].substring((tmp+1)))));
 		    }
 			if(GEOCGRCHI.PUB.verify_all_info()){
-				LOADING.message("Guardando datos en GEOCGR, Espere por favor...");
+				LOADING.message("Guardando datos en SISGEOB, Espere por favor...");
 				LOADING.show();
 				SOCKET.request({
 					request: "mercado/set", 

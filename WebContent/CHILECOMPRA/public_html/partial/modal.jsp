@@ -269,7 +269,7 @@
 				<div class="icon"><i class="fa fa-exclamation"></i></div>
 				<div class="body">
 					<h3>Registro Incompleto</h3><br>
-					GEO-CGR detect&oacute; un incidente con el servicio de verificaci&oacute;n de Mercado P&uacute;blico. Contactese con Mercado P&uacute;blico
+					SISGEOB detect&oacute; un incidente con el servicio de verificaci&oacute;n de Mercado P&uacute;blico. Contactese con Mercado P&uacute;blico
 				</div>
 			</div>
 		</div>
