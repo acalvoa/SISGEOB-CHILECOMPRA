@@ -51,7 +51,7 @@
 				case "A1": case "B1": case "E1": case "F1": case "J1": case "CO": case "B2": case "E2": case "H2": case "I2":
 					settings.tipo = "LPV";
 					break;
-				case "A2": case "D1": case "C2": case "F2":
+				case "A2": case "D1": case "C2": case "F2": case "SE": case "OC": case "D1":  case "C1": case "F3": case "G1": case "R1": case "CA": case "OC": case "CM": case "FG": case "TL":
 					settings.tipo = "TD";
 					break;	
 			}
@@ -562,6 +562,45 @@
 			verify_complete: function(){
 				return settings.status;
 			},
+			save_partial: function(){
+				//GUARDAMOS LOS CAMPOS DE LA SUBCLASIFICACION
+				if(typeof settings.subclasificacion_act != "undefined" && settings.subclasificacion_act != []){
+					settings.subclasificacion = settings.subclasificacion_act;
+					settings.subclasificacion_act = [];
+				}
+				formulario.tipo = "1"; //OBRA PUBLICA
+				formulario.procedimiento = "1";
+				if( $("#normaproc").val() == null || typeof $("#normaproc").val() == "undefined" ){
+				    formulario.fundamento = " ";
+				}else{
+					formulario.fundamento = $("#normaproc").val();	
+				}
+				formulario.mandante = $("#servtxtinputs").val();
+				formulario.monto_adjudicacion = ($("#montoAdjudicado").val() != "")?$("#montoAdjudicado").val().replace(/\./g,""):"NOTREQ";
+				formulario.fecha_adjudicacion = ($("#fechaMontoAdjudicado").val() != "")?$("#fechaMontoAdjudicado").val():"NOTREQ";
+				formulario.contratante =  $("#servtxtinput").val();
+				formulario.modalidad = $(".modalidad").children("select").val();
+				formulario.financiamiento = $(".financiamiento").children("select").val();
+				if( $(".descrip").val() == null || typeof $(".descrip").val() == "undefined" ){
+				    formulario.descrip = " ";
+				}
+				else{
+					formulario.descrip = $(".descrip").val();	
+				}
+				formulario.codigobip = $(".codigobip").children("input").val();
+				formulario.vcodigobip = $(".vcodigobip").children("input").val();
+				formulario.codigoini = $(".codigoini").children("input").val();
+				formulario.clasificacion = $(".clasificacion").children("select").val();
+				formulario.subclasificacion = $(".subclasificacion").children("select").val();
+				formulario.inidate = $("#picker-inicio").val();
+				formulario.finishdate = $("#picker-termino").val();
+				formulario.licPrivada= ($("#selecLicPrivada").val() != null)?$("#selecLicPrivada").val():"-1";
+				formulario.tratoDirec= ($("#selecTratoDir").val() != null)?$("#selecTratoDir").val():"-1";
+				formulario.shortName = $(".shortName").children("input").val().toUpperCase();
+				
+				fila.children(".form").removeClass("rojo").addClass("verde");
+				settings.status = false;
+			},
 			save_form: function(recover){
 				if(self.PUB.verify_form(recover)){
 					//GUARDAMOS LOS CAMPOS DE LA SUBCLASIFICACION
@@ -601,7 +640,8 @@
 					
 					fila.children(".form").removeClass("rojo").addClass("verde");
 					settings.status = true;
-					$("#saveform").addClass("verde");	
+					$("#saveform").addClass("verde");
+
 				}
 				else
 				{

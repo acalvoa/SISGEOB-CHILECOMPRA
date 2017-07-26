@@ -49,7 +49,7 @@
 		],
 		
 		"EXTERNAL": [
-			"maps.googleapis.com/maps/api/js?client=gme-contraloriageneral&v=3.17&sensor=true"
+			"maps.googleapis.com/maps/api/js?v=3.26&key=AIzaSyAVImaf_n-d_3tOw5Cmp7Ue6dD2KJh2ODE"
 		],
 		
 		"CSS": [

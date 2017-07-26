@@ -149,6 +149,7 @@ GEOCGRAPP
 								    if(scope["formlinea"].initdate.$valid) $("#inicio-estimado").unbind('click').css({
 								    	background: "#CCC"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								// FECHA DE TERMINO
 								if(typeof datos.FECHA_FIN != "undefined"){
@@ -161,6 +162,7 @@ GEOCGRAPP
 								    if(scope["formlinea"].finishdate.$valid) $("#termino-estimado").unbind('click').css({
 								    	background: "#CCC"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								// COMUNA
 								if(typeof datos.COMUNA != "undefined"){
@@ -175,6 +177,7 @@ GEOCGRAPP
 								    if(scope["formlinea"].comunas.$valid) $("#add_comuna_button").unbind('click').css({
 								    	background: "#CCC"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								// FECHA DE TERMINO
 								if(typeof datos.MODALIDAD != "undefined"){
@@ -188,6 +191,7 @@ GEOCGRAPP
 								    $(".modalidad").css({
 								    	padding: "0 0 0 0"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								// FINANCIAMIENTO
 								if(typeof datos.FINANCIAMIENTO != "undefined"){
@@ -201,6 +205,7 @@ GEOCGRAPP
 								    $(".financiamiento").css({
 								    	padding: "0 0 0 0"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								// NOMBRE CORTO
 								if(typeof datos.SHORTNAME != "undefined"){
@@ -212,6 +217,7 @@ GEOCGRAPP
 								    	background: "#FFF",
 								    	border: "1px #CCC solid"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								// SEGUN TIPO DE LICITACION
 								switch (GEOCGRCHI.PUB.get_tipo())
@@ -243,8 +249,9 @@ GEOCGRAPP
 										    	border: "1px #CCC solid"
 										    });
 										}
+										GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 										break;
-									case "A2": case "D1": case "C2": case "F2":
+									case "A2": case "D1": case "C2": case "F2": case "SE": case "OC": case "D1":  case "C1": case "F3": case "G1": case "R1": case "CA": case "OC": case "CM": case "FG": case "TL":
 										// CAUSA TRATO DIRECTO
 										if(typeof datos.CAUSA_LICITACION != "undefined"){
 											var scope = angular.element($("#selecTratoDir")).scope();
@@ -269,6 +276,7 @@ GEOCGRAPP
 										    	border: "1px #CCC solid"
 										    });
 										}
+										GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 										break;	
 								}
 								// CODIGO BIP
@@ -289,6 +297,7 @@ GEOCGRAPP
 								    	background: "#FFF",
 								    	border: "1px #CCC solid"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								//CODIGO INI
 								if(typeof datos.CODIGO_INI != "undefined"){
@@ -300,6 +309,7 @@ GEOCGRAPP
 								    	background: "#FFF",
 								    	border: "1px #CCC solid"
 								    });
+								    GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 								}
 								//CLASIFICACION
 								if(typeof datos.CLASIFICACION != "undefined"){
@@ -338,6 +348,7 @@ GEOCGRAPP
 											    	padding: "0 0 0 0"
 											    });
 											}
+											GEOCGRCHI.PUB.get_form_element().PUB.save_partial();
 										}
 									});
 								}

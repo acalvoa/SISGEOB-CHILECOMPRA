@@ -207,7 +207,7 @@
 						});
 						//$("#nametipolicitacion").html("Licitaci&oacute;n Privada");
 						break;
-					case "A2": case "D1": case "C2": case "F2":
+					case "A2": case "D1": case "C2": case "F2": case "SE": case "OC": case "D1":  case "C1": case "F3": case "G1": case "R1": case "CA": case "OC": case "CM": case "FG": case "TL":
 						SOCKET.request({
 							request: "formulario/FLPrivada",
 							data:{
@@ -398,6 +398,7 @@
 				var fila = $('<div class="tr"></div>');
 				$('<div class="td t2"></div>').html(item.Correlativo).appendTo(fila);
 				// AGREAMOS LAS LINEAS
+				if(!item.Descripcion) item.Descripcion = item.Producto;
 				$('<div class="td t3"></div>').html((item.Descripcion.length > 30)?item.Descripcion.substring(0,27)+"...":item.Descripcion).appendTo(fila)
 				.on('mouseenter', function(){
 					POP.PUB.show({
@@ -524,10 +525,11 @@
 							scope["formlinea"].normaproc.$setValidity("cctextbox", false);
 						});
 						break;
-					case "A2": case "D1": case "C2": case "F2":
+					case "A2": case "D1": case "C2": case "F2": case "SE": case "OC": case "D1":  case "C1": case "F3": case "G1": case "R1": case "CA": case "OC": case "CM": case "FG": case "TL":
 						$("#selecLicPrivada").hide();
 						$("#selecTratoDir").show();
 						$("#normaproc").parent().show();
+						
 						$(".obra-publica-tipo").hide();
 						//$("#nametipolicitacion").html("Trato Directo");
 						//VALIDACIONES
