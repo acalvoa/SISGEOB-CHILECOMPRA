@@ -1,5 +1,7 @@
 # Changelog
 
+## [Bugs post versión 17.6](!8) (26/07/2017)
+
 ## [Properties](!6) (07/07/2017)
 
 ## [Ant build](!5) (05/07/2017)
