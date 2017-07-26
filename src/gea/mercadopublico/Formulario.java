@@ -61,7 +61,7 @@ public class Formulario {
 	public String CAUSAFUND = ""; // CAUSA FUND
 	public Integer N_ORDER = 1; // NUMERO DE ADJUDICACION
 	public String CREATORUSER = "GEOCGR";
-	public MercadoData MERCADO; // DATOS DE LA API DE MERCADO PUBLICO
+	public MPData MERCADO; // DATOS DE LA API DE MERCADO PUBLICO
 	public String EXPETREWA; // EXPEDIENTE DE TREWAA
 	public Integer X_PROY; // X_PROY
 	public JSONArray COMUNA; // COMUNAS
@@ -77,17 +77,17 @@ public class Formulario {
 	
 	
 	// GENERAMOS EL CONSTRUCTOR
-	public Formulario(JSONObject form, MercadoData mercado) throws ErrorDBDataNotExistsException, ErrorDBDataErrorException, ErrorDateConvertionException, ErrorJSONDataReadException {
+	public Formulario(JSONObject form, MPData mercado2) throws ErrorDBDataNotExistsException, ErrorDBDataErrorException, ErrorDateConvertionException, ErrorJSONDataReadException {
 		try {
 			// FORMATEADORES DE FECHA
 			SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
 			SimpleDateFormat sdf2 = new SimpleDateFormat("M/dd/yyyy");
 			SimpleDateFormat sdf3 = new SimpleDateFormat("dd/MM/yyyy");
 			// SETEAMOS LOS PARAMETROS
-			this.IDMERCADOPUBLICO = mercado.MPSTRING.toUpperCase();
+			this.IDMERCADOPUBLICO = mercado2.getMPSTRING().toUpperCase();
 			this.TYPEPROJECT = form.getString("tipo");
 			this.TYPECONTRACT = Mapeo.getMapeoS(Mapeo.TIPOCONTRATO, this.TYPEPROJECT);
-			this.TYPEPROCED = Mapeo.getMapeoS(Mapeo.PROCEDCONTRATACION, mercado.TIPO);
+			this.TYPEPROCED = Mapeo.getMapeoS(Mapeo.PROCEDCONTRATACION, mercado2.getTIPO());
 			this.CODSISTRADOC_SERVCONTRATANTE = obtenerCodigoSistradoc(form.getString("contratante"));
 			this.SERVCONTRATANTE = String.valueOf(obtenerIdServicio(form.getString("contratante")));
 			this.CODSISTRADOC_SERVMANDANTE = obtenerCodigoSistradoc(form.getString("mandante"));
@@ -102,18 +102,21 @@ public class Formulario {
 			this.CODINI = (form.has("codigoini") && !form.getString("codigoini").equals(""))?form.getString("codigoini"):null;
 			this.CLASIFICACTION = form.getInt("clasificacion");
 			this.SUBCLASIFICATION = form.getInt("subclasificacion");
-			if("PR".equals(this.TYPEPROCED)) this.CAUSEORDER = form.getInt("licPrivada"); 
-			else if("TD".equals(this.TYPEPROCED)) this.CAUSEORDER = form.getInt("tratoDirec");
+			if("PR".equals(this.TYPEPROCED.trim())){
+				this.CAUSEORDER = form.getInt("licPrivada"); 
+			}
+			else if("TD".equals(this.TYPEPROCED.trim())){
+				this.CAUSEORDER = form.getInt("tratoDirec");
+			}
 			this.NORMA = form.getString("fundamento");
 			this.INIDATE = getDate(sdf3,sdf,form.getString("inidate"));
 			this.FINISHDATE = getDate(sdf3,sdf,form.getString("finishdate"));
 			this.CREATEDATE = sdf.format(new Date()); 
 			this.COMUNA = form.getJSONArray("comuna");
-			this.MERCADO = mercado;
+			this.MERCADO = mercado2;
 			this.ENTIDAD = form.getString("entidad");
 			this.CODIGO_ENTIDAD = form.getString("codigo_entidad");
 			this.ID_ENTIDAD = form.getInt("id_entidad");
-			
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			throw new ErrorJSONDataReadException("EXISTE UN ERROR AL LEER LOS DATOS DEL FORMULARIO DE REGISTRO. ERROR: "+e.getMessage());
@@ -190,7 +193,7 @@ public class Formulario {
 			else
 			{
 				TrewaUtil trewaUtil = new TrewaUtil();
-				this.EXPETREWA = trewaUtil.creacionContratoCambioEtapa(this.TYPECONTRACT, this.MERCADO.TITULOPROY, this.CODSISTRADOC_SERVMANDANTE);
+				this.EXPETREWA = trewaUtil.creacionContratoCambioEtapa(this.TYPECONTRACT, this.MERCADO.getTITULOPROY(), this.CODSISTRADOC_SERVMANDANTE);
 				this.ASIGNASERVICIOBADEJA = trewaUtil.asignaservicioBandeja(this.CODSISTRADOC_SERVCONTRATANTE, this.EXPETREWA);
 				if(!this.ASIGNASERVICIOBADEJA)
 				{

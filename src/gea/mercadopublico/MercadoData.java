@@ -12,7 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MercadoData {
+public class MercadoData implements MPData{
 	public String DESCRIPCION;
 	public Integer TOMARAZON;
 	public Integer PLAZOBRA;
@@ -26,11 +26,13 @@ public class MercadoData {
 	public String TIPODOC;
 	public String MPSTRING;
 	public String MONTOESTIMADO;
+	private JSONObject DATA;
 	// GENERAMOS EL CONSTRUCTOR
 	public MercadoData(String idMP) throws ErrorJSONDataReadException, ErrorReadServiceException, ErrorDBDataNotExistsException, ErrorDBDataErrorException{
 		try {
 			MercadoPublico mercado = new MercadoPublico(idMP);
 			JSONObject data = mercado.principal();
+			this.DATA = data;
 			this.MPSTRING = idMP;
 			this.TITULOPROY = data.getString("NOMBRE");
 			this.DESCRIPCION = data.getString("DESCRIPCION");
@@ -50,6 +52,45 @@ public class MercadoData {
 			throw new ErrorReadServiceException(e.getMessage());
 		}
 	}
+	public String getDESCRIPCION() {
+		return DESCRIPCION;
+	}
+	public Integer getTOMARAZON() {
+		return TOMARAZON;
+	}
+	public Integer getPLAZOBRA() {
+		return PLAZOBRA;
+	}
+	public Integer getUNIDATIEMPO() {
+		return UNIDATIEMPO;
+	}
+	public Integer getMONEDA() {
+		return MONEDA;
+	}
+	public String getTIPO() {
+		return TIPO;
+	}
+	public JSONArray getITEMS() {
+		return ITEMS;
+	}
+	public String getTITULOPROY() {
+		return TITULOPROY;
+	}
+	public String getCODIGOMP() {
+		return CODIGOMP;
+	}
+	public String getPROCECONTRATACION() {
+		return PROCECONTRATACION;
+	}
+	public String getTIPODOC() {
+		return TIPODOC;
+	}
+	public String getMPSTRING() {
+		return MPSTRING;
+	}
+	public String getMONTOESTIMADO() {
+		return MONTOESTIMADO;
+	}
 	public boolean verifyData(){
 		if(DESCRIPCION != null && TOMARAZON != null 
 			&& PLAZOBRA != null 
@@ -62,5 +103,15 @@ public class MercadoData {
 		else{
 			return false;
 		}
+	}
+	@Override
+	public boolean isOC() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public JSONObject getData() {
+		// TODO Auto-generated method stub
+		return this.DATA;
 	}
 }

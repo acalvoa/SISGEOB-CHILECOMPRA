@@ -83,5 +83,6 @@ public class PropertyManager {
 		public static final String URLMIDESO="URLMIDESO";
 		public static final String CONSULTAIDI="CONSULTAIDI";
 		public static final String CONSULTAFICHA="CONSULTAFICHA";
+		public static final String MAILSOPORTE="MAILSOPORTE"; 
 	}
 }

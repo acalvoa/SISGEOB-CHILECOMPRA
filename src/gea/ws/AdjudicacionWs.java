@@ -20,7 +20,11 @@ import gea.annotation.ModelField;
 import gea.framework.Cache;
 import gea.framework.Model;
 import gea.framework.ModelResult;
+import gea.mercadopublico.Formulario;
+import gea.mercadopublico.MPData;
 import gea.mercadopublico.MercadoPublico;
+import gea.mercadopublico.OCData;
+import gea.mercadopublico.OrdenDeCompra;
 import gea.model.ModelAdjudicacionContrato;
 import gea.model.ModelAuth;
 import gea.model.ModelChileTrans;
@@ -29,16 +33,21 @@ import gea.model.ModelContratista;
 import gea.model.ModelContratistaCreate;
 import gea.model.ModelIdsMercadoUnico;
 import gea.model.ModelProyectos;
+import gea.model.ModelSISGEOBOC;
 import gea.model.ModelSpatial;
 import gea.model.ModelTomaRazon;
 import gea.model.ModelUbicacionProyecto;
 import gea.utils.Exception.Error403Exception;
+import gea.utils.Exception.ErrorChileCompraRegException;
 import gea.utils.Exception.ErrorCodeException;
 import gea.utils.Exception.ErrorDBDataErrorException;
 import gea.utils.Exception.ErrorDBDataNotExistsException;
 import gea.utils.trewautils.Mapeo;
 
 public class AdjudicacionWs {
+	public static boolean isOC(String codigo){
+		return codigo.matches(".*-SE.*|.*-OC.*|.*-D1.*|.*-C1.*|.*-F3.*|.*-G1.*|.*-R1.*|.*-CA.*|.*-CM.*|.*-FG.*|.*-TL.*");
+	}
 	public static JSONObject Adjudicacion(HttpServletRequest req, HttpServletResponse res) throws IOException{
 		JSONObject retorno = new JSONObject();
 		String ORDERS = null;
@@ -87,7 +96,14 @@ public class AdjudicacionWs {
 							KeyQuery.put("KEY",orders.getJSONObject(i).getString("KEY"));
 							KeyQuery.put("ID",orders.getJSONObject(i).getString("ORDER"));
 							if(KEY.find(KeyQuery.toString()).size() > 0){
-								mercado = getMercadoPublico(orders.getJSONObject(i).getString("ORDER"));
+								if(isOC(orders.getJSONObject(i).getString("ORDER"))){
+									mercado = getOrdenCompra(orders.getJSONObject(i).getString("ORDER"));
+								}
+								else
+								{
+									mercado = getMercadoPublico(orders.getJSONObject(i).getString("ORDER"));
+								}
+								
 								//EN ESTE SEGMENTO VA LA OPERACION DE ADJUDICACION
 								JSONArray lineas = mercado.getJSONArray("ITEMS");
 								for(int l=0; l<lineas.length(); l++){
@@ -147,6 +163,8 @@ public class AdjudicacionWs {
 														//PROCEDEMOS CON LA OPERACION
 														if(TOMARAZON.update(TRUPDATE.toString(), query.toString())){
 															if(ADJUDICACION.update(ADJUDUPDATE.toString(), query.toString())){
+																/*GUARDAMOS EL OBJETO*/
+																UPDATEOC(mercado,X_PROY);
 																JSONObject Rorder = new JSONObject();
 																Rorder.put("ORDER", orders.getJSONObject(i).getString("ORDER"));
 																Rorder.put("STATUS", "OK");
@@ -196,6 +214,13 @@ public class AdjudicacionWs {
 										Rorder.put("ORDER", orders.getJSONObject(i).getString("ORDER"));
 										Rorder.put("STATUS", "DATA ERROR");
 										impact.put("ERROR IN LINE "+lineas.getJSONObject(l).getInt("LINEA")+" OF ORDER "+orders.getJSONObject(i).getString("ORDER")+". ERROR: "+e.getMessage());
+										ordes_back.put(Rorder);
+									} catch (ErrorChileCompraRegException e) {
+										status = 2;
+										JSONObject Rorder = new JSONObject();
+										Rorder.put("ORDER", orders.getJSONObject(i).getString("ORDER"));
+										Rorder.put("STATUS", "SAVE DATA ERROR");
+										impact.put("ERROR AL GUARDAR EL OBJETO DE LA ORDEN DE COMPRA. ERROR: "+e.getMessage());
 										ordes_back.put(Rorder);
 									}
 								}
@@ -359,7 +384,47 @@ public class AdjudicacionWs {
 		}
 		resultado.put("ITEMS", lineas);
 		return resultado;
-	}  
+	} 
+	private static JSONObject getOrdenCompra(String idMP) throws IOException, JSONException, ErrorDBDataNotExistsException, ErrorDBDataErrorException, ParseException {
+		JSONObject resultado = new JSONObject();
+		OrdenDeCompra mercado = new OrdenDeCompra(idMP);
+		OCData mer = mercado.adjudicacion();
+		//ADJUNTAMOS LOS DOCUMENTOS Y EXTRAEMOS LOS CAMPOS BASICOS DE LA ADJUDICACION
+		String codigoDocumento = String.valueOf(7);
+		resultado.put("DURACIONCONTRATO",0);
+		resultado.put("TIPOTOMARAZON", Mapeo.getMapeoI(Mapeo.TDOCHILECOMPRA,codigoDocumento));
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-M-dd");
+		String fechaDocumento      = sdf.format(sdf1.parse(mer.FECHA_CREACION));
+		resultado.put("FECHADOCUMENTO",  fechaDocumento);
+		resultado.put("FOLIO", "SIN NUMERO");
+		resultado.put("MONEDA",mer.getMONEDA());
+		Calendar fecha = Calendar.getInstance();
+		fecha.setTime(sdf1.parse(mer.FECHA_CREACION));
+		int anioDocumento = fecha.get(Calendar.YEAR);
+		resultado.put("ANIODOCUMENTO", anioDocumento);
+		resultado.put("OCDATA", mer.getData());
+		JSONArray lineas = new JSONArray();
+		for(int i=0; i< mer.ITEMS.length; i++){
+			//EXTRAEMOS LOS DATOS DE ADJUDICACION DE CADA LINEA DEL CONTRATO
+			JSONObject item = new JSONObject();
+			try{
+				item.put("LINEA", mer.ITEMS[i].CORRELATIVO);
+				item.put("IDPROVEEDOR", obtenerIdContratista(mer.PROVEEDOR.RUT_SUCURSAL.replaceAll("\\.", ""),mer.PROVEEDOR.NOMBRE));
+				item.put("MONTO", mer.ITEMS[i].TOTAL);
+				
+			}
+			catch(Exception e)
+			{
+				item.put("LINEA", mer.ITEMS[i].CORRELATIVO);
+				item.put("IDPROVEEDOR", 6730);
+				item.put("MONTO",0);
+			}
+			lineas.put(item);
+		}
+		resultado.put("ITEMS", lineas);
+		return resultado;
+	}
 	private static int  obtenerIdContratista(String rutContratista, String razon) throws IllegalAccessException{
 		Model<ModelContratista> contratista = new Model<ModelContratista>(ModelContratista.class);
 		ModelResult<ModelContratista> resContratista;
@@ -397,4 +462,26 @@ public class AdjudicacionWs {
 			return idContratista;
 		}
 	} 
+	private static void UPDATEOC(JSONObject mer, int X_PROY) throws ErrorChileCompraRegException{
+		try{
+			if(mer.has("OCDATA")){
+				// CARGAMOS EL MODELO DE DATOS
+				Model<ModelSISGEOBOC> OCDATA = new Model<ModelSISGEOBOC>(ModelSISGEOBOC.class);
+				// CREAMOS EL INGRESO A LA TOMA DE RAZON
+				JSONObject DATAS = new JSONObject();
+				JSONObject DATAIN = new JSONObject();
+				DATAIN.put("DATA", mer.getJSONObject("OCDATA").toString());
+				DATAS.put("PROY_X_PROY", X_PROY);
+				OCDATA.update(DATAIN.toString(), DATAS.toString());
+			}
+			return;
+		}
+		catch(Error403Exception e){
+			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ADJUDICACION DE PROJECTO PARA EL PROYECTO "+X_PROY+". FASE ACTUALIZACION DATA OC. ERROR: "+e.getMessage());
+		} catch (IOException e) {
+			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ADJUDICACION DE PROJECTO PARA EL PROYECTO "+X_PROY+". FASE ACTUALIZACION DATA OC. ERROR: "+e.getMessage());
+		} catch (JSONException e) {
+			throw new ErrorChileCompraRegException("NO SE HA PODIDO CREAR EL REGISTRO DE ADJUDICACION DE PROJECTO PARA EL PROYECTO "+X_PROY+". FASE ACTUALIZACION DATA OC. ERROR: "+e.getMessage());
+		}
+	}
 }

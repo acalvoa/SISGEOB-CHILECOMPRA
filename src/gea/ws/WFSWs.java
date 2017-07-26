@@ -4,6 +4,7 @@ import gea.framework.Cache;
 import gea.framework.Model;
 import gea.framework.ModelResult;
 import gea.model.ModelIdsMercadoUnico;
+import gea.model.ModelObras;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ public class WFSWs {
 			String code = req.getParameter("CODE");
 			String entidad = req.getParameter("ENTIDAD");
 			Model<ModelIdsMercadoUnico> geo_mercado = new Model<ModelIdsMercadoUnico>(ModelIdsMercadoUnico.class);
+			Model<ModelObras> geo_obras = new Model<ModelObras>(ModelObras.class);
 			JSONObject query = new JSONObject();
 			query.put("CODIGO_ENTIDAD", code);
 			query.put("X_ENTIDAD", entidad);
@@ -26,8 +28,12 @@ public class WFSWs {
 				JSONArray retorno = new JSONArray();
 				JSONArray resultados = result.toJSON();
 				for(int i=0; i<resultados.length();i++){
+					JSONObject query_o = new JSONObject();
+					query_o.put("CODPROYECTO", resultados.getJSONObject(i).get("PROY_X_PROY"));
+					ModelResult<ModelObras> expediente = geo_obras.findOne(query_o.toString());
 					JSONObject element = new JSONObject();
-					element.put("CODIGO_GEOCGR", resultados.getJSONObject(i).get("PROY_X_PROY"));
+					JSONObject expediente_r = expediente.toJSON().getJSONObject(0);
+					element.put("CODIGO_GEOCGR", expediente_r.getString("X_EXPE"));
 					element.put("ID_MERCADO_PUBLICO", resultados.getJSONObject(i).get("C_ID_MERC_UNICO"));
 					retorno.put(element);
 				}

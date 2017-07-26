@@ -34,4 +34,20 @@ public class ControllerComunal extends ControllerBase{
 		}
 		res.SendCallback(retorno);
 	}
+	public static void getcomunaone(Request req, Response res) throws ErrorCodeException, Error403Exception, IOException{
+		Model<ModelComunalAuto> comunas = new Model<ModelComunalAuto>(ModelComunalAuto.class,req);
+		JSONObject query = new JSONObject();
+		query.put("NOMBRE", req.getData().getString("SEARCH"));
+		ModelResult<ModelComunalAuto> resultado = comunas.find(query.toString());
+		JSONObject retorno = new JSONObject();
+		JSONArray datos = resultado.toJSON();
+		for(int i=0; i<datos.length(); i++){
+			JSONObject temp = new JSONObject();
+			temp.put("value", datos.getJSONObject(i).getString("NOMBRE"));
+			temp.put("CENTROIDE", datos.getJSONObject(i).get("CENTROIDE"));
+			temp.put("NUMERO", datos.getJSONObject(i).getString("NUMERO"));
+			retorno = temp;
+		}
+		res.SendCallback(retorno);
+	}
 }
