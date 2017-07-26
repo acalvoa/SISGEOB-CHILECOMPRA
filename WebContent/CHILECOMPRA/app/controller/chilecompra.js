@@ -529,6 +529,7 @@
 						$("#selecLicPrivada").hide();
 						$("#selecTratoDir").show();
 						$("#normaproc").parent().show();
+						$("#normaproc").parent().parent().show();
 						
 						$(".obra-publica-tipo").hide();
 						//$("#nametipolicitacion").html("Trato Directo");

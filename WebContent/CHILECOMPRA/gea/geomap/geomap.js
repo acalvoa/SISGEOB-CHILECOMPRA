@@ -60,7 +60,7 @@
 				});
 				
 				if ( !status ) {
-					console.log("Se requiere la version " + settings.version + " de la API de GoogleMaps para ejecutar GEO-CGR");
+					console.log("Se requiere la version " + settings.version + " de la API de GoogleMaps para ejecutar SISGEOB");
 				} else {
 					//SI LA LIBRERIA ES CORRECTA LLAMAMOS AL MAPA
 					methods.make_map();

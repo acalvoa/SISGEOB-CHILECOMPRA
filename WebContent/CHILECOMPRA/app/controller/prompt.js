@@ -24,26 +24,22 @@
 			var footer = $('<div></div>').addClass("footer").appendTo(box);
 			// DEFINIMOS EL LOGO
 			var logo = $('<div></div>').addClass("logo text-center").appendTo(header);
-			if(!_CONFIG._CUSTOM.BLOCK){
-				var object = $("<object></object>")
-					.attr("data", "CHILECOMPRA/public_html/images/logos/sisgeob.svg")
-					.attr("height", "60")
-					.attr("type", "image/svg+xml")
-					.appendTo(logo);
-				$("<img></img>")
-					.attr("src","CHILECOMPRA/public_html/images/logos/png/sisgeob.png")
-					.attr("height","60")
-					.appendTo(object);
-				$("<img></img>")
-					.attr("src","CHILECOMPRA/public_html/images/logos/png/chilecompra.png")
-					.attr("height","60")
-					.attr("style","vertical-align: top;")
-					.appendTo(logo);
-			}
-			else
-			{
-				$("<img></img>").attr("src","CHILECOMPRA/public_html/images/logo.jpg").appendTo(logo);
-			}
+			
+			var object = $("<object></object>")
+				.attr("data", "CHILECOMPRA/public_html/images/logos/sisgeob.svg")
+				.attr("height", "60")
+				.attr("type", "image/svg+xml")
+				.appendTo(logo);
+			$("<img></img>")
+				.attr("src","CHILECOMPRA/public_html/images/logos/png/sisgeob.png")
+				.attr("height","60")
+				.appendTo(object);
+			$("<img></img>")
+				.attr("src","CHILECOMPRA/public_html/images/logos/png/chilecompra.png")
+				.attr("height","60")
+				.attr("style","vertical-align: top;")
+				.appendTo(logo);
+			
 			//DEFINIMOS EL CONTENIDO
 			SETTINGS.content = $('<div></div>').addClass("content").appendTo(content).html(args.texto);
 			//DEFINIMOS LOS BOTONES

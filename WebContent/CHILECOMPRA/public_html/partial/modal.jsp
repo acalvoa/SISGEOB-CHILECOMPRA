@@ -21,7 +21,7 @@
 				<div class="whygeocgr modal-ini-content">
 					<p>SISGEOB son las siglas del Sistema de Gesti&oacute;n de Obras, que permite almacenar, articular, publicar y consultar informaci&oacute;n sobre la inversi&oacute;n de recursos en obras p&uacute;blicas, el cual est&aacute; en la l&iacute;nea de la Contralor&iacute;a General de la Rep&uacute;blica, de resguarda la probidad, la transparencia y el correcto uso del patrimonio p&uacute;blico.</p>
 					<p>SISGEOB en conjunto con el portal GEO-CGR, buscan promover el control ciudadano mediante la entrega de instrumentos para el an&aacute;lisis y monitoreo de informaci&oacute;n confiable, oportuna y con contexto territorial a trav&eacute;s de su georreferenciaci&oacute;n.</p>
-					<p>La informaci&oacute;n que se registre en esta etapa por medio de SISGEOB, ser&aacute; transparentada en el Portal GEOCGR, desarrollados por la Contralor&iacute;a General de la Rep&uacute;blica. El portal puede ser visitado en el siguiente link &nbsp;<a href="http://www.contraloria.cl/geocgrappcgr/GEOCGR/index.jsp"><span>www.contraloria.cl/geocgr</span></a>.</p>
+					<p>La informaci&oacute;n que se registre en esta etapa por medio de SISGEOB, ser&aacute; transparentada en el Portal GEOCGR, desarrollados por la Contralor&iacute;a General de la Rep&uacute;blica. El portal puede ser visitado en el siguiente link &nbsp;<a href="http://www.contraloria.cl/geocgrappcgr/PORTALGEOCGR/index.jsp"><span>www.contraloria.cl/geocgr</span></a>.</p>
 				</div>
 				<div class="ayuda modal-ini-content">
 					<div class="tabs">
@@ -269,7 +269,7 @@
 				<div class="icon"><i class="fa fa-exclamation"></i></div>
 				<div class="body">
 					<h3>Registro Incompleto</h3><br>
-					GEO-CGR detect&oacute; un incidente con el servicio de verificaci&oacute;n de Mercado P&uacute;blico. Contactese con Mercado P&uacute;blico
+					SISGEOB detect&oacute; un incidente con el servicio de verificaci&oacute;n de Mercado P&uacute;blico. Contactese con Mercado P&uacute;blico
 				</div>
 			</div>
 		</div>
