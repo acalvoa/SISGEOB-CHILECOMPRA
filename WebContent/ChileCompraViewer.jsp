@@ -13,7 +13,9 @@ if(task.chileGruntViewerLook(request.getParameter("codigo"))){
 }
 else
 {
-	String redirectURL = request.getRequestURL().toString().replaceAll(request.getServletPath(), "") + "/index.jsp?MP="+request.getParameter("codigo");
+	String requestURL = request.getRequestURL().toString().replaceAll(request.getServletPath(), "");
+	String requestURL_newcontext = requestURL.replace("/GEOCGR", "/PORTALGEOCGR");
+	String redirectURL = requestURL_newcontext + "/index.jsp?MP="+request.getParameter("codigo");
     response.sendRedirect(redirectURL);
 }
 %>
