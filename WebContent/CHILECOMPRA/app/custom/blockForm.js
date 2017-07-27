@@ -19,7 +19,7 @@
 					+ "</div>"
 					+ "<div class='iparagraph'>"
 					+ "La informaci&oacute;n desplegada en este visor puede ser modificada ingresando al formulario "
-					+ "GEO-CGR desde el mismo bot&oacute;n de acceso dispuesto en el paso 5 del proceso de "
+					+ "SISGEOB desde el mismo bot&oacute;n de acceso dispuesto en el paso 5 del proceso de "
 					+ "adjudicaci&oacute;n, denominado &quot;Acta de Adjudicaci&oacute;n&quot;<br><br>"
 					+ "</div>"
 					+ "</div>"

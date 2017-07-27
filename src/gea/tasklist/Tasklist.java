@@ -98,7 +98,7 @@ public class Tasklist {
 		}
 		else{
 			this.loadConfig();
-			this.ERROR("La licitaci&oacute;n indicada no posee una llave valida publica en los registros de GEOCGR, Intente nuevamente desde el formulario de ChileCompra");
+			this.ERROR("La licitaci&oacute;n indicada no posee una llave valida publica en los registros de SISGEOB, Intente nuevamente desde el formulario de ChileCompra");
 			this.printLayout();
 		}
 	}
@@ -156,7 +156,7 @@ public class Tasklist {
 		}
 		else{
 			this.loadConfig();
-			this.ERROR("La licitaci&oacute;n indicada no posee una llave valida publica en los registros de GEOCGR, Intente nuevamente desde el formulario de ChileCompra");
+			this.ERROR("La licitaci&oacute;n indicada no posee una llave valida publica en los registros de SISGEOB, Intente nuevamente desde el formulario de ChileCompra");
 			this.printLayout();
 		}
 	}

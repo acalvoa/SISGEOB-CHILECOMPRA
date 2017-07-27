@@ -43,15 +43,15 @@ public class BaseException extends Exception{
 		String from = "sisgeob@contraloria.cl";
 		String to = "sisgeob@contraloria.cl";
 		try {
-			from = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.GEOCGR.MAILSOPORTE).toString();
-			to = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.GEOCGR.MAILSOPORTE).toString();
+			from = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.MAILSOPORTE).toString();
+			to = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.MAILSOPORTE).toString();
 		} catch (PropertyManagerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String subject = "INCIDENCIA - GEOCGR - " + PropertyManager.AMBIENTE_DESPLIEGUE;
+		String subject = "INCIDENCIA - " + PropertyManager.AMBIENTE_DESPLIEGUE;
 		String message = (this.reg != null)?this.getMessage()+"\n\r OBJECT ERROR: "+reg.toString(): this.getMessage();
-		String name = "GEOCGR";
+		String name = "SISGEOB";
 		this.sendMail(host,port,from,to,subject,message,name);
 	}
 	public void sendMail(String host,String port,

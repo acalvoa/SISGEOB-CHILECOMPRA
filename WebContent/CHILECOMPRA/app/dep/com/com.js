@@ -193,7 +193,7 @@
 		// DEFINIMOS EL CONSTRUCTOR DEL WEBSOCKET QUE ESTABLECE LA CONEXION INICIAL CON EL SERVIDOR
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		var constructor = function(onready){
-			console.log("Conectando al servidor GeoCGR...");
+			console.log("Conectando al servidor SISGEOB...");
 			ws = new WebSocket("ws://"+config.websocket.host+":"+config.websocket.port+"/");
 			stack = new stacks();
 			done = new stacks();
