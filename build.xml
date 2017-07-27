@@ -48,6 +48,7 @@
             comment="Properties">
             <entry key="PATH_CONFIG_FILE" value="${PATH_CONFIG_FILE}" />
             <entry key="ENV" value="${ENV}" />
+            <entry key="MAIL_SOPORTE" value="${MAILSOPORTE}" />
         </propertyfile>
 
         <!-- Este es el archivo que debe ser copiado en el servidor (PATH_CONFIG_FILE)-->

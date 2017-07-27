@@ -43,8 +43,8 @@ public class BaseException extends Exception{
 		String from = "sisgeob@contraloria.cl";
 		String to = "sisgeob@contraloria.cl";
 		try {
-			from = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.GEOCGR.MAILSOPORTE).toString();
-			to = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.GEOCGR.MAILSOPORTE).toString();
+			from = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.MAILSOPORTE).toString();
+			to = PropertyManager.getInstance().getProperty(PropertyManager.GEOCGR_FILE,PropertyManager.MAILSOPORTE).toString();
 		} catch (PropertyManagerException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
