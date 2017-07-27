@@ -26,7 +26,7 @@
 				<div class="ayuda modal-ini-content">
 					<div class="tabs">
 						<div class="tab" data-tab="1" ng-click="m.tab($event)">Portal GEO-CGR Control Ciudadano de Obras</div>
-						<div class="tab" data-tab="2" ng-click="m.tab($event)">Acerca del Formulario GEO-CGR</div>
+						<div class="tab" data-tab="2" ng-click="m.tab($event)">Acerca del Formulario SISGEOB</div>
 						<div class="tab" data-tab="3" ng-click="m.tab($event)">C&oacute;mo y qu&eacute; se registra</div>
 						<div class="tab" data-tab="4" ng-click="m.tab($event)">Acerca de la Localizaci&oacute;n de la Obra</div>
 						<div class="manual">
@@ -52,7 +52,7 @@
 							</div>
 						</div>
 						<div class="tabcontent tab2">
-							<div class="titulo" ng-click="m.tcontent($event)">Acerca del Formulario GEO-CGR</div>
+							<div class="titulo" ng-click="m.tcontent($event)">Acerca del Formulario SISGEOB</div>
 							<div class="content">
 								<h4>&iquest;Qui&eacute;nes deben registrar en SISGEOB?</h4>
 								<p>Deben registrar en SISGEOB, todas las Entidades P&uacute;blicas que efect&uacute;en sus licitaciones en el sistema <a href="http://www.mercadopublico.cl"><span>www.mercadopublico.cl</span></a> y que marquen la opci&oacute;n &ldquo;Licitaci&oacute;n de Contrato de Obra&rdquo;, siguiendo para ello la definici&oacute;n de Contrato de Obra P&uacute;blica establecida por la Contralor&iacute;a General de la Rep&uacute;blica.</p>
