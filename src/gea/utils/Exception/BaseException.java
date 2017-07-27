@@ -49,9 +49,9 @@ public class BaseException extends Exception{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String subject = "INCIDENCIA - GEOCGR - " + PropertyManager.AMBIENTE_DESPLIEGUE;
+		String subject = "INCIDENCIA - " + PropertyManager.AMBIENTE_DESPLIEGUE;
 		String message = (this.reg != null)?this.getMessage()+"\n\r OBJECT ERROR: "+reg.toString(): this.getMessage();
-		String name = "GEOCGR";
+		String name = "SISGEOB";
 		this.sendMail(host,port,from,to,subject,message,name);
 	}
 	public void sendMail(String host,String port,
