@@ -398,7 +398,7 @@
 				var fila = $('<div class="tr"></div>');
 				$('<div class="td t2"></div>').html(item.Correlativo).appendTo(fila);
 				// AGREAMOS LAS LINEAS
-				if(!item.Descripcion) item.Descripcion = item.Producto;
+				if(!item.Descripcion) item.Descripcion = item.NombreProducto;
 				$('<div class="td t3"></div>').html((item.Descripcion.length > 30)?item.Descripcion.substring(0,27)+"...":item.Descripcion).appendTo(fila)
 				.on('mouseenter', function(){
 					POP.PUB.show({

@@ -1,5 +1,7 @@
 # Changelog
 
+## [Hotfix 17.9 - Error item.Descripcion](!11) (04/08/2017)
+
 ## [Bugs post versión 17.7](!10) (26/07/2017)
 
 ## [Bugs post versión 17.6](!8) (26/07/2017)
