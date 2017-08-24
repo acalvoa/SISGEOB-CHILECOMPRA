@@ -45,13 +45,13 @@
 			settings.code = code;
 			switch(tipo)
 			{
-				case "L1": case "LE": case "LP": case "LS": case "LQ" : case "LR":
+				case "L1": case "LE": case "LP": case "LS": case "LQ" : case "LR": case "O1":
 					settings.tipo = "LP";
 					break;
-				case "A1": case "B1": case "E1": case "F1": case "J1": case "CO": case "B2": case "E2": case "H2": case "I2":
+				case "A1": case "B1": case "E1": case "F1": case "J1": case "CO": case "B2": case "E2": case "H2": case "I2": case "O2":
 					settings.tipo = "LPV";
 					break;
-				case "A2": case "D1": case "C2": case "F2": case "SE": case "OC": case "D1":  case "C1": case "F3": case "G1": case "R1": case "CA": case "OC": case "CM": case "FG": case "TL":
+				case "A2": case "C2": case "F2": case "SE": case "OC": case "D1":  case "C1": case "F3": case "G1": case "R1": case "CA": case "CM": case "FG": case "TL":
 					settings.tipo = "TD";
 					break;	
 			}
