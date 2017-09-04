@@ -1,6 +1,4 @@
 {
-	// VARIABLES DE ENTORNO
-	// PATH DEL SISTEMA DE ARCHIVOS
 	"ASSET": {
 		"APP": "CHILECOMPRA/app/app.js",
 		"LAYOUT": "CHILECOMPRA/public_html/layout.jsp",
@@ -11,120 +9,104 @@
 		"CONFIG": "CHILECOMPRA/app/config/const.jsp",
 		"DEPENDENCE": "CHILECOMPRA/app/dep/",
 		"CSSDEPENDENCE": "CHILECOMPRA/app/cssdep/",
-	 	"CONTROLLER": "CHILECOMPRA/app/controller/",
+		"CONTROLLER": "CHILECOMPRA/app/controller/",
 		"GEA": "CHILECOMPRA/gea/",
 		"CUSTOM": "CHILECOMPRA/app/custom/"
 	},
-	
-	// SE INTEGRAN LOS OBJETOS DE CRIPTOGRAFIA
 	"CRYPTO": [
-		"aes", 
-		"md5", 
-		"pbkdf2", 
-		"sha1", 
+		"aes",
+		"md5",
+		"pbkdf2",
+		"sha1",
 		"aesutil"
 	],
-	
-	// SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS COMPONENTES GEA
 	"GEA": [
-		"geautils", 
-		"geomap", 
+		"geautils",
+		"geomap",
 		"geobox"
 	],
-	
-	// SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LAS DEPENDENCIAS
 	"DEPENDENCE": {
 		"INTERNAL": [
-			"jquery", 
-			"jquery-ui", 
-			"angular", 
-			"bigInt", 
-			"include", 
-			"com", 
-			"model", 
-			"controller", 
-			"scrollbar", 
+			"jquery",
+			"jquery-ui",
+			"angular",
+			"bigInt",
+			"include",
+			"com",
+			"model",
+			"controller",
+			"scrollbar",
 			"cookie",
 			"properties"
 		],
-		
 		"EXTERNAL": [
 			"maps.googleapis.com/maps/api/js?v=3.26&key=AIzaSyAVImaf_n-d_3tOw5Cmp7Ue6dD2KJh2ODE&libraries=places,drawing"
 		],
-		
 		"CSS": [
 			"normalize",
-			"jquery-ui", 
+			"jquery-ui",
 			"scrollbar"
-		],
+		]
 	},
-	
-	// SE DESCRIBE EN ORDEN SECUENCIAL EL ORDEN DE LA CARGA DE LOS PARTIAL
-	// TODOS LOS LAYOUT ESTAN ASOCIADOS A UN ARCHIVO LESS QUE DEBE EXISTIR, SINO ESTOS SERAN IGNORADOS DE LA ESTRUCTURA
 	"LAYOUT": [
-		"header.jsp", 
-		"mapa.jsp", 
-		"footer.jsp", 
-		"popover.jsp", 
-		"loading.jsp", 
+		"header.jsp",
+		"mapa.jsp",
+		"footer.jsp",
+		"popover.jsp",
+		"loading.jsp",
 		"modal.jsp",
 		"ayuda_panel.jsp"
 	],
-	
 	"STYLES": [
-		"base.less", 
-		"essential.less", 
-		"header.less", 
-		"mapa.less", 
-		"panel.less", 
+		"base.less",
+		"essential.less",
+		"header.less",
+		"mapa.less",
+		"panel.less",
 		"ayuda_panel.less",
-		"footer.less", 
+		"footer.less",
 		"popover.less",
-		"etiqueta.less", 
-		"loading.less", 
-		"geobox.less", 
+		"etiqueta.less",
+		"loading.less",
+		"geobox.less",
 		"infopop.less",
-		"modal.less", 
+		"modal.less",
 		"alert.less",
 		"prompt.less"
 	],
-	
-	//SE DESCRIBE EN ORDEN SECUENCIAL LA CARGA DE LOS CONTROLARES
 	"CONTROLLER": [
-		"module", 
-		"panel", 
-		"ayuda_panel", 
-		"spatial", 
-		"loading", 
-		"formulario", 
-		"chilecompra", 
-		"popover", 
+		"module",
+		"panel",
+		"ayuda_panel",
+		"spatial",
+		"loading",
+		"formulario",
+		"chilecompra",
+		"popover",
 		"infopop",
 		"etiqueta",
-		"modal", 
-		"toolbar", 
+		"modal",
+		"toolbar",
 		"alert",
 		"slidercc",
 		"analytics",
 		"validaciones",
 		"prompt"
 	],
-	
-	// VARIABLES DE APLICACION
 	"MAP": {
-		"LAT": -33.46911990,
-		"LNG": -70.6419970,
-		"ZOOM": 4,
+		"LAT": -33.4691199,
+		"LNG": -70.641997,
+		"ZOOM": 4
 	},
 	"MERCADOPUBLICO": {
-		"MP": "api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?",
-		"OC": "apidesarrollo.chilecompra.cl/servicios/v2/Publico/OrdenesDeCompra.json?",
+		"MP": "apiqa.mercadopublico.cl/servicios/v1/publico/licitaciones.json?",
+		"OC": "api.mercadopublico.cl/servicios/v2/publico/OrdenCompra.json?",
 		"CODIGO": "LP14",
 		"TICKET": "&ticket=D6DF9A69-2F0E-482E-B1F4-55A234C8193F",
 		"TICKETOC": "ticket=D582A409-1B3F-496B-90CC-C41FAE839808"
 	},
 	"MIDESO": {
-		"URLMIDESO": "bipqa.mds.cl:8090/bip2-trabajo/app/services/",
+		"URLMIDESO": "prebip2.ministeriodesarrollosocial.gob.cl/bip2-trabajo/app/services",
 		"CONSULTAIDI": "ConsultaIdiWS",
 		"CONSULTAFICHA": "ConsultaFiichaIdiWS"
 	}
