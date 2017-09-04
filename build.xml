@@ -36,7 +36,6 @@
         <property file="${properties.dir}/${env}.properties" />
 
         <echo level="info" message="Creating property file: ${web.project.dir}/app/config/properties.json" />
-        <!-- Esta mala indentación es para que echo escriba de buena manera el archivo -->
         <script language="javascript">
             load("nashorn:mozilla_compat.js");
 
