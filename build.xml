@@ -35,13 +35,24 @@
     <target name="write-properties" depends="check-properties, clean-configs" if="properties.exist" >
         <property file="${properties.dir}/${env}.properties" />
 
-        <echo level="info" message="Creating new property file: ${web.project.dir}/app/config/properties.json" />
+        <echo level="info" message="Creating property file: ${web.project.dir}/app/config/properties.json" />
         <!-- Esta mala indentación es para que echo escriba de buena manera el archivo -->
-<echo file="${web.project.dir}/app/config/properties.json">{
-    "registro_referencia_url": "${REGISTROURL}",
-    "cerrar_url": "${CERRARURL}"
-}
-</echo>
+        <script language="javascript">
+            load("nashorn:mozilla_compat.js");
+
+            var FileWriter = java.io.FileWriter;
+
+            var file_path = project.getProperty("web.project.dir") + "/app/config/properties.json";
+
+            var properties = {
+                registro_referencia_url: project.getProperty('REGISTROURL'),
+                cerrar_url: project.getProperty('CERRARURL')
+            };
+
+            var fw = new FileWriter(file_path);
+            fw.write(JSON.stringify(properties, null, "\t"));
+            fw.close();
+        </script>
         
         <propertyfile
             file="${web.dir}/WEB-INF/classes/properties/config.properties" 
@@ -67,6 +78,47 @@
             <entry key="CONSULTAIDI" value="${CONSULTAIDI}" />
             <entry key="CONSULTAFICHA" value="${CONSULTAFICHA}" />
         </propertyfile>
+
+        <script language="javascript">
+            load("nashorn:mozilla_compat.js");
+
+            var File = java.io.File;
+            var FileReader = java.io.FileReader;
+            var BufferedReader = java.io.BufferedReader;
+            var FileWriter = java.io.FileWriter;
+
+            var file_path = "WebContent/WEB-INF/classes/config_cc.json";
+
+            echo = project.createTask("echo");
+            echo.setMessage("Modify: " + file_path);
+            echo.perform();
+
+            var file = new File(file_path);
+            fr = new FileReader(file);
+            br = new BufferedReader(fr);
+
+            var json_text = "";
+            while ((sCurrentLine = br.readLine()) != null) {
+                json_text = json_text + sCurrentLine;
+            }
+
+            fr.close();
+            var struct = eval("(" + json_text + ")");
+
+            struct.MERCADOPUBLICO.MP = project.getProperty("MP_LICITACIONES");
+            struct.MERCADOPUBLICO.OC = project.getProperty("MP_ORDENESCOMPRA");
+            struct.MERCADOPUBLICO.CODIGO = project.getProperty("MP_CODIGO");
+            struct.MERCADOPUBLICO.TICKET = project.getProperty("MP_TICKET");
+            struct.MERCADOPUBLICO.TICKETOC = project.getProperty("MP_TICKETOC");
+
+            struct.MIDESO.URLMIDESO = project.getProperty("MIDESO_URLMIDESO");
+            struct.MIDESO.CONSULTAIDI = project.getProperty("MIDESO_CONSULTAIDI");
+            struct.MIDESO.CONSULTAFICHA = project.getProperty("MIDESO_CONSULTAFICHA");
+
+            var fw = new FileWriter(file_path);
+            fw.write(JSON.stringify(struct, null, "\t"));
+            fw.close();
+        </script>
     </target>
 
     <!-- Public Targets -->
