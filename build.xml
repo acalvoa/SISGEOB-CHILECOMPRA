@@ -163,6 +163,7 @@
     <target name="dist-ear" depends="dist, getVersion, getEnvCode" description="Generate the EAR distribution">
         <ear destfile="${dist.dir}/sisgeob-chilecompra-${env_code}-${version}.ear" appxml="${web.dir}/META-INF/weblogic-application.xml" >
             <fileset dir="${dist.dir}" includes="*.war"/>
+            <metainf dir="${web.dir}/META-INF" excludes="application.xml, .mf" /> 
         </ear>
         <delete file="${dist.dir}/sisgeob-chilecompra.war"/>
     </target>
