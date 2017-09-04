@@ -16,6 +16,19 @@
     </path>
 
     <!-- Private Targets -->
+    <target name="getVersion">
+        <loadfile property="version_file" srcfile="VERSION" failonerror="false"/>
+        <property name="version" value="${version_file}"/>
+        <echo>Version: ${version_file}</echo>
+    </target>
+
+    <target name="getEnvCode">
+        <script language="javascript">
+            var env_code = project.getProperty("env")[0].toUpperCase();
+            project.setProperty("env_code", env_code);
+        </script>
+    </target>
+
     <target name="check-properties">
         <available file="${properties.dir}/${env}.properties" property="properties.exist"/>
         <fail message="File not found: ${properties.dir}/${env}.properties">
@@ -147,8 +160,8 @@
         </war>
     </target>
 
-    <target name="dist-ear" depends="dist" description="Generate the EAR distribution">
-        <ear destfile="${dist.dir}/sisgeob-chilecompra.ear" appxml="${web.dir}/META-INF/weblogic-application.xml" >
+    <target name="dist-ear" depends="dist, getVersion, getEnvCode" description="Generate the EAR distribution">
+        <ear destfile="${dist.dir}/sisgeob-chilecompra-${env_code}-${version}.ear" appxml="${web.dir}/META-INF/weblogic-application.xml" >
             <fileset dir="${dist.dir}" includes="*.war"/>
         </ear>
         <delete file="${dist.dir}/sisgeob-chilecompra.war"/>
